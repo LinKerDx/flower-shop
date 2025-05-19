@@ -18,7 +18,7 @@ export function ProductosFiltrados() {
 
             {
                 tieneProductosFiltrados
-                    ? productosFiltrados.map(item => { return <ProductCard key={item.id} item={item} onClick={() => lanzarFuegos()} /> })
+                    ? productosFiltrados.map(item => { return <ProductCard key={item.id} item={item} /> })
                     : <NoEncuentraProductos />
             }
         </>
