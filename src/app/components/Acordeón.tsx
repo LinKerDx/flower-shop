@@ -22,10 +22,19 @@ export const AccordionDemo = () => {
     );
 };
 
-export const Accordion = ({ items }) => {
-    const [activeIndex, setActiveIndex] = useState(null);
+type AccordionItemType = {
+    title: string;
+    content: React.ReactNode;
+};
 
-    const toggleAccordion = (index) => {
+interface AccordionProps {
+    items: AccordionItemType[];
+}
+
+export const Accordion = ({ items }: AccordionProps) => {
+    const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+    const toggleAccordion = (index: number) => {
         setActiveIndex(activeIndex === index ? null : index);
     };
 
@@ -44,7 +53,14 @@ export const Accordion = ({ items }) => {
     );
 };
 
-const AccordionItem = ({ title, content, isOpen, onClick }) => {
+type AccordionItemProps = {
+    title: string;
+    content: React.ReactNode;
+    isOpen: boolean;
+    onClick: () => void;
+};
+
+const AccordionItem = ({ title, content, isOpen, onClick }: AccordionItemProps) => {
     return (
         <div className="border border-[#f291ab]/20 rounded-lg overflow-hidden shadow-sm transition-all duration-300">
             <button

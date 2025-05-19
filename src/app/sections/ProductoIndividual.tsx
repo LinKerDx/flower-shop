@@ -49,14 +49,15 @@ export default function ProductoIndividual({ item }: { item: Producto }) {
                         <p className="text-sm text-gray-600 mt-2 whitespace-pre-line">
                             {item.descripción}
                         </p>
-                        {item.opciones_maceta.map((items, index) => {
-                            return (
-                                <div key={index} className="flex flex-rows gap-2">
-                                    <span className="badges py-1 px-4 rounded-lg" >{items}<input className="hidden" type="checkbox" value={items} /></span>
-                                </div>
-                            )
-                        })}
+                        <div className="flex flex-rows gap-2">
 
+                            {item.opciones_maceta.map((items, index) => {
+                                return (
+                                    <span key={index} className="badges py-1 px-4 rounded-lg" >{items}<input className="hidden" type="checkbox" value={items} /></span>
+                                )
+                            })}
+
+                        </div>
 
                     </section>
 
@@ -84,7 +85,7 @@ export default function ProductoIndividual({ item }: { item: Producto }) {
             <footer>
                 <ProductosRecomendados productoActualId={item.id} categoria={item.categoría} />
             </footer>
-        </div>
+        </div >
 
     )
 }
