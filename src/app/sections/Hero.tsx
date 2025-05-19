@@ -51,15 +51,21 @@ export default function Hero() {
                     />
                 </div>
 
-                <div className=" md:absolute md:left-1/2  md:-bottom-7 md:-translate-x-1/2 bg-gradient-to-b from-primary to-primary-dark rounded-b-xl  py-4 px-6 md:px-8 shadow-lg w-[90%] md:w-[500px] mx-auto text-center md:mt-0 z-30">
+                <div className=" md:absolute md:left-1/2 md:-bottom-13  lg:-bottom-12 md:-translate-x-1/2 bg-gradient-to-b from-primary to-primary-dark rounded-b-xl  py-4 px-6 md:px-8 shadow-lg w-[90%] md:w-[500px] mx-auto text-center md:mt-0 z-30">
                     <p className="text-black font-bold text-sm md:text-2xl tracking-wide">
                         Cada arreglo cuenta una historia
                     </p>
 
                 </div>
-                <div className=" md:absolute md:left-1/2  md:-bottom-7 md:-translate-x-1/2 bg-gradient-to-b from-primary to-primary-dark rounded-b-xl  py-4 px-6 md:px-8 shadow-lg w-[90%] md:w-[500px] mx-auto text-center md:mt-0 z-30">
+                <div className=" md:absolute md:right-12/32  md:-bottom-30 md:-translate-x-1/2 bg-gradient-to-b from-primary to-[#B7BA70] rounded-b-xl  py-4 px-6 md:px-8 shadow-lg w-[90%] md:w-[500px] mx-auto text-center md:mt-0 z-30">
                     <p className="text-black font-bold text-sm md:text-2xl tracking-wide">
-                        <Link href="/ArregloPersonalizado">Crea tu propio arreglo</Link>
+                        <Link href="/ArregloPersonalizado">Crea tu propio arreglo 🍀 </Link>
+                    </p>
+
+                </div>
+                <div className=" md:absolute md:left-23/32  md:-bottom-30 md:-translate-x-1/2 bg-gradient-to-b from-primary to-[#E64C4C] rounded-b-xl  py-4 px-6 md:px-8 shadow-lg w-[90%] md:w-[500px] mx-auto text-center md:mt-0 z-30">
+                    <p className="text-black font-bold text-sm md:text-2xl tracking-wide">
+                        <Link href="/ArregloPersonalizado">⬇  Mira nuestros productos 😳 </Link>
                     </p>
 
                 </div>

@@ -19,7 +19,10 @@ export default function Page() {
                 <div className="responsivo-grid">
                     {categoría.map((item) => {
                         return (
-                            <ProductCard key={item.id} item={item} />
+                            <ProductCard
+                                key={item.id}
+                                item={item}
+                            />
                         )
                     })}
                 </div>

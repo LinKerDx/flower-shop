@@ -50,7 +50,7 @@ export default function Header() {
                         </SignedIn>
                     </div>
                 </nav>
-                <div className="">
+                <div className="hidden">
                     <ul className="space-x-4 hidden md:flex">
                         {navLinks.map((link) => (
                             <li key={link.name}>

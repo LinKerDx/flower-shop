@@ -4,14 +4,20 @@ import { Producto } from "../types/productos"
 import { AddToCartIcon, RemoveFromCart } from "./icons/Icons"
 import { useCart } from "../hooks/useCart"
 import { DatosProducto } from "../services/producto"
+import { useFuegosArtificiales } from "../hooks/useFuegosArtificiales"
+import FuegosArtificiales from "./FuegosArtificiales"
 
-export default function ProductCard({ item, onClick }: { item: Producto, onClick: () => void }) {
+export default function ProductCard({ item }: { item: Producto }) {
     const { addToCart, removeFromCart } = useCart()
+    const { disparar, lanzarFuegos } = useFuegosArtificiales()
+
     const { checkProducto } = DatosProducto()
     const isInCart = checkProducto(item)
 
     return (
         <>
+            <FuegosArtificiales disparar={disparar} />
+
             <div className="flex flex-col items-center justify-center">
 
                 <article className="bg-primary-dark rounded-xl shadow-md overflow-hidden w-72 h-full flex flex-col  transform transition-transform duration-300 hover:scale-105 hover:shadow-xl ">
@@ -52,14 +58,16 @@ export default function ProductCard({ item, onClick }: { item: Producto, onClick
                                 <span className="text-xs text-blue-text">Precio</span>
                                 <span className="font-semibold text-lg">{item.precio_estimado} <small className="text-blue-text">{item.moneda}</small></span>
                             </div>
-                            <button style={{ backgroundColor: isInCart ? 'black' : '#6de06d' }} onClick={() => {
-                                if (isInCart) {
-                                    removeFromCart(item);
-                                } else {
-                                    addToCart(item);
-                                    onClick()
-                                }
-                            }} className="cursor-pointer group-hover:animate-elastic-ultrasoft text-white text-sm rounded-lg transition-colors p-1">
+                            <button style={{ backgroundColor: isInCart ? 'black' : '#6de06d' }}
+                                onClick={() => {
+                                    if (isInCart) {
+                                        removeFromCart(item);
+                                    } else {
+                                        addToCart(item);
+                                        lanzarFuegos();
+                                    }
+                                }}
+                                className="cursor-pointer group-hover:animate-elastic-ultrasoft text-white text-sm rounded-lg transition-colors p-1">
                                 {isInCart ? <RemoveFromCart /> : <AddToCartIcon />}
                             </button>
                             <Link href={`/producto/${item.id}`} >
