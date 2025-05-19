@@ -4,6 +4,7 @@ import FuegosArtificiales from "@/app/components/FuegosArtificiales";
 import ProductCard from "@/app/components/ProductCard";
 import SectionContainer from "@/app/components/SectionContainer"
 import { useFuegosArtificiales } from "@/app/hooks/useFuegosArtificiales";
+import ProductosRecomendados from "@/app/sections/ProductosRecomendados";
 import { DatosProducto } from "@/app/services/producto";
 import { useParams } from "next/navigation";
 
@@ -12,7 +13,8 @@ export default function Page() {
     const { producto } = DatosProducto()
     const params = useParams();
 
-    const category = params.category;
+    const categoryParam = params.category;
+    const category = Array.isArray(categoryParam) ? categoryParam[0] : categoryParam;
     const categoría = producto.filter(producto => producto.categoría === category)
 
 
@@ -34,6 +36,7 @@ export default function Page() {
                         )
                     })}
                 </div>
+                <ProductosRecomendados categoria={category ?? ""} />
             </div>
         </SectionContainer>
     )
