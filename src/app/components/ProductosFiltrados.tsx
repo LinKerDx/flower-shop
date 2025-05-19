@@ -15,10 +15,9 @@ export function ProductosFiltrados() {
     return (
         <>
             <FuegosArtificiales disparar={disparar} />
-
             {
                 tieneProductosFiltrados
-                    ? productosFiltrados.map(item => { return <ProductCard key={item.id} item={item} /> })
+                    ? productosFiltrados.map(item => { return <ProductCard key={item.id} item={item} onClick={() => lanzarFuegos()} /> })
                     : <NoEncuentraProductos />
             }
         </>
