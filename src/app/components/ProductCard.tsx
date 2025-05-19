@@ -4,20 +4,15 @@ import { Producto } from "../types/productos"
 import { AddToCartIcon, RemoveFromCart } from "./icons/Icons"
 import { useCart } from "../hooks/useCart"
 import { DatosProducto } from "../services/producto"
-import { useFuegosArtificiales } from "../hooks/useFuegosArtificiales"
-import FuegosArtificiales from "./FuegosArtificiales"
-import { on } from "events"
 
 export default function ProductCard({ item, onClick }: { item: Producto, onClick: () => void }) {
     const { addToCart, removeFromCart } = useCart()
-    const { disparar } = useFuegosArtificiales()
 
     const { checkProducto } = DatosProducto()
     const isInCart = checkProducto(item)
 
     return (
         <>
-            <FuegosArtificiales disparar={disparar} />
             <div className="flex flex-col items-center justify-center">
 
                 <article className="bg-primary-dark rounded-xl shadow-md overflow-hidden w-72 h-full flex flex-col  transform transition-transform duration-300 hover:scale-105 hover:shadow-xl ">
