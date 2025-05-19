@@ -39,7 +39,7 @@ export default function Hero() {
                     />
                     <video
                         src="/assets/Hero4.webm"
-                        className="hidden md:block w-full h-full object-cover col-span-3 aspect-video transition-all duration-300 hover:brightness-110 "
+                        className="hidden md:block w-full h-full object-cover col-span-3 transition-all duration-300 hover:brightness-110 "
                         autoPlay
                         loop
                         muted
