@@ -1,0 +1,90 @@
+
+<svg viewBox="50 80 400 350" xmlns="http://www.w3.org/2000/svg">
+ 
+  <!-- Bolsa de compras -->
+  <g>
+    <!-- Sombra de la bolsa -->
+    <path d="M130,165 L370,165 L345,410 L155,410 Z" fill="#00000025" transform="translate(8,8)"/>
+    
+    <!-- Cuerpo de la bolsa -->
+    <path d="M130,165 L370,165 L345,410 L155,410 Z" fill="#ff6b6b" stroke="#e64c4c" stroke-width="2"/>
+    
+    <!-- Parte superior de la bolsa -->
+    <rect x="125" y="145" width="250" height="25" fill="#e64c4c" rx="8" ry="8"/>
+    
+    <!-- Asas de la bolsa -->
+    <path d="M165,145 C165,90 215,90 215,145" fill="none" stroke="#e64c4c" stroke-width="10" stroke-linecap="round"/>
+    <path d="M285,145 C285,90 335,90 335,145" fill="none" stroke="#e64c4c" stroke-width="10" stroke-linecap="round"/>
+    
+    <!-- Detalles de la bolsa -->
+    <path d="M155,210 L345,210" stroke="white" stroke-width="3" stroke-dasharray="0,0"/>
+    
+    <!-- Círculo decorativo -->
+    <circle cx="250" cy="280" r="70" fill="white" opacity="0.9"/> 
+    
+<g transform="translate(212, 227)">
+ <!-- Tallo simple -->
+    <rect x="32" y="48" width="10" height="10" fill="#2f855a"/>
+    <rect x="32" y="56" width="10" height="10" fill="#2f855a"/>
+    <rect x="32" y="64" width="10" height="10" fill="#2f855a"/>
+    <rect x="32" y="72" width="10" height="10" fill="#2f855a"/>
+    <rect x="32" y="80" width="10" height="10" fill="#2f855a"/>
+    <rect x="32" y="88" width="10" height="10" fill="#2f855a"/>
+    
+    <!-- Una hoja simple -->
+    <rect x="24" y="64" width="10" height="10" fill="#48bb78"/>
+    <rect x="40" y="72" width="10" height="10" fill="#48bb78"/>
+
+    
+
+    <!-- Centro de la flor -->
+    <rect x="24" y="32" width="20" height="20" fill="#f687b3"/>
+    <rect x="24" y="40" width="20" height="20" fill="#f687b3"/>
+    <rect x="32" y="32" width="20" height="20" fill="#f687b3"/>
+    <rect x="32" y="40" width="20" height="20" fill="#f687b3"/>
+    
+    <!-- Pétalos - versión minimalista con solo 4 direcciones principales -->
+    <!-- Superior -->
+    <rect x="24" y="16" width="20" height="20" fill="#f687b3"/>
+    <rect x="24" y="24" width="20" height="20" fill="#f687b3"/>
+    <rect x="32" y="24" width="20" height="20" fill="#f687b3"/>
+    
+    <!-- Derecho -->
+    <rect x="40" y="32" width="20" height="20" fill="#f687b3"/>
+    <rect x="48" y="32" width="20" height="20" fill="#f687b3"/>
+    <rect x="40" y="40" width="20" height="20" fill="#f687b3"/>
+    
+    <!-- Inferior -->
+    <rect x="24" y="48" width="20" height="20" fill="#f687b3"/>
+    <rect x="32" y="48" width="20" height="20" fill="#f687b3"/>
+    
+    <!-- Izquierdo -->
+    <rect x="8" y="32" width="20" height="20" fill="#f687b3"/>
+    <rect x="16" y="32" width="20" height="20" fill="#f687b3"/>
+    <rect x="16" y="40" width="20" height="20" fill="#f687b3"/>
+    
+    <!-- Diagonal superior-derecha -->
+    <rect x="40" y="24" width="20" height="20" fill="#f687b3"/>
+    
+    <!-- Diagonal inferior-derecha -->
+    <rect x="40" y="48" width="20" height="20" fill="#f687b3"/>
+    
+    <!-- Diagonal inferior-izquierda -->
+    <rect x="16" y="48" width="20" height="20" fill="#f687b3"/>
+    
+    <!-- Diagonal superior-izquierda -->
+    <rect x="16" y="24" width="20" height="20" fill="#f687b3"/>
+
+  </g>
+    
+    <!-- Detalles adicionales -->
+    <path d="M160,350 L180,320 L200,350 L220,320 L240,350 L260,320 L280,350 L300,320 L320,350 L340,320" 
+          fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- Pequeños círculos decorativos -->
+    <circle cx="170" cy="230" r="8" fill="white"/>
+    <circle cx="330" cy="230" r="8" fill="white"/>
+    <circle cx="170" cy="380" r="8" fill="white"/>
+    <circle cx="330" cy="380" r="8" fill="white"/>
+  </g>
+</svg>

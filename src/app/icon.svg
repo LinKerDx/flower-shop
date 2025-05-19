@@ -1,0 +1,52 @@
+<svg viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fondo transparente -->
+  <rect width="320" height="320" fill="transparent" />
+  
+  <!-- Cuadrícula pixel art (16x16 píxeles, cada píxel de 20x20) -->
+  
+  <!-- Tallo -->
+  <rect x="140" y="200" width="20" height="20" fill="#3ea832" />
+  <rect x="140" y="220" width="20" height="20" fill="#3ea832" />
+  <rect x="140" y="240" width="20" height="20" fill="#3ea832" />
+  <rect x="140" y="260" width="20" height="20" fill="#3ea832" />
+  <rect x="140" y="280" width="20" height="20" fill="#3ea832" />
+  
+  <!-- Hojas -->
+  <rect x="120" y="240" width="20" height="20" fill="#3ea832" />
+  <rect x="100" y="240" width="20" height="20" fill="#3ea832" />
+  <rect x="160" y="220" width="20" height="20" fill="#3ea832" />
+  <rect x="180" y="220" width="20" height="20" fill="#3ea832" />
+  
+  <!-- Pétalos rosa claro (exteriores) -->
+  <rect x="120" y="120" width="20" height="20" fill="#ff9ecf" />
+  <rect x="140" y="100" width="20" height="20" fill="#ff9ecf" />
+  <rect x="160" y="120" width="20" height="20" fill="#ff9ecf" />
+  <rect x="140" y="140" width="20" height="20" fill="#ff9ecf" />
+  
+  <rect x="100" y="140" width="20" height="20" fill="#ff9ecf" />
+  <rect x="100" y="160" width="20" height="20" fill="#ff9ecf" />
+  <rect x="180" y="140" width="20" height="20" fill="#ff9ecf" />
+  <rect x="180" y="160" width="20" height="20" fill="#ff9ecf" />
+  
+  <!-- Pétalos rosa intenso (medios) -->
+  <rect x="120" y="140" width="20" height="20" fill="#ff6eb5" />
+  <rect x="160" y="140" width="20" height="20" fill="#ff6eb5" />
+  <rect x="120" y="160" width="20" height="20" fill="#ff6eb5" />
+  <rect x="160" y="160" width="20" height="20" fill="#ff6eb5" />
+  <rect x="140" y="120" width="20" height="20" fill="#ff6eb5" />
+  <rect x="140" y="160" width="20" height="20" fill="#ff6eb5" />
+  
+  <!-- Centro amarillo -->
+  <rect x="140" y="140" width="20" height="20" fill="#ffd700" />
+  
+  <!-- Sombra/Brillo -->
+  <rect x="160" y="100" width="20" height="20" fill="#ffc1e0" />
+  <rect x="120" y="100" width="20" height="20" fill="#ffc1e0" />
+  <rect x="100" y="120" width="20" height="20" fill="#ffc1e0" />
+  <rect x="180" y="120" width="20" height="20" fill="#ffc1e0" />
+  
+  <!-- Detalles de profundidad -->
+  <rect x="140" y="180" width="20" height="20" fill="#ff3a96" />
+  <rect x="120" y="180" width="20" height="20" fill="#ff6eb5" />
+  <rect x="160" y="180" width="20" height="20" fill="#ff6eb5" />
+</svg>

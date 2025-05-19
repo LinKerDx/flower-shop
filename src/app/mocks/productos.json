@@ -1,0 +1,522 @@
+[
+    {
+        "id": 1,
+        "tipo": "Cactus globular",
+        "descripción": "Cactus barril redondo con espinas doradas dispuestas en costillas verticales",
+        "maceta": "Cuenco de terracota",
+        "opciones_maceta": [
+            "Terracota",
+            "Negro",
+            "Blanco",
+            "Azul marino"
+        ],
+        "nivel_cuidado": "Bajo mantenimiento",
+        "precio_estimado": 15.50,
+        "moneda": "euros",
+        "imagen": "/imgs/cactaceas/1.webp",
+        "categoría": "Cactus",
+        "stock": 10,
+        "descuento": 0,
+        "rating": 4.9
+    },
+    {
+        "id": 2,
+        "tipo": "Conjunto de Mammillaria",
+        "descripción": "Múltiples pequeños cactus redondos con espinas doradas creciendo juntos",
+        "maceta": "Cerámica decorativa con motivos florales",
+        "opciones_maceta": [
+            "Blanco con flores",
+            "Verde pastel",
+            "Rosa claro",
+            "Amarillo suave"
+        ],
+        "nivel_cuidado": "Bajo mantenimiento",
+        "precio_estimado": 18.75,
+        "moneda": "euros",
+        "imagen": "/imgs/cactaceas/2.webp",
+        "categoría": "Cactus",
+        "stock": 15,
+        "descuento": 0,
+        "rating": 5
+    },
+    {
+        "id": 3,
+        "tipo": "Cactus columnar",
+        "descripción": "Pequeño cactus de crecimiento vertical con costillas visibles",
+        "maceta": "Cerámica blanca minimalista",
+        "opciones_maceta": [
+            "Blanco",
+            "Gris",
+            "Negro mate",
+            "Terracota"
+        ],
+        "nivel_cuidado": "Bajo mantenimiento",
+        "precio_estimado": 12.99,
+        "moneda": "euros",
+        "imagen": "/imgs/cactaceas/3.webp",
+        "categoría": "Cactus",
+        "stock": 20,
+        "descuento": 0,
+        "rating": 5
+    },
+    {
+        "id": 4,
+        "tipo": "Opuntia (Nopal)",
+        "descripción": "Cactus de paletas con segmentos planos ovalados y pequeñas espinas",
+        "maceta": "Maceta cilíndrica plateada",
+        "opciones_maceta": [
+            "Plateado",
+            "Cobre",
+            "Dorado",
+            "Bronce"
+        ],
+        "nivel_cuidado": "Bajo mantenimiento",
+        "precio_estimado": 22.50,
+        "moneda": "euros",
+        "imagen": "/imgs/cactaceas/4.webp",
+        "categoría": "Cactus",
+        "stock": 50,
+        "descuento": 8,
+        "rating": 4.1
+    },
+    {
+        "id": 5,
+        "tipo": "Opuntia (Nopal)",
+        "descripción": "Cactus de paletas maduro con múltiples segmentos",
+        "maceta": "Maceta moderna con diseño abstracto",
+        "opciones_maceta": [
+            "Multicolor",
+            "Azul geométrico",
+            "Negro y blanco",
+            "Rojo y rosa"
+        ],
+        "nivel_cuidado": "Bajo mantenimiento",
+        "precio_estimado": 26.90,
+        "moneda": "euros",
+        "imagen": "/imgs/cactaceas/5.webp",
+        "categoría": "Cactus",
+        "stock": 30,
+        "descuento": 30,
+        "rating": 5
+    },
+    {
+        "id": 6,
+        "tipo": "Mammillaria",
+        "descripción": "Pequeño cactus redondo con espinas pronunciadas",
+        "maceta": "Terracota clásica",
+        "opciones_maceta": [
+            "Terracota",
+            "Blanco",
+            "Verde oliva",
+            "Ocre"
+        ],
+        "nivel_cuidado": "Bajo mantenimiento",
+        "precio_estimado": 14.25,
+        "moneda": "euros",
+        "imagen": "/imgs/cactaceas/6.webp",
+        "categoría": "Cactus",
+        "stock": 10,
+        "descuento": 5,
+        "rating": 4.3
+    },
+    {
+        "id": 7,
+        "tipo": "Schefflera Arboricola Variegada",
+        "descripción": "Planta arbustiva con hojas verdes y amarillas dispuestas en forma radial",
+        "maceta": "Maceta blanca simple y elegante",
+        "opciones_maceta": [
+            "Blanco",
+            "Terracota",
+            "Gris",
+            "Negro"
+        ],
+        "nivel_cuidado": "Bajo",
+        "precio_estimado": 24.99,
+        "moneda": "euros",
+        "imagen": "/imgs/variedad/1.webp",
+        "categoría": "Variedad",
+        "stock": 10,
+        "descuento": 5,
+        "rating": 4.5
+    },
+    {
+        "id": 8,
+        "tipo": "Begonia Maculata",
+        "descripción": "Planta con hojas verdes decoradas con puntos blancos distintivos",
+        "maceta": "Maceta de terracota tradicional",
+        "opciones_maceta": [
+            "Terracota",
+            "Blanco",
+            "Negro",
+            "Gris"
+        ],
+        "nivel_cuidado": "Moderado",
+        "precio_estimado": 18.50,
+        "moneda": "euros",
+        "imagen": "/imgs/variedad/2.webp",
+        "categoría": "Variedad",
+        "stock": 10,
+        "descuento": 0,
+        "rating": 4.5
+    },
+    {
+        "id": 9,
+        "tipo": "Dracaena Massangeana",
+        "descripción": "Planta tipo palmera con tronco central y hojas verdes alargadas",
+        "maceta": "Maceta cilíndrica de terracota naranja",
+        "opciones_maceta": [
+            "Terracota",
+            "Blanco",
+            "Negro",
+            "Gris claro"
+        ],
+        "nivel_cuidado": "Bajo",
+        "precio_estimado": 26.99,
+        "moneda": "euros",
+        "imagen": "/imgs/variedad/3.webp",
+        "categoría": "Variedad",
+        "stock": 12,
+        "descuento": 10,
+        "rating": 5
+    },
+    {
+        "id": 10,
+        "tipo": "Sansevieria (Lengua de suegra)",
+        "descripción": "Planta con hojas erectas, gruesas y puntiagudas con patrones moteados",
+        "maceta": "Cesto trenzado marrón",
+        "opciones_maceta": [
+            "Cesto tejido",
+            "Terracota",
+            "Cerámica blanca",
+            "Negro"
+        ],
+        "nivel_cuidado": "Muy bajo",
+        "precio_estimado": 19.99,
+        "moneda": "euros",
+        "imagen": "/imgs/variedad/4.webp",
+        "categoría": "Variedad",
+        "stock": 11,
+        "descuento": 0,
+        "rating": 4.2
+    },
+    {
+        "id": 11,
+        "tipo": "Sansevieria Cilíndrica",
+        "descripción": "Planta con hojas cilíndricas y puntiagudas verticales",
+        "maceta": "Maceta blanca minimalista",
+        "opciones_maceta": [
+            "Blanco",
+            "Terracota",
+            "Gris",
+            "Negro"
+        ],
+        "nivel_cuidado": "Muy bajo",
+        "precio_estimado": 17.50,
+        "moneda": "euros",
+        "imagen": "/imgs/variedad/5.webp",
+        "categoría": "Variedad",
+        "stock": 13,
+        "descuento": 15,
+        "rating": 4.5
+    },
+    {
+        "id": 12,
+        "tipo": "Sansevieria Trifasciata Laurentii",
+        "descripción": "Planta con hojas alargadas verdes con bordes amarillos",
+        "maceta": "Maceta acanalada de terracota",
+        "opciones_maceta": [
+            "Terracota",
+            "Blanco",
+            "Gris",
+            "Negro"
+        ],
+        "nivel_cuidado": "Muy bajo",
+        "precio_estimado": 22.50,
+        "moneda": "euros",
+        "imagen": "/imgs/variedad/6.webp",
+        "categoría": "Variedad",
+        "stock": 3,
+        "descuento": 30,
+        "rating": 4.5
+    },
+    {
+        "id": 13,
+        "tipo": "Peperomia Watermelon",
+        "descripción": "Planta compacta con hojas redondas y patrones rayados que recuerdan a una sandía",
+        "maceta": "Maceta terracota clásica",
+        "opciones_maceta": [
+            "Terracota",
+            "Blanco",
+            "Negro",
+            "Verde"
+        ],
+        "nivel_cuidado": "Moderado",
+        "precio_estimado": 15.99,
+        "moneda": "euros",
+        "imagen": "/imgs/variedad/7.webp",
+        "categoría": "Variedad",
+        "stock": 21,
+        "descuento": 0,
+        "rating": 4.2
+    },
+    {
+        "id": 14,
+        "tipo": "Ornamental Pepper (Solanum)",
+        "descripción": "Pequeña planta con flores amarillas puntiagudas y hojas verdes compactas",
+        "maceta": "Recipiente cilíndrico azul pastel con diseño tipo acuarela",
+        "opciones_maceta": [
+            "Azul pastel",
+            "Terracota",
+            "Blanco",
+            "Negro"
+        ],
+        "nivel_cuidado": "Moderado",
+        "precio_estimado": 12.99,
+        "moneda": "euros",
+        "imagen": "/imgs/flores/1.webp",
+        "categoría": "Flores",
+        "stock": 40,
+        "descuento": 0,
+        "rating": 4.5
+    },
+    {
+        "id": 15,
+        "tipo": "Planta decorativa con miniflores",
+        "descripción": "Arbusto compacto con abundante follaje verde y pequeñas flores rosadas",
+        "maceta": "Maceta blanca ovalada",
+        "opciones_maceta": [
+            "Blanco",
+            "Negro",
+            "Gris",
+            "Beige"
+        ],
+        "nivel_cuidado": "Bajo",
+        "precio_estimado": 14.50,
+        "moneda": "euros",
+        "imagen": "/imgs/flores/2.webp",
+        "categoría": "Flores",
+        "stock": 20,
+        "descuento": 0,
+        "rating": 4.5
+    },
+    {
+        "id": 16,
+        "tipo": "Geranio rojo (Pelargonium)",
+        "descripción": "Planta con flores rojas vibrantes y hojas verdes redondeadas",
+        "maceta": "Maceta clásica de terracota",
+        "opciones_maceta": [
+            "Terracota",
+            "Blanco",
+            "Verde",
+            "Gris"
+        ],
+        "nivel_cuidado": "Moderado",
+        "precio_estimado": 9.95,
+        "moneda": "euros",
+        "imagen": "/imgs/flores/3.webp",
+        "categoría": "Flores",
+        "stock": 27,
+        "descuento": 7,
+        "rating": 4.5
+    },
+    {
+        "id": 17,
+        "tipo": "Margarita rosa (Bellis)",
+        "descripción": "Planta con flores tipo margarita de color rosa y follaje verde",
+        "maceta": "Maceta blanca simple",
+        "opciones_maceta": [
+            "Blanco",
+            "Azul claro",
+            "Rosa",
+            "Beige"
+        ],
+        "nivel_cuidado": "Moderado",
+        "precio_estimado": 8.75,
+        "moneda": "euros",
+        "imagen": "/imgs/flores/4.webp",
+        "categoría": "Flores",
+        "stock": 23,
+        "descuento": 15,
+        "rating": 5
+    },
+    {
+        "id": 18,
+        "tipo": "Pensamientos multicolor (Viola)",
+        "descripción": "Flores coloridas con caras características en tonos púrpura, amarillo, rojo y blanco",
+        "maceta": "Recipiente de cerámica turquesa",
+        "opciones_maceta": [
+            "Turquesa",
+            "Verde",
+            "Terracota",
+            "Azul"
+        ],
+        "nivel_cuidado": "Bajo",
+        "precio_estimado": 11.25,
+        "moneda": "euros",
+        "imagen": "/imgs/flores/5.webp",
+        "categoría": "Flores",
+        "stock": 23,
+        "descuento": 0,
+        "rating": 4.9
+    },
+    {
+        "id": 19,
+        "tipo": "Geranios para balcón",
+        "descripción": "Geranios rojos colgantes para ventana o balcón",
+        "maceta": "Maceta de terracota con soporte de hierro forjado",
+        "opciones_maceta": [
+            "Terracota",
+            "Plástico terracota",
+            "Cerámica",
+            "Fibra"
+        ],
+        "nivel_cuidado": "Moderado",
+        "precio_estimado": 18.50,
+        "moneda": "euros",
+        "imagen": "/imgs/flores/6.webp",
+        "categoría": "Flores",
+        "stock": 12,
+        "descuento": 0,
+        "rating": 4.8
+    },
+    {
+        "id": 20,
+        "tipo": "Combinación lavanda y margaritas",
+        "descripción": "Arreglo de lavanda púrpura con margaritas blancas",
+        "maceta": "Jardinera rectangular de madera",
+        "opciones_maceta": [
+            "Madera oscura",
+            "Madera clara",
+            "Gris",
+            "Negro"
+        ],
+        "nivel_cuidado": "Moderado",
+        "precio_estimado": 22.95,
+        "moneda": "euros",
+        "imagen": "/imgs/flores/7.webp",
+        "categoría": "Flores",
+        "stock": 30,
+        "descuento": 0,
+        "rating": 4.7
+    },
+    {
+        "id": 21,
+        "tipo": "Arreglo floral mixto",
+        "descripción": "Bouquet con lirios blancos, rosas rojas y girasoles amarillos",
+        "maceta": "Arreglo para floristería",
+        "opciones_maceta": [
+            "Sin maceta",
+            "Jarrón de vidrio",
+            "Cesta",
+            "Papel decorativo"
+        ],
+        "nivel_cuidado": "Alto (flores cortadas)",
+        "precio_estimado": 29.99,
+        "moneda": "euros",
+        "imagen": "/imgs/flores/8.webp",
+        "categoría": "Flores",
+        "stock": 11,
+        "descuento": 0,
+        "rating": 4.2
+    },
+    {
+        "id": 22,
+        "tipo": "Ramo nupcial/formal",
+        "descripción": "Arreglo elegante con peonías rosas, rosas blancas y toques de lavanda púrpura con pequeñas flores blancas y follaje verde",
+        "maceta": "Sin maceta - ramo atado con cinta",
+        "opciones_maceta": [
+            "Cinta rosa",
+            "Cinta blanca",
+            "Cinta marfil",
+            "Cinta de encaje"
+        ],
+        "nivel_cuidado": "Alto (flores cortadas)",
+        "precio_estimado": 85.00,
+        "moneda": "euros",
+        "imagen": "/imgs/flores/9.webp",
+        "categoría": "Flores",
+        "stock": 23,
+        "descuento": 0,
+        "rating": 5
+    },
+    {
+        "id": 23,
+        "tipo": "Arreglo rústico en caja",
+        "descripción": "Composición de rosas color salmón con lavanda, flores silvestres blancas y eucalipto en contenedor rústico",
+        "maceta": "Caja de madera rústica",
+        "opciones_maceta": [
+            "Madera natural",
+            "Madera blanca",
+            "Madera gris",
+            "Cesta de mimbre"
+        ],
+        "nivel_cuidado": "Alto (flores cortadas)",
+        "precio_estimado": 45.50,
+        "moneda": "euros",
+        "imagen": "/imgs/flores/10.webp",
+        "categoría": "Flores",
+        "stock": 18,
+        "descuento": 20,
+        "rating": 4.8
+    },
+    {
+        "id": 24,
+        "tipo": "Orquídea Phalaenopsis",
+        "descripción": "Elegante orquídea Phalaenopsis con flores blancas y centro magenta en plena floración, con varios tallos florales y botones por abrir",
+        "maceta": "Jarrón de vidrio transparente",
+        "opciones_maceta": [
+            "Jarrón de vidrio",
+            "Maceta cerámica blanca",
+            "Maceta cerámica negra",
+            "Maceta decorativa"
+        ],
+        "nivel_cuidado": "Medio",
+        "precio_estimado": 35.90,
+        "moneda": "euros",
+        "imagen": "/imgs/flores/11.webp",
+        "categoría": "Flores",
+        "stock": 15,
+        "descuento": 0,
+        "rating": 5
+    },
+    {
+        "id": 25,
+        "tipo": "Arreglo de helechos con flores amarillas",
+        "descripción": "Composición de helechos verdes vibrantes combinados con pequeñas flores amarillas en un arreglo natural y silvestre",
+        "maceta": "Maceta rústica con musgo",
+        "opciones_maceta": [
+            "Maceta rústica",
+            "Maceta de yute",
+            "Maceta de fibra natural",
+            "Maceta de corcho"
+        ],
+        "nivel_cuidado": "Bajo",
+        "precio_estimado": 28.50,
+        "moneda": "euros",
+        "imagen": "/imgs/flores/12.webp",
+        "categoría": "Flores",
+        "stock": 17,
+        "descuento": 10,
+        "rating": 4.1
+    },
+    {
+        "id": 26,
+        "tipo": "Anturio rojo",
+        "descripción": "Anturio con flores de intenso color rojo brillante y hojas grandes de color verde oscuro brillante",
+        "maceta": "Maceta dorada con soporte metálico",
+        "opciones_maceta": [
+            "Dorada con soporte",
+            "Cerámica blanca",
+            "Terracota",
+            "Metal cepillado"
+        ],
+        "nivel_cuidado": "Medio",
+        "precio_estimado": 42.75,
+        "moneda": "euros",
+        "imagen": "/imgs/flores/13.webp",
+        "categoría": "Flores",
+        "stock": 22,
+        "descuento": 0,
+        "rating": 4.5
+    }
+]

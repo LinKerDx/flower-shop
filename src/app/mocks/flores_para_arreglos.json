@@ -1,0 +1,408 @@
+[
+  {
+    "nombre": "Rosa",
+    "nombre_cientifico": "Rosa sp.",
+    "colores_disponibles": [
+      "rojo",
+      "blanco",
+      "rosa",
+      "amarillo",
+      "naranja",
+      "lavanda"
+    ],
+    "temporada": [
+      "primavera",
+      "verano"
+    ],
+    "duracion_en_florero": "7-14 días",
+    "significado": "Amor, belleza, romance",
+    "aroma": "Fuerte y dulce",
+    "precio_promedio": {
+      "unidad": 3.50,
+      "docena": 35.00
+    },
+    "tamaños_maceta": [
+      "pequeña",
+      "mediana",
+      "grande"
+    ]
+  },
+  {
+    "nombre": "Tulipán",
+    "nombre_cientifico": "Tulipa sp.",
+    "colores_disponibles": [
+      "rojo",
+      "amarillo",
+      "rosa",
+      "púrpura",
+      "blanco",
+      "naranja"
+    ],
+    "temporada": [
+      "invierno",
+      "primavera"
+    ],
+    "duracion_en_florero": "5-7 días",
+    "significado": "Amor perfecto, fama",
+    "aroma": "Ligero",
+    "precio_promedio": {
+      "unidad": 2.75,
+      "docena": 28.00
+    },
+    "tamaños_maceta": [
+      "pequeña",
+      "mediana",
+      "grande"
+    ]
+  },
+  {
+    "nombre": "Girasol",
+    "nombre_cientifico": "Helianthus annuus",
+    "colores_disponibles": [
+      "amarillo",
+      "naranja",
+      "rojo oscuro"
+    ],
+    "temporada": [
+      "verano",
+      "otoño"
+    ],
+    "duracion_en_florero": "7-10 días",
+    "significado": "Adoración, lealtad, longevidad",
+    "aroma": "Suave, herbáceo",
+    "precio_promedio": {
+      "unidad": 4.00,
+      "docena": 40.00
+    },
+    "tamaños_maceta": [
+      "pequeña",
+      "mediana",
+      "grande"
+    ]
+  },
+  {
+    "nombre": "Orquídea",
+    "nombre_cientifico": "Orchidaceae",
+    "colores_disponibles": [
+      "blanco",
+      "rosa",
+      "púrpura",
+      "amarillo",
+      "verde"
+    ],
+    "temporada": [
+      "todo el año"
+    ],
+    "duracion_en_florero": "14-21 días",
+    "significado": "Belleza exótica, lujo, amor",
+    "aroma": "Varía según especie",
+    "precio_promedio": {
+      "unidad": 18.00,
+      "docena": 195.00
+    },
+    "tamaños_maceta": [
+      "pequeña",
+      "mediana",
+      "grande"
+    ]
+  },
+  {
+    "nombre": "Lilium",
+    "nombre_cientifico": "Lilium sp.",
+    "colores_disponibles": [
+      "blanco",
+      "rosa",
+      "amarillo",
+      "naranja",
+      "rojo"
+    ],
+    "temporada": [
+      "primavera",
+      "verano"
+    ],
+    "duracion_en_florero": "7-14 días",
+    "significado": "Pureza, fertilidad, renovación",
+    "aroma": "Intenso y dulce",
+    "precio_promedio": {
+      "unidad": 5.00,
+      "docena": 50.00
+    },
+    "tamaños_maceta": [
+      "pequeña",
+      "mediana",
+      "grande"
+    ]
+  },
+  {
+    "nombre": "Gerbera",
+    "nombre_cientifico": "Gerbera jamesonii",
+    "colores_disponibles": [
+      "rojo",
+      "naranja",
+      "amarillo",
+      "rosa",
+      "blanco",
+      "púrpura"
+    ],
+    "temporada": [
+      "primavera",
+      "verano",
+      "otoño"
+    ],
+    "duracion_en_florero": "7-10 días",
+    "significado": "Inocencia, pureza, alegría",
+    "aroma": "Casi imperceptible",
+    "precio_promedio": {
+      "unidad": 3.00,
+      "docena": 30.00
+    },
+    "tamaños_maceta": [
+      "pequeña",
+      "mediana",
+      "grande"
+    ]
+  },
+  {
+    "nombre": "Crisantemo",
+    "nombre_cientifico": "Chrysanthemum morifolium",
+    "colores_disponibles": [
+      "blanco",
+      "amarillo",
+      "rojo",
+      "púrpura",
+      "rosa"
+    ],
+    "temporada": [
+      "otoño",
+      "invierno"
+    ],
+    "duracion_en_florero": "14-21 días",
+    "significado": "Alegría, longevidad, fidelidad",
+    "aroma": "Ligeramente herbal",
+    "precio_promedio": {
+      "unidad": 2.50,
+      "docena": 25.00
+    },
+    "tamaños_maceta": [
+      "pequeña",
+      "mediana",
+      "grande"
+    ]
+  },
+  {
+    "nombre": "Dalia",
+    "nombre_cientifico": "Dahlia sp.",
+    "colores_disponibles": [
+      "rosa",
+      "púrpura",
+      "rojo",
+      "amarillo",
+      "naranja",
+      "blanco"
+    ],
+    "temporada": [
+      "verano",
+      "otoño"
+    ],
+    "duracion_en_florero": "5-7 días",
+    "significado": "Elegancia, dignidad, amor eterno",
+    "aroma": "Ligero a ninguno",
+    "precio_promedio": {
+      "unidad": 4.50,
+      "docena": 45.00
+    },
+    "tamaños_maceta": [
+      "pequeña",
+      "mediana",
+      "grande"
+    ]
+  },
+  {
+    "nombre": "Peonía",
+    "nombre_cientifico": "Paeonia lactiflora",
+    "colores_disponibles": [
+      "blanco",
+      "rosa",
+      "rojo",
+      "coral",
+      "burdeos"
+    ],
+    "temporada": [
+      "primavera"
+    ],
+    "duracion_en_florero": "5-7 días",
+    "significado": "Romance, prosperidad, buena fortuna",
+    "aroma": "Dulce y potente",
+    "precio_promedio": {
+      "unidad": 8.00,
+      "docena": 85.00
+    },
+    "tamaños_maceta": [
+      "pequeña",
+      "mediana",
+      "grande"
+    ]
+  },
+  {
+    "nombre": "Clavel",
+    "nombre_cientifico": "Dianthus caryophyllus",
+    "colores_disponibles": [
+      "rojo",
+      "rosa",
+      "blanco",
+      "amarillo",
+      "púrpura"
+    ],
+    "temporada": [
+      "todo el año"
+    ],
+    "duracion_en_florero": "14-21 días",
+    "significado": "Fascinación, distinción, amor",
+    "aroma": "Dulce y especiado",
+    "precio_promedio": {
+      "unidad": 2.00,
+      "docena": 20.00
+    },
+    "tamaños_maceta": [
+      "pequeña",
+      "mediana",
+      "grande"
+    ]
+  },
+  {
+    "nombre": "Alstroemeria",
+    "nombre_cientifico": "Alstroemeria aurea",
+    "colores_disponibles": [
+      "rosa",
+      "blanco",
+      "naranja",
+      "amarillo",
+      "rojo",
+      "púrpura"
+    ],
+    "temporada": [
+      "primavera",
+      "verano"
+    ],
+    "duracion_en_florero": "10-14 días",
+    "significado": "Amistad, devoción, fortuna",
+    "aroma": "Muy suave o ninguno",
+    "precio_promedio": {
+      "unidad": 2.50,
+      "docena": 25.00
+    },
+    "tamaños_maceta": [
+      "pequeña",
+      "mediana",
+      "grande"
+    ]
+  },
+  {
+    "nombre": "Hortensia",
+    "nombre_cientifico": "Hydrangea macrophylla",
+    "colores_disponibles": [
+      "azul",
+      "rosa",
+      "blanco",
+      "verde",
+      "púrpura"
+    ],
+    "temporada": [
+      "primavera",
+      "verano"
+    ],
+    "duracion_en_florero": "7-14 días",
+    "significado": "Gratitud, gracia, abundancia",
+    "aroma": "Ligero a ninguno",
+    "precio_promedio": {
+      "unidad": 7.50,
+      "docena": 78.00
+    },
+    "tamaños_maceta": [
+      "pequeña",
+      "mediana",
+      "grande"
+    ]
+  },
+  {
+    "nombre": "Gladiolo",
+    "nombre_cientifico": "Gladiolus sp.",
+    "colores_disponibles": [
+      "rosa",
+      "rojo",
+      "púrpura",
+      "blanco",
+      "amarillo",
+      "naranja"
+    ],
+    "temporada": [
+      "verano",
+      "otoño"
+    ],
+    "duracion_en_florero": "7-10 días",
+    "significado": "Fuerza de carácter, integridad, victoria",
+    "aroma": "Ligero",
+    "precio_promedio": {
+      "unidad": 3.25,
+      "docena": 32.50
+    },
+    "tamaños_maceta": [
+      "pequeña",
+      "mediana",
+      "grande"
+    ]
+  },
+  {
+    "nombre": "Lisianthus",
+    "nombre_cientifico": "Eustoma grandiflorum",
+    "colores_disponibles": [
+      "blanco",
+      "rosa",
+      "púrpura",
+      "azul",
+      "champán"
+    ],
+    "temporada": [
+      "verano"
+    ],
+    "duracion_en_florero": "10-14 días",
+    "significado": "Carisma, gratitud, aprecio",
+    "aroma": "Suave o ninguno",
+    "precio_promedio": {
+      "unidad": 4.75,
+      "docena": 48.00
+    },
+    "tamaños_maceta": [
+      "pequeña",
+      "mediana",
+      "grande"
+    ]
+  },
+  {
+    "nombre": "Fresia",
+    "nombre_cientifico": "Freesia x hybrida",
+    "colores_disponibles": [
+      "blanco",
+      "amarillo",
+      "rojo",
+      "rosa",
+      "púrpura",
+      "naranja"
+    ],
+    "temporada": [
+      "primavera"
+    ],
+    "duracion_en_florero": "7-10 días",
+    "significado": "Inocencia, amistad, confianza",
+    "aroma": "Dulce y cítrico",
+    "precio_promedio": {
+      "unidad": 3.75,
+      "docena": 38.00
+    },
+    "tamaños_maceta": [
+      "pequeña",
+      "mediana",
+      "grande"
+    ]
+  }
+]

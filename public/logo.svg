@@ -1,0 +1,34 @@
+<svg viewBox="100 135 600 280" xmlns="http://www.w3.org/2000/svg">
+
+  
+  <!-- Elementos florales decorativos -->
+  <path d="M150,250 C150,180 200,150 250,150 C300,150 350,180 350,250 C350,320 300,350 250,350 C200,350 150,320 150,250 Z" fill="#e8f4e4" />
+  <path d="M450,250 C450,180 500,150 550,150 C600,150 650,180 650,250 C650,320 600,350 550,350 C500,350 450,320 450,250 Z" fill="#e8f4e4" />
+  
+  <!-- Tallo y hojas -->
+  <path d="M250,350 C250,380 270,400 300,420 C320,435 330,450 335,470" stroke="#5a9367" stroke-width="3" fill="none" />
+  <path d="M550,350 C550,380 530,400 500,420 C480,435 470,450 465,470" stroke="#5a9367" stroke-width="3" fill="none" />
+  
+  <!-- Pétalos estilizados -->
+  <path d="M250,250 C270,230 280,200 250,180 C220,200 230,230 250,250 Z" fill="#E78B9D" />
+  <path d="M250,250 C270,270 280,300 250,320 C220,300 230,270 250,250 Z" fill="#E78B9D" />
+  <path d="M250,250 C230,230 200,220 180,250 C200,280 230,270 250,250 Z" fill="#E78B9D" />
+  <path d="M250,250 C270,270 300,280 320,250 C300,220 270,230 250,250 Z" fill="#E78B9D" />
+  
+  <path d="M550,250 C570,230 580,200 550,180 C520,200 530,230 550,250 Z" fill="#E78B9D" />
+  <path d="M550,250 C570,270 580,300 550,320 C520,300 530,270 550,250 Z" fill="#E78B9D" />
+  <path d="M550,250 C530,230 500,220 480,250 C500,280 530,270 550,250 Z" fill="#E78B9D" />
+  <path d="M550,250 C570,270 600,280 620,250 C600,220 570,230 550,250 Z" fill="#E78B9D" />
+  
+  <!-- Centro de las flores -->
+  <circle cx="250" cy="250" r="15" fill="#f8cd5f" />
+  <circle cx="550" cy="250" r="15" fill="#f8cd5f" />
+  
+  <!-- Texto principal -->
+  <text x="400" y="220" font-family="Georgia, serif" font-size="60" text-anchor="middle" fill="#4a6c5d" font-weight="bold">Pétalo</text>
+  <text x="400" y="260" font-family="Georgia, serif" font-size="30" text-anchor="middle" fill="#4a6c5d">y</text>
+  <text x="400" y="320" font-family="Georgia, serif" font-size="60" text-anchor="middle" fill="#4a6c5d" font-weight="bold">Verso</text>
+  
+  <!-- Eslogan -->
+  <text x="400" y="380" font-family="Georgia, serif" font-size="18" text-anchor="middle" font-style="italic" fill="#240000">donde cada arreglo cuenta una historia</text>
+</svg>
