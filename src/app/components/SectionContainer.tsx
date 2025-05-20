@@ -1,6 +1,6 @@
-export default function SectionContainer({ children }: { children: React.ReactNode }) {
+export default function SectionContainer({ children, ref, id }: { children: React.ReactNode, ref?: React.Ref<HTMLElement> | undefined, id?: string | undefined }) {
     return (
-        <section className="flex flex-col items-center justify-center w-full h-full py-16">
+        <section ref={ref} id={id} className="flex flex-col items-center justify-center w-full h-full py-16">
             {children}
         </section>
     );

@@ -18,6 +18,10 @@
 
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .badges {
   position: relative;
   overflow: hidden;
@@ -97,8 +101,8 @@
   --animate-movimientocinta: movimiento-cinta 17s linear infinite;
   --animate-movimientocintareversa: movimiento-cinta-reversa 17s linear infinite;
 
-  --animate-movimientocinta-mobile: movimiento-cinta-mobile 13s linear infinite;
-  --animate-movimientocintareversa-mobile: movimiento-cinta-reversa-mobile 13s linear infinite;
+  --animate-movimientocinta-mobile: movimiento-cinta-mobile 15s linear infinite;
+  --animate-movimientocintareversa-mobile: movimiento-cinta-reversa-mobile 15s linear infinite;
 
   --animate-movimientocinta-compu: movimiento-cinta-compu 50s linear infinite;
   --animate-movimientocintareversa-compu: movimiento-cinta-reversa-compu 50s linear infinite;
@@ -117,7 +121,7 @@
     }
 
     100% {
-      transform: translateX(-121%);
+      transform: translateX(-85%);
     }
   }
 
@@ -142,7 +146,6 @@
       transform: scale(1, 1);
     }
   }
-
 
   @keyframes movimiento-cinta-reversa-compu {
     0% {
@@ -172,33 +175,33 @@
 
   @keyframes movimiento-cinta-reversa {
     0% {
-      transform: translateX(120%);
+      transform: translateX(170%);
     }
 
     100% {
-      transform: translateX(-100%);
+      transform: translateX(-170%);
     }
 
   }
 
   @keyframes movimiento-cinta-mobile {
     0% {
-      transform: translateX(-165%);
+      transform: translateX(-197%);
     }
 
     100% {
-      transform: translateX(100%);
+      transform: translateX(170%);
     }
 
   }
 
   @keyframes movimiento-cinta-reversa-mobile {
     0% {
-      transform: translateX(100%);
+      transform: translateX(120%);
     }
 
     100% {
-      transform: translateX(-170%);
+      transform: translateX(-240%);
     }
 
   }

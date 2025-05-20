@@ -30,7 +30,7 @@ export default function ProductoIndividual({ item }: { item: Producto }) {
             </header>
 
             {/* Contenido principal */}
-            <main className="flex flex-col md:flex-row items-center gap-10 mt-6">
+            <main className="flex flex-col md:grid md:grid-cols-3 items-center gap-10 mt-6">
                 {/* Imagen y descripción corta */}
                 <div className="flex flex-col gap-6 items-center">
                     <img src={item.imagen} alt={item.tipo} className="w-72 h-72 object-cover border-4 border-primary-dark rounded" />
@@ -38,15 +38,14 @@ export default function ProductoIndividual({ item }: { item: Producto }) {
                 </div>
 
                 {/* Detalles del producto */}
-                <aside className="flex flex-col">
-                    <section className="mt-4">
+                <aside className="flex flex-col items-center justify-center md:grid-cols-2">
+                    <section className="mt-4  flex flex-col gap-2">
                         <h1 className="text-2xl font-bold">{item.tipo}</h1>
-                        <p className="text-xl text-green-600 mt-1">
+                        <p className="text-xl text-green-600 ">
                             {item.precio_estimado} <small className="text-gray-500">{item.moneda}</small>
                         </p>
 
-                        <h2 className="font-semibold text-gray-800">Información del producto</h2>
-                        <p className="text-sm text-gray-600 mt-2 whitespace-pre-line">
+                        <p className="text-sm text-gray-600 max-w-80 whitespace-pre-line">
                             {item.descripción}
                         </p>
                         <div className="flex flex-rows gap-2">

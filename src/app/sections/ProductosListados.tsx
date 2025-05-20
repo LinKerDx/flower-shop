@@ -3,13 +3,14 @@ import { Filtro } from "@/app/components/Filtro";
 
 import SectionContainer from "@/app/components/SectionContainer"
 import { ProductosFiltrados } from "../components/ProductosFiltrados";
+import React, { forwardRef } from 'react';
 
 
-export function ProductosListados() {
+export const ProductosListados = forwardRef<HTMLElement>((props, ref) => {
 
     return (
-        <SectionContainer>
-            <div className="flex flex-col items-center justify-center mt-20 gap-10 w-full ">
+        <SectionContainer ref={ref} id="Productos" >
+            <div className="flex flex-col items-center justify-center mt-20 gap-10 w-full  ">
                 <h1 className="text-4xl font-bold ">Productos</h1>
                 <Filtro />
                 <div className="responsivo-grid">
@@ -17,4 +18,4 @@ export function ProductosListados() {
                 </div>
             </div>
         </SectionContainer>);
-}
+})
