@@ -155,7 +155,7 @@ export default function Personalizado() {
                     </main>
 
                     <aside className="w-full md:w-1/2">
-                        <div className="bg-white p-6 rounded-lg shadow-md sticky top-6">
+                        <div className="bg-white p-6 rounded-lg shadow-md sticky top-17">
                             <h2 className="text-xl font-semibold mb-4">Tu selección</h2>
 
                             {

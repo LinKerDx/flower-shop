@@ -20,6 +20,7 @@ export default function ProductCard({ item, onClick }: { item: Producto, onClick
                     <Link href={`/producto/${item.id}`} >
 
                         <div className="relative pt-[100%] overflow-hidden bg-gray-100">
+
                             <img
                                 src={item.imagen}
                                 alt={item.tipo}

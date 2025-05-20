@@ -22,6 +22,47 @@ html {
   scroll-behavior: smooth;
 }
 
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.5s;
+}
+
+/* Animación para la página anterior */
+::view-transition-old(root) {
+  animation-name: fade-out;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Animación para la nueva página */
+::view-transition-new(root) {
+  animation-name: fade-in;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slide-out-up {
+  0% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+
+  100% {
+    opacity: 0.5;
+    transform: translateY(-10%);
+  }
+}
+
+@keyframes slide-in-down {
+  0% {
+    opacity: 0.5;
+    transform: translateY(10%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
 .badges {
   position: relative;
   overflow: hidden;
@@ -175,11 +216,11 @@ html {
 
   @keyframes movimiento-cinta-reversa {
     0% {
-      transform: translateX(170%);
+      transform: translateX(100%);
     }
 
     100% {
-      transform: translateX(-170%);
+      transform: translateX(-120%);
     }
 
   }

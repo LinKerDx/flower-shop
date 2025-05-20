@@ -73,11 +73,11 @@ export default function SistemaDePago() {
         cardInfo.cvv.length >= 3;
 
     return (
-        <div className="flex flex-col items-center justify-center ">
+        <div className="flex flex-col items-center justify-center">
             {/* Payment Button */}
             <button
                 onClick={openModal}
-                className="badges flex items-center justify-center p-2 text-sm  text-white bg-blue-600 rounded-md shadow-md transition-all duration-300 hover:bg-blue-700 active:scale-95 hover:shadow-lg"
+                className="flex items-center justify-center py-2 px-7  text-sm  text-white bg-blue-600 rounded-md shadow-md transition-all duration-300 hover:bg-blue-700 active:scale-95 hover:shadow-lg"
             >
                 <svg
                     className="size-7 mr-2"

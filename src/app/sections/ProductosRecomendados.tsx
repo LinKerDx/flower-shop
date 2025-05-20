@@ -48,7 +48,7 @@ export default function ProductosRecomendados({ productoActualId, categoria }: P
     return (
         <div className="flex flex-col gap-5">
             <h2 className="text-2xl font-bold text-center">También te puede interesar</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:flex lg:flex-row gap-4 rounded-lg justify-items-center-safe">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:flex lg:flex-row gap-4 rounded-lg justify-items-center-safe md:justify-center">
                 {productosAleatorios.map((item) => {
                     return (
                         <article

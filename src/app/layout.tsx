@@ -6,6 +6,7 @@ import Header from "@/app/sections/Header";
 import ShoppingCart from "./components/ShoppingCart";
 import { CartProvider } from "./context/cart";
 import { Toaster } from "sonner";
+import { unstable_ViewTransition as ViewTransition } from 'react'
 
 
 const geistSans = Geist({
@@ -36,13 +37,14 @@ export default function RootLayout({
       >
 
         <Header />
-        <CartProvider>
-          <main className="flex flex-col gap-4">
-            <ShoppingCart />
-            {children}
-          </main>
-        </CartProvider>
-
+        <ViewTransition>
+          <CartProvider>
+            <main className="flex flex-col gap-4">
+              <ShoppingCart />
+              {children}
+            </main>
+          </CartProvider>
+        </ViewTransition>
         <Toaster richColors />
         <Footer />
       </body>
