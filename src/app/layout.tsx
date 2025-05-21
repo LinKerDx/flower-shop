@@ -31,7 +31,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-
+      <head>
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="/PetaloyVerso.webp" />
+        <meta
+          name="twitter:site:domain"
+          content="https://flower-shop-ivory-one.vercel.app/"
+        />
+        <meta
+          property="twitter:title"
+          content="Pétalo y Verso - Tienda Virtual"
+        />
+        <meta
+          property="twitter:description"
+          content="Omar es un Desarrollador autodidacta que desarrolla sitios desde cero."
+        />
+        <meta name="twitter:url" content="https://flower-shop-ivory-one.vercel.app/" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
