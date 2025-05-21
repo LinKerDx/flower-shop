@@ -14,7 +14,7 @@ export default function ImprovedBreadcrumb({ item }: { item: Producto }) {
     ];
 
     return (
-        <nav aria-label="Breadcrumb" className="py-3 md:px-4 bg-primary-dark rounded-lg shadow-sm">
+        <nav aria-label="Breadcrumb" className="py-3 md:px-4 bg-primary-dark xl:rounded-2xl shadow-sm">
             <ol className="inline-flex items-center md:gap-2">
                 {breadcrumbItems.map((item, index) => {
                     const Icon = item.icon;
