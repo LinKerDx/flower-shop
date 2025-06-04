@@ -7,7 +7,7 @@ import ShoppingCart from "./components/ShoppingCart";
 import { CartProvider } from "./context/cart";
 import { Toaster } from "sonner";
 import { unstable_ViewTransition as ViewTransition } from 'react'
-
+import { Analytics } from "@vercel/analytics/next"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

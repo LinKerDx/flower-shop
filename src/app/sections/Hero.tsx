@@ -2,10 +2,32 @@
 
 import Link from "next/link"
 import SectionContainer from "../components/SectionContainer"
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { SplitText } from "gsap/SplitText";
+
+
 
 
 export default function Hero({ onScrollToProductos }: { onScrollToProductos: () => void }) {
 
+
+    
+    useGSAP(() => {
+        // gsap code here...
+        let splitText = SplitText.create("h1", {
+            type: "chars",
+            charsClass: "char",
+        });
+        gsap.from(splitText.chars, { 
+            y: 10,
+            duration: 1,
+            ease: 'power3.in',
+            stagger: 0.2,
+            autoAlpha: 0,
+        }); // <-- automatically reverted
+    }); 
+    
     return (
         <SectionContainer>
             <div className="relative mb-15">
@@ -53,9 +75,9 @@ export default function Hero({ onScrollToProductos }: { onScrollToProductos: () 
                 <section className="flex flex-col gap-4 mt-6 md:mt-0 lg:grid lg:grid-cols-2 lg:gap-4">
 
                     <div className=" bg-gradient-to-b from-primary to-primary-dark lg:col-span-2 rounded-b-xl  py-4 px-6 md:px-8 shadow-lg w-[90%] md:w-[500px] mx-auto text-center md:mt-0 z-30">
-                        <p className="text-black font-bold text-sm md:text-2xl tracking-wide">
+                        <h1 className="text-black font-bold text-sm md:text-2xl tracking-wide">
                             Cada arreglo cuenta una historia
-                        </p>
+                        </h1>
 
                     </div>
                     <div className="bg-gradient-to-b from-primary to-[#B7BA70]  rounded-b-xl  py-4 px-6 md:px-8 shadow-lg w-[90%] md:w-[500px] mx-auto text-center md:mt-0 z-30">
@@ -79,7 +101,6 @@ export default function Hero({ onScrollToProductos }: { onScrollToProductos: () 
                             </button>
                         </p>
                     </div>
-
                     {/* <div className=" md:absolute md:left-1/2 md:-bottom-13  lg:-bottom-12 md:-translate-x-1/2 bg-gradient-to-b from-primary to-primary-dark rounded-b-xl  py-4 px-6 md:px-8 shadow-lg w-[90%] md:w-[500px] mx-auto text-center md:mt-0 z-30">
                         <p className="text-black font-bold text-sm md:text-2xl tracking-wide">
                             Cada arreglo cuenta una historia
