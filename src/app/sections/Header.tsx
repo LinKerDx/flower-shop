@@ -32,13 +32,11 @@ export default function Header() {
                         <img src="/logo.svg" alt="imagen del logo Pétalo y Verso" className="w-35 object-contain" />
                     </Link>
                     <div>
-                        <form className="flex items-center gap-2 bg-white rounded-full px-4 py-1">
+                        <form className="flex  items-center gap-2 bg-white rounded-full px-4 py-1">
                             <PlaceholderChanger />
-                            <button type="submit" className="cursor-pointer">
-                                <img src="/lupa.svg" alt="lupa para buscar" className="size-4 md:size-6" />
-                            </button>
                         </form>
                     </div>
+                    {/* Iniciar Sesión */}
                     <div className="flex gap-4">
                         <SignedOut>
                             <div className="hover:text-gray-400 cursor-pointer">

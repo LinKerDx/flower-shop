@@ -4,26 +4,28 @@ import Link from "next/link"
 import SectionContainer from "../components/SectionContainer"
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
+import { useRef } from "react";
+    
 import { SplitText } from "gsap/SplitText";
 
-
+gsap.registerPlugin(SplitText);
 
 
 export default function Hero({ onScrollToProductos }: { onScrollToProductos: () => void }) {
 
 
-    
+    const text = useRef<HTMLHeadingElement>(null)
+   
     useGSAP(() => {
         // gsap code here...
-        let splitText = SplitText.create("h1", {
-            type: "chars",
-            charsClass: "char",
+        let splitText = SplitText.create(text.current!, {
+            type: "chars"
         });
         gsap.from(splitText.chars, { 
             y: 10,
             duration: 1,
             ease: 'power3.in',
-            stagger: 0.2,
+            stagger: 0.4,
             autoAlpha: 0,
         }); // <-- automatically reverted
     }); 
@@ -75,7 +77,7 @@ export default function Hero({ onScrollToProductos }: { onScrollToProductos: () 
                 <section className="flex flex-col gap-4 mt-6 md:mt-0 lg:grid lg:grid-cols-2 lg:gap-4">
 
                     <div className=" bg-gradient-to-b from-primary to-primary-dark lg:col-span-2 rounded-b-xl  py-4 px-6 md:px-8 shadow-lg w-[90%] md:w-[500px] mx-auto text-center md:mt-0 z-30">
-                        <h1 className="text-black font-bold text-sm md:text-2xl tracking-wide">
+                        <h1 ref={text} className="text-black font-bold text-sm md:text-2xl tracking-wide">
                             Cada arreglo cuenta una historia
                         </h1>
 
