@@ -1,4 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @next/next/no-img-element */
+
 import { useState, useEffect, useRef } from "react";
 import { DatosProducto } from "../services/producto";
 import { Producto } from "../types/productos";
@@ -130,7 +132,7 @@ export default function PlaceholderChanger() {
           aria-controls="search-dropdown-listbox"
           role="combobox"
         />
-        
+
 
         {query && (
           <button
@@ -160,12 +162,12 @@ export default function PlaceholderChanger() {
                   onClick={() => handleSelect(item)}
                   onMouseEnter={() => setSelectedIndex(index)}
                 >
-                <Link href={`/producto/${item.id}`}>
-                  <div className="flex flex-col">
-                    <span className="font-medium">{item.tipo}</span>
-                    <span className="text-sm text-gray-500">{item.categoría}</span>
-                  </div>
-                </Link>
+                  <Link href={`/producto/${item.id}`}>
+                    <div className="flex flex-col">
+                      <span className="font-medium">{item.tipo}</span>
+                      <span className="text-sm text-gray-500">{item.categoría}</span>
+                    </div>
+                  </Link>
                 </li>
               ))}
             </ul>

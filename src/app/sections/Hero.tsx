@@ -5,7 +5,7 @@ import SectionContainer from "../components/SectionContainer"
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { useRef } from "react";
-    
+
 import { SplitText } from "gsap/SplitText";
 
 gsap.registerPlugin(SplitText);
@@ -15,21 +15,21 @@ export default function Hero({ onScrollToProductos }: { onScrollToProductos: () 
 
 
     const text = useRef<HTMLHeadingElement>(null)
-   
+
     useGSAP(() => {
         // gsap code here...
-        let splitText = SplitText.create(text.current!, {
+        const splitText = SplitText.create(text.current!, {
             type: "chars"
         });
-        gsap.from(splitText.chars, { 
+        gsap.from(splitText.chars, {
             y: 10,
             duration: 1,
             ease: 'power3.in',
             stagger: 0.4,
             autoAlpha: 0,
         }); // <-- automatically reverted
-    }); 
-    
+    });
+
     return (
         <SectionContainer>
             <div className="relative mb-15">
