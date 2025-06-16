@@ -15,23 +15,6 @@ export interface Producto {
     descuento: number;
 }
 
-export interface ArreglosFlorales {
-    nombre: string,
-    nombre_cientifico: string,
-    colores_disponibles: Array<string>,
-    temporada: Array<string>,
-    duracion_en_florero: string,
-    significado: string,
-    aroma: string,
-    precio_promedio: {
-        unidad: number,
-        unidad: number,
-    },
-    tamaños_maceta: Array<string>,
-}
-
-export type ListOfArreglos = ArreglosFlorales[];
-
 
 
 type Productos = {
