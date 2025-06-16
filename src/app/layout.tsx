@@ -44,14 +44,14 @@ export default function RootLayout({
         />
         <meta
           property="twitter:description"
-          content="Omar es un Desarrollador autodidacta que desarrolla sitios desde cero."
+          content="Omar es un programador autodidacta que desarrolla sitios desde cero."
         />
         <meta name="twitter:url" content="https://flower-shop-ivory-one.vercel.app/" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Analytics/>
+        <Analytics />
         <Header />
         <ViewTransition>
           <CartProvider>

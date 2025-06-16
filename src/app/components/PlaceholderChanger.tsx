@@ -21,7 +21,7 @@ export default function PlaceholderChanger() {
 
   const placeholders = [
     { text: "Cáctus", img: "/imgs/cactaceas/cactacea.svg" },
-    { text: "Flores", img: "/imgs/flores/flores.svg" },
+    { text: "Flores", img: "/imgs/floreros/flores.svg" },
     { text: "Plantas", img: "/imgs/variedad/variedad.svg" },
   ];
 

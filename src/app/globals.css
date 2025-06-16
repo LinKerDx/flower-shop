@@ -272,6 +272,7 @@ html {
 
 
 body {
+  overscroll-behavior: none;
   background: var(--primary);
   color: var(--primary-font);
   font-family: Arial, Helvetica, sans-serif;

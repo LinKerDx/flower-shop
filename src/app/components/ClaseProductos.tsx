@@ -8,17 +8,17 @@ export default function ClaseProductos() {
     const Productos = [{
         category: "Cactus",
         id: "0",
-        vid: "/assets/cactaceas.mp4"
+        vid: "/assets/cactus.webp"
     },
     {
         category: "Variedad",
         id: "1",
-        vid: "/assets/variedad.mp4"
+        vid: "/assets/variedad.webp"
     },
     {
         category: "Flores",
         id: "2",
-        vid: "/assets/floral.mp4"
+        vid: "/assets/Flor.webp"
     }
     ]
     return (
@@ -33,7 +33,7 @@ export default function ClaseProductos() {
                                 <Link href={`/categoria/${producto.category}`
                                 } className="flex flex-col items-center justify-center">
                                     <h2 className="mt-2 text-xl font-semibold ">{producto.category}</h2>
-                                    <video src={producto.vid} className="object-cover h-[500px]" preload="auto" loop autoPlay />
+                                    <img src={producto.vid} className="object-cover h-[500px]" />
                                 </Link>
                             </div>
                         ))
