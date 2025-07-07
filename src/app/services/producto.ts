@@ -1,9 +1,7 @@
 'use client'
 import { useState } from "react";
-import { ListOfProductos, Producto } from "../types/productos";
-
+import {  ListOfProductos, Producto } from "../types/productos";
 import ProductosIniciales from "@/app/mocks/productos.json";
-
 import { useFilters } from "../hooks/useFilters";
 import { useCart } from "../hooks/useCart";
 

@@ -6,22 +6,28 @@ import SectionContainer from "../components/SectionContainer"
 import { DatosProducto } from "../services/producto"
 import ProductosRecomendados from "../sections/ProductosRecomendados"
 import { useCart } from "../hooks/useCart"
-import { Producto } from "../types/productos"
+import { ListOfProductos, Producto } from "../types/productos"
+import { arregloPersonalizadoIcon, Minus, Plus } from "../components/icons/Icons"
+import { v4 as uuidv4 } from 'uuid';
 
 export default function Personalizado() {
     // Estados para manejar las selecciones y opciones
-    const [florSeleccionada, setFlorSeleccionada] = useState<Producto>();
+    const [florSeleccionada, setFlorSeleccionada] = useState<ListOfProductos>([]);
     const [colorMaceta, setColorMaceta] = useState("");
     const [tamañoMaceta, setTamañoMaceta] = useState("");
     const [opcionesMaceta, setOpcionesMaceta] = useState<string[]>([]);
     const [tamañosMaceta, setTamañosMaceta] = useState<string[]>([]);
 
     const { addToCart } = useCart()
-
-
+    const { producto } = DatosProducto();
+    
+    const precioBase = florSeleccionada.map((item) =>{
+        const precioUnitario = item.cantidad && item.cantidad >= 12 ? item.precio_promedio.docena / 12 : item.precio_promedio.unidad;
+        return precioUnitario * (item.cantidad || 1);  
+    }).reduce((a, b) => a + b, 0);
     // Obtener datos del producto
-    const { producto, arreglosFlorales } = DatosProducto();
     const arregloPersonalizado = producto.filter((i) => i.categoría === "Flores");
+    
 
     // Extraer opciones únicas de macetas
     useEffect(() => {
@@ -39,7 +45,7 @@ export default function Personalizado() {
 
         // Obtener tamaños únicos de macetas
         const tamañosSet = new Set();
-        arreglosFlorales.forEach((i) => {
+        producto.forEach((i) => {
             if (i.tamaños_maceta && i.tamaños_maceta.length) {
                 i.tamaños_maceta.forEach(o => tamañosSet.add(o));
             }
@@ -47,15 +53,20 @@ export default function Personalizado() {
         const tamañosUnicos = (Array.from(tamañosSet) as string[]).sort();
         setTamañosMaceta(tamañosUnicos);
         setTamañoMaceta(tamañosUnicos.length > 0 ? tamañosUnicos[0] : "");
-    }, [producto, arreglosFlorales]);
+    }, [producto]);
 
     // Manejadores de eventos
 
 
 
     const handleFlorClick = (item: Producto): void => {
-        setFlorSeleccionada(item.id === (florSeleccionada)?.id ? undefined : item);
-    };
+        const florEnCarrito = florSeleccionada.some((i) => i.id === item.id);
+        if (florEnCarrito) {
+          setFlorSeleccionada(florSeleccionada.filter((i) => i.id !== item.id));
+        } else {
+          setFlorSeleccionada([...florSeleccionada, { ...item, cantidad: 1 }]);
+        }
+      };
 
     const handleColorChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         setColorMaceta(e.target.value);
@@ -65,33 +76,66 @@ export default function Personalizado() {
         setTamañoMaceta(tamaño);
     };
 
+    const handleUnidadesPlusClick = (id: number): void => {
+        setFlorSeleccionada(florSeleccionada.map((item) =>
+          item.id === id && item.cantidad !== undefined
+            ? { ...item, cantidad: item.cantidad + 1 }
+            : item
+        ));
+      };
+
+      const handleUnidadesMinusClick = (id: number): void => {
+        setFlorSeleccionada(florSeleccionada.flatMap((item) => {
+          if (item.id === id && item.cantidad !== undefined) {
+            const nuevaCantidad = item.cantidad - 1;
+            return nuevaCantidad > 0 ? [{ ...item, cantidad: nuevaCantidad }] : [];
+          }
+          return [item];
+        }));
+      };
+
+      const crearArregloPersonalizado = (florSeleccionada: Producto[]) => {
+        const arregloPersonalizado = {
+            id: uuidv4(),
+            tipo: "Arreglo Personalizado",
+            descripción: `${florSeleccionada.map((item) => item.nombre + " " + item.cantidad).join(", ")}`,
+            maceta: colorMaceta,
+            moneda: florSeleccionada[0].moneda,
+            imagen: "/personalizada.webp",
+            categoría: "Arreglo Personalizado",
+            precio_estimado: calcularPrecio(),
+            cantidad: 1,
+        
+        };
+        addToCart(arregloPersonalizado);
+      };
+
+
     // Calcular el precio basado en las selecciones
-    const calcularPrecio = () => {
+        const calcularPrecio = () => {
         if (!florSeleccionada) return 0;
-
-        // Aquí podrías implementar lógica de cálculo de precio basada en las selecciones
-        const precioBase = florSeleccionada.precio_estimado || 0;
-
         // Factor por tamaño de maceta (ejemplo)
         const factoresTamaño: Record<"Pequeño" | "Mediano" | "Grande", number> = {
             "Pequeño": 1,
             "Mediano": 1.5,
             "Grande": 2
         };
+        
 
-        return precioBase * (factoresTamaño[tamañoMaceta as "Pequeño" | "Mediano" | "Grande"] || 1);
+        // Aquí podrías implementar lógica de cálculo de precio basada en las selecciones
+        const precioFinal = (precioBase * (factoresTamaño[tamañoMaceta as "Pequeño" | "Mediano" | "Grande"] || 1)).toFixed(2);
+
+
+        return precioFinal
     };
 
     return (
         <SectionContainer>
-            <div className="max-md:mt-25">
-
-
+            <div className="mt-15 w-full px-5">
                 <h1 className="text-3xl text-center font-bold mb-6">Arreglo Personalizado</h1>
-
-                <div className=" flex flex-col md:flex-row gap-8 ">
+                <div className=" flex flex-col md:flex-row gap-8 w-full">
                     <main className="w-full md:w-1/2 flex flex-col gap-8 ">
-                        <section className="bg-white rounded-lg shadow-md p-5">
+                        <section className="bg-white rounded-lg shadow-md p-5 ">
                             <h2 className="text-xl font-semibold mb-4 ">Elige tus flores favoritas</h2>
                             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4  p-5">
                                 {arregloPersonalizado.map((item) => (
@@ -118,7 +162,7 @@ export default function Personalizado() {
                             </div>
                         </section>
 
-                        <section className="bg-white p-6 rounded-lg shadow-md">
+                        <section className="bg-white p-6 rounded-lg shadow-md h-full">
                             <h2 className="text-xl font-semibold mb-4">Personaliza tu maceta</h2>
 
                             <div className="mb-6">
@@ -154,33 +198,70 @@ export default function Personalizado() {
                         </section>
                     </main>
 
-                    <aside className="w-full md:w-1/2">
-                        <div className="bg-white p-6 rounded-lg shadow-md sticky top-17">
-                            <h2 className="text-xl font-semibold mb-4">Tu selección</h2>
+                    <aside className="w-full md:w-1/2 ">
+                        <div className="bg-white p-6 rounded-lg shadow-md sticky top-17 h-6/16">
+                        <h2 className="text-xl font-semibold mb-4">Tu selección</h2>
+                        <div className="h-1/2 scroll-y overflow-y-auto">
+                            
 
                             {
                                 florSeleccionada ? (
-                                    <div className="flex items-center gap-4 mb-6">
-                                        <img
-                                            src={florSeleccionada.imagen}
-                                            alt={florSeleccionada.tipo}
-                                            className="w-20 h-20 object-cover rounded-lg"
-                                        />
-                                        <div>
-                                            <h3 className="font-medium">{florSeleccionada.tipo}</h3>
-                                            <p className="text-sm text-gray-600">
-                                                Maceta: {colorMaceta}, Tamaño: {tamañoMaceta}
-                                            </p>
+                                    florSeleccionada.map((item) => (
+                                        <div className="flex items-center gap-4 mb-6">
+                                            <img
+                                                src={item.imagen}
+                                                alt={item.tipo}
+                                                className="w-20 h-20 object-cover rounded-lg"
+                                            />
+                                            <div>
+                                                <h3 className="font-medium">{item.nombre ? item.nombre : item.tipo}</h3>
+                                            </div>
+                                            <div>
+                                                <p className="text-sm text-gray-600">
+                                                    {
+                                                    ( item.cantidad && item.cantidad >= 12 
+                                                        ? (item.precio_promedio.docena / 12) 
+                                                        : item.precio_promedio.unidad).toFixed(2)
+                                                    } {item.moneda} / unidad
+                                                </p>
+                                            </div>
+                                            <div className="flex items-center gap-2">
+                                                <button
+                                                    onClick={() => handleUnidadesMinusClick(item.id)}
+                                                    className="text-blue-text hover:text-primary-dark p-1 cursor-pointer"
+                                                    aria-label="Reducir cantidad"
+                                                >
+                                                    <Minus />
+                                                </button>
+                                                <span className="text-sm w-5 text-center">{item.cantidad}</span>
+                                                <button
+                                                    onClick={() => handleUnidadesPlusClick(item.id)}
+                                                    className="text-blue-text hover:text-primary-dark p-1 cursor-pointer"
+                                                    aria-label="Aumentar cantidad"
+                                                >
+                                                    <Plus />
+                                                </button>
+                                            </div>
+                                            <button
+                                                onClick={() => handleFlorClick(item)}
+                                                className="text-red-500 hover:text-red-600 cursor-pointer"
+                                            >
+                                                Eliminar
+                                            </button>
                                         </div>
-                                    </div>
+                                    ))
+                                    
                                 ) : (
                                     <p className="text-gray-500 mb-6">Selecciona una flor para comenzar</p>
                                 )}
-
+                            </div>
                             <div className="border-t border-gray-200 pt-4 mb-6">
+                                <p className="text-sm text-gray-600">
+                                    Maceta: {colorMaceta}, Tamaño: {tamañoMaceta}
+                                </p>
                                 <div className="flex justify-between mb-2">
                                     <span>Precio base:</span>
-                                    <span>${florSeleccionada?.precio_estimado || 0}</span>
+                                    <span>${precioBase.toFixed(2) || 0}</span>
                                 </div>
                                 <div className="flex justify-between font-bold text-lg">
                                     <span>Total:</span>
@@ -195,7 +276,7 @@ export default function Personalizado() {
                                         : "bg-gray-300 cursor-not-allowed"}`}
                                 disabled={!florSeleccionada}
                                 onClick={() => {
-                                    if (florSeleccionada) addToCart(florSeleccionada);
+                                    if (florSeleccionada) crearArregloPersonalizado(florSeleccionada);
                                 }}
                             >
                                 Añadir al carrito

@@ -274,7 +274,7 @@
         "precio_estimado": 12.99,
         "moneda": "euros",
         "imagen": "/imgs/floreros/1.webp",
-        "categoría": "Flores",
+        "categoría": "Floreros",
         "stock": 40,
         "descuento": 0,
         "rating": 4.5
@@ -294,7 +294,7 @@
         "precio_estimado": 14.50,
         "moneda": "euros",
         "imagen": "/imgs/floreros/2.webp",
-        "categoría": "Flores",
+        "categoría": "Floreros",
         "stock": 20,
         "descuento": 0,
         "rating": 4.5
@@ -314,7 +314,7 @@
         "precio_estimado": 9.95,
         "moneda": "euros",
         "imagen": "/imgs/floreros/3.webp",
-        "categoría": "Flores",
+        "categoría": "Floreros",
         "stock": 27,
         "descuento": 7,
         "rating": 4.5
@@ -334,7 +334,7 @@
         "precio_estimado": 8.75,
         "moneda": "euros",
         "imagen": "/imgs/floreros/4.webp",
-        "categoría": "Flores",
+        "categoría": "Floreros",
         "stock": 23,
         "descuento": 15,
         "rating": 5
@@ -354,7 +354,7 @@
         "precio_estimado": 11.25,
         "moneda": "euros",
         "imagen": "/imgs/floreros/5.webp",
-        "categoría": "Flores",
+        "categoría": "Floreros",
         "stock": 23,
         "descuento": 0,
         "rating": 4.9
@@ -374,7 +374,7 @@
         "precio_estimado": 18.50,
         "moneda": "euros",
         "imagen": "/imgs/floreros/6.webp",
-        "categoría": "Flores",
+        "categoría": "Floreros",
         "stock": 12,
         "descuento": 0,
         "rating": 4.8
@@ -394,7 +394,7 @@
         "precio_estimado": 22.95,
         "moneda": "euros",
         "imagen": "/imgs/floreros/7.webp",
-        "categoría": "Flores",
+        "categoría": "Floreros",
         "stock": 30,
         "descuento": 0,
         "rating": 4.7
@@ -414,7 +414,7 @@
         "precio_estimado": 29.99,
         "moneda": "euros",
         "imagen": "/imgs/floreros/8.webp",
-        "categoría": "Flores",
+        "categoría": "Floreros",
         "stock": 11,
         "descuento": 0,
         "rating": 4.2
@@ -434,7 +434,7 @@
         "precio_estimado": 85.00,
         "moneda": "euros",
         "imagen": "/imgs/floreros/9.webp",
-        "categoría": "Flores",
+        "categoría": "Floreros",
         "stock": 23,
         "descuento": 0,
         "rating": 5
@@ -454,7 +454,7 @@
         "precio_estimado": 45.50,
         "moneda": "euros",
         "imagen": "/imgs/floreros/10.webp",
-        "categoría": "Flores",
+        "categoría": "Floreros",
         "stock": 18,
         "descuento": 20,
         "rating": 4.8
@@ -474,7 +474,7 @@
         "precio_estimado": 35.90,
         "moneda": "euros",
         "imagen": "/imgs/floreros/11.webp",
-        "categoría": "Flores",
+        "categoría": "Floreros",
         "stock": 15,
         "descuento": 0,
         "rating": 5
@@ -494,7 +494,7 @@
         "precio_estimado": 28.50,
         "moneda": "euros",
         "imagen": "/imgs/floreros/12.webp",
-        "categoría": "Flores",
+        "categoría": "Floreros",
         "stock": 17,
         "descuento": 10,
         "rating": 4.1
@@ -514,9 +514,534 @@
         "precio_estimado": 42.75,
         "moneda": "euros",
         "imagen": "/imgs/floreros/13.webp",
-        "categoría": "Flores",
+        "categoría": "Floreros",
         "stock": 22,
         "descuento": 0,
         "rating": 4.5
-    }
+    },
+    {
+        "id": 28,
+        "tipo": "Rosa roja clásica",
+        "nombre": "Rosa",
+        "nombre_cientifico": "Rosa sp.",
+        "significado": "Amor, pasión, respeto",
+        "aroma": "Intenso y floral",
+        "precio_promedio": {
+          "unidad": 3.50,
+          "docena": 38.00
+        },
+        "descripción": "Rosa roja de pétalos aterciopelados con fragancia intensa y tallo largo",
+        "maceta": "Maceta de cerámica blanca",
+        "opciones_maceta": [
+          "Cerámica blanca",
+          "Terracota",
+          "Verde musgo",
+          "Rosa pálido"
+        ],
+        "tamaños_maceta": [
+          "chica",
+          "mediana",
+          "grande"
+        ],
+        "nivel_cuidado": "Mantenimiento medio",
+        "temporada_crecimiento": "Primavera-Verano",
+        "precio_estimado": 22.90,
+        "precio_fuera_temporada": 28.50,
+        "moneda": "euros",
+        "imagen": "/imgs/flores/rosa.webp",
+        "categoría": "Flores",
+        "stock": 15,
+        "descuento": 10,
+        "rating": 4.8
+      },
+      {
+        "id": 29,
+        "tipo": "Orquídea Phalaenopsis",
+        "nombre": "Orquídea",
+        "nombre_cientifico": "Phalaenopsis sp.",
+        "significado": "Elegancia, amor refinado, belleza",
+        "aroma": "Suave y delicado",
+        "precio_promedio": {
+          "unidad": 12.00,
+          "docena": 135.00
+        },
+        "descripción": "Orquídea blanca con centro rosado, elegante y de larga duración",
+        "maceta": "Maceta transparente con sustrato especial",
+        "opciones_maceta": [
+          "Transparente",
+          "Cerámica negra",
+          "Bambú natural",
+          "Cristal azul"
+        ],
+        "tamaños_maceta": [
+          "chica",
+          "mediana",
+          "grande"
+        ],
+        "nivel_cuidado": "Alto mantenimiento",
+        "temporada_crecimiento": "Todo el año",
+        "precio_estimado": 35.75,
+        "precio_fuera_temporada": 35.75,
+        "moneda": "euros",
+        "imagen": "/imgs/flores/orquidea.webp",
+        "categoría": "Flores",
+        "stock": 8,
+        "descuento": 0,
+        "rating": 4.7
+      },
+      {
+        "id": 30,
+        "tipo": "Girasol miniatura",
+        "nombre": "Girasol",
+        "nombre_cientifico": "Helianthus annuus",
+        "significado": "Lealtad, admiración, alegría",
+        "aroma": "Ligero y herbáceo",
+        "precio_promedio": {
+          "unidad": 2.50,
+          "docena": 28.00
+        },
+        "descripción": "Girasol compacto con pétalos amarillo brillante y centro marrón oscuro",
+        "maceta": "Maceta de yute natural",
+        "opciones_maceta": [
+          "Yute natural",
+          "Terracota",
+          "Amarillo",
+          "Marrón rústico"
+        ],
+        "tamaños_maceta": [
+          "chica",
+          "mediana",
+          "grande"
+        ],
+        "nivel_cuidado": "Bajo mantenimiento",
+        "temporada_crecimiento": "Verano",
+        "precio_estimado": 12.40,
+        "precio_fuera_temporada": 18.90,
+        "moneda": "euros",
+        "imagen": "/imgs/flores/girasol.webp",
+        "categoría": "Flores",
+        "stock": 20,
+        "descuento": 15,
+        "rating": 4.6
+      },
+      {
+        "id": 31,
+        "tipo": "Lavanda francesa",
+        "nombre": "Lavanda",
+        "nombre_cientifico": "Lavandula stoechas",
+        "significado": "Serenidad, pureza, tranquilidad",
+        "aroma": "Intenso y relajante",
+        "precio_promedio": {
+          "unidad": 4.00,
+          "docena": 45.00
+        },
+        "descripción": "Aromática lavanda con espigas púrpuras y hojas plateadas fragantes",
+        "maceta": "Maceta de zinc galvanizado",
+        "opciones_maceta": [
+          "Zinc galvanizado",
+          "Blanco vintage",
+          "Púrpura",
+          "Plata"
+        ],
+        "tamaños_maceta": [
+          "chica",
+          "mediana",
+          "grande"
+        ],
+        "nivel_cuidado": "Bajo mantenimiento",
+        "temporada_crecimiento": "Primavera-Verano-Otoño",
+        "precio_estimado": 18.60,
+        "precio_fuera_temporada": 24.20,
+        "moneda": "euros",
+        "imagen": "/imgs/flores/lavanda.webp",
+        "categoría": "Flores",
+        "stock": 12,
+        "descuento": 5,
+        "rating": 4.9
+      },
+      {
+        "id": 32,
+        "tipo": "Tulipán holandés",
+        "nombre": "Tulipán",
+        "nombre_cientifico": "Tulipa sp.",
+        "significado": "Amor perfecto, elegancia, gracia",
+        "aroma": "Suave y fresco",
+        "precio_promedio": {
+          "unidad": 2.00,
+          "docena": 22.00
+        },
+        "descripción": "Tulipán rojo con bordes amarillos, bulbo de primera calidad",
+        "maceta": "Maceta de cerámica esmaltada",
+        "opciones_maceta": [
+          "Cerámica roja",
+          "Amarillo brillante",
+          "Blanco",
+          "Multicolor"
+        ],
+        "tamaños_maceta": [
+          "chica",
+          "mediana",
+          "grande"
+        ],
+        "nivel_cuidado": "Mantenimiento medio",
+        "temporada_crecimiento": "Primavera",
+        "precio_estimado": 14.25,
+        "precio_fuera_temporada": 21.75,
+        "moneda": "euros",
+        "imagen": "/imgs/flores/tulipan.webp",
+        "categoría": "Flores",
+        "stock": 25,
+        "descuento": 20,
+        "rating": 4.5
+      },
+      {
+        "id": 33,
+        "tipo": "Begonia rex",
+        "nombre": "Begonia",
+        "nombre_cientifico": "Begonia rex",
+        "significado": "Gratitud, cordialidad, singularidad",
+        "aroma": "Apenas perceptible",
+        "precio_promedio": {
+          "unidad": 6.00,
+          "docena": 65.00
+        },
+        "descripción": "Begonia de hojas decorativas con patrones plateados y bordes rojos",
+        "maceta": "Maceta colgante de mimbre",
+        "opciones_maceta": [
+          "Mimbre natural",
+          "Blanco",
+          "Verde oscuro",
+          "Marrón chocolate"
+        ],
+        "tamaños_maceta": [
+          "chica",
+          "mediana",
+          "grande"
+        ],
+        "nivel_cuidado": "Mantenimiento medio",
+        "temporada_crecimiento": "Primavera-Verano",
+        "precio_estimado": 16.80,
+        "precio_fuera_temporada": 22.40,
+        "moneda": "euros",
+        "imagen": "/imgs/flores/begonia.webp",
+        "categoría": "Flores",
+        "stock": 9,
+        "descuento": 0,
+        "rating": 4.4
+      },
+      {
+        "id": 34,
+        "tipo": "Petunia cascada",
+        "nombre": "Petunia",
+        "nombre_cientifico": "Petunia x hybrida",
+        "significado": "Calma, tranquilidad, nunca pierdas la esperanza",
+        "aroma": "Dulce y suave",
+        "precio_promedio": {
+          "unidad": 1.80,
+          "docena": 20.00
+        },
+        "descripción": "Petunia morada con efecto cascada, ideal para macetas colgantes",
+        "maceta": "Maceta colgante de plástico",
+        "opciones_maceta": [
+          "Verde claro",
+          "Morado",
+          "Blanco",
+          "Rosa"
+        ],
+        "tamaños_maceta": [
+          "chica",
+          "mediana",
+          "grande"
+        ],
+        "nivel_cuidado": "Bajo mantenimiento",
+        "temporada_crecimiento": "Primavera-Verano-Otoño",
+        "precio_estimado": 11.90,
+        "precio_fuera_temporada": 16.50,
+        "moneda": "euros",
+        "imagen": "/imgs/flores/petunia.webp",
+        "categoría": "Flores",
+        "stock": 18,
+        "descuento": 0,
+        "rating": 4.3
+      },
+      {
+        "id": 35,
+        "tipo": "Violeta africana",
+        "nombre": "Violeta",
+        "nombre_cientifico": "Saintpaulia ionantha",
+        "significado": "Modestia, humildad, fidelidad",
+        "aroma": "Muy suave y dulce",
+        "precio_promedio": {
+          "unidad": 4.50,
+          "docena": 50.00
+        },
+        "descripción": "Violeta compacta con flores púrpuras aterciopeladas y hojas suaves",
+        "maceta": "Maceta de cerámica pequeña",
+        "opciones_maceta": [
+          "Púrpura",
+          "Blanco",
+          "Rosa claro",
+          "Azul pastel"
+        ],
+        "tamaños_maceta": [
+          "chica",
+          "mediana",
+          "grande"
+        ],
+        "nivel_cuidado": "Alto mantenimiento",
+        "temporada_crecimiento": "Todo el año",
+        "precio_estimado": 13.45,
+        "precio_fuera_temporada": 13.45,
+        "moneda": "euros",
+        "imagen": "/imgs/flores/violeta.webp",
+        "categoría": "Flores",
+        "stock": 14,
+        "descuento": 0,
+        "rating": 4.7
+      },
+      {
+        "id": 36,
+        "tipo": "Margarita gerbera",
+        "nombre": "Gerbera",
+        "nombre_cientifico": "Gerbera jamesonii",
+        "significado": "Alegría, inocencia, pureza",
+        "aroma": "Fresco y ligero",
+        "precio_promedio": {
+          "unidad": 3.00,
+          "docena": 34.00
+        },
+        "descripción": "Gerbera naranja vibrante con pétalos largos y centro amarillo",
+        "maceta": "Maceta de fibra de coco",
+        "opciones_maceta": [
+          "Fibra natural",
+          "Naranja",
+          "Amarillo",
+          "Terracota"
+        ],
+        "tamaños_maceta": [
+          "chica",
+          "mediana",
+          "grande"
+        ],
+        "nivel_cuidado": "Mantenimiento medio",
+        "temporada_crecimiento": "Primavera-Verano",
+        "precio_estimado": 19.30,
+        "precio_fuera_temporada": 25.80,
+        "moneda": "euros",
+        "imagen": "/imgs/flores/gerbera.webp",
+        "categoría": "Flores",
+        "stock": 11,
+        "descuento": 0,
+        "rating": 4.6
+      },
+      {
+        "id": 37,
+        "tipo": "Clavel del poeta",
+        "nombre": "Clavel",
+        "nombre_cientifico": "Dianthus barbatus",
+        "significado": "Amor maternal, distinción, fascinación",
+        "aroma": "Dulce y especiado",
+        "precio_promedio": {
+          "unidad": 1.50,
+          "docena": 16.00
+        },
+        "descripción": "Clavel rosado con bordes dentados y fragancia dulce tradicional",
+        "maceta": "Maceta de barro cocido",
+        "opciones_maceta": [
+          "Barro natural",
+          "Rosa",
+          "Blanco",
+          "Rojo ladrillo"
+        ],
+        "tamaños_maceta": [
+          "chica",
+          "mediana",
+          "grande"
+        ],
+        "nivel_cuidado": "Bajo mantenimiento",
+        "temporada_crecimiento": "Primavera-Verano-Otoño",
+        "precio_estimado": 9.75,
+        "precio_fuera_temporada": 13.90,
+        "moneda": "euros",
+        "imagen": "/imgs/flores/clavel.webp",
+        "categoría": "Flores",
+        "stock": 22,
+        "descuento": 0,
+        "rating": 4.2
+      },
+      {
+        "id": 38,
+        "tipo": "Hortensia azul",
+        "nombre": "Hortensia",
+        "nombre_cientifico": "Hydrangea macrophylla",
+        "significado": "Gratitud, comprensión, abundancia",
+        "aroma": "Suave y fresco",
+        "precio_promedio": {
+          "unidad": 8.00,
+          "docena": 90.00
+        },
+        "descripción": "Hortensia con racimos de flores azul intenso, ideal para semi-sombra",
+        "maceta": "Maceta de cerámica grande",
+        "opciones_maceta": [
+          "Azul cobalto",
+          "Blanco",
+          "Gris",
+          "Verde agua"
+        ],
+        "tamaños_maceta": [
+          "chica",
+          "mediana",
+          "grande"
+        ],
+        "nivel_cuidado": "Mantenimiento medio",
+        "temporada_crecimiento": "Primavera-Verano",
+        "precio_estimado": 28.50,
+        "precio_fuera_temporada": 36.90,
+        "moneda": "euros",
+        "imagen": "/imgs/flores/hortensia.webp",
+        "categoría": "Flores",
+        "stock": 6,
+        "descuento": 0,
+        "rating": 4.8
+      },
+      {
+        "id": 39,
+        "tipo": "Pensamiento tricolor",
+        "nombre": "Pensamiento",
+        "nombre_cientifico": "Viola tricolor",
+        "significado": "Pensamientos amorosos, recuerdo, meditación",
+        "aroma": "Muy ligero y dulce",
+        "precio_promedio": {
+          "unidad": 1.20,
+          "docena": 13.00
+        },
+        "descripción": "Pensamiento con pétalos amarillos, morados y blancos en delicada combinación",
+        "maceta": "Maceta rectangular de madera",
+        "opciones_maceta": [
+          "Madera natural",
+          "Blanco",
+          "Multicolor",
+          "Verde salvia"
+        ],
+        "tamaños_maceta": [
+          "chica",
+          "mediana",
+          "grande"
+        ],
+        "nivel_cuidado": "Bajo mantenimiento",
+        "temporada_crecimiento": "Otoño-Invierno-Primavera",
+        "precio_estimado": 8.2,
+        "precio_fuera_temporada": 12.6,
+        "moneda": "euros",
+        "imagen": "/imgs/flores/pensamiento.webp",
+        "categoría": "Flores",
+        "stock": 30,
+        "descuento": 25,
+        "rating": 4.1
+      },
+      {
+        "id": 40,
+        "tipo": "Azalea japonesa",
+        "nombre": "Azalea",
+        "nombre_cientifico": "Rhododendron japonicum",
+        "significado": "Temperancia, pasión frágil, cuidado de uno mismo",
+        "aroma": "Dulce y delicado",
+        "precio_promedio": {
+          "unidad": 10.00,
+          "docena": 115.00
+        },
+        "descripción": "Azalea compacta con flores rosas abundantes y hojas perennes pequeñas",
+        "maceta": "Maceta de cerámica estilo oriental",
+        "opciones_maceta": [
+          "Cerámica oriental",
+          "Negro mate",
+          "Rosa pálido",
+          "Bambú"
+        ],
+        "tamaños_maceta": [
+          "chica",
+          "mediana",
+          "grande"
+        ],
+        "nivel_cuidado": "Alto mantenimiento",
+        "temporada_crecimiento": "Primavera",
+        "precio_estimado": 32.90,
+        "precio_fuera_temporada": 42.50,
+        "moneda": "euros",
+        "imagen": "/imgs/flores/azalea.webp",
+        "categoría": "Flores",
+        "stock": 7,
+        "descuento": 0,
+        "rating": 4.9
+      },
+      {
+        "id": 41,
+        "tipo": "Cosmos bipinnatus",
+        "nombre": "Cosmos",
+        "nombre_cientifico": "Cosmos bipinnatus",
+        "significado": "Orden, paz, tranquilidad, modestia",
+        "aroma": "Casi imperceptible",
+        "precio_promedio": {
+          "unidad": 1.00,
+          "docena": 11.00
+        },
+        "descripción": "Cosmos blanco con centro amarillo y follaje plumoso delicado",
+        "maceta": "Maceta biodegradable",
+        "opciones_maceta": [
+          "Fibra biodegradable",
+          "Blanco",
+          "Verde claro",
+          "Beige natural"
+        ],
+        "tamaños_maceta": [
+          "chica",
+          "mediana",
+          "grande"
+        ],
+        "nivel_cuidado": "Bajo mantenimiento",
+        "temporada_crecimiento": "Verano-Otoño",
+        "precio_estimado": 7.65,
+        "precio_fuera_temporada": 11.25,
+        "moneda": "euros",
+        "imagen": "/imgs/flores/cosmos.webp",
+        "categoría": "Flores",
+        "stock": 24,
+        "descuento": 0,
+        "rating": 4.4
+      },
+      {
+        "id": 42,
+        "tipo": "Anthurium rojo",
+        "nombre": "Anthurium",
+        "nombre_cientifico": "Anthurium andraeanum",
+        "significado": "Hospitalidad, abundancia, felicidad",
+        "aroma": "Sin aroma",
+        "precio_promedio": {
+          "unidad": 15.00,
+          "docena": 170.00
+        },
+        "descripción": "Anthurium con brácteas rojas brillantes y espádice amarillo característico",
+        "maceta": "Maceta de cerámica negra",
+        "opciones_maceta": [
+          "Negro brillante",
+          "Rojo",
+          "Blanco",
+          "Gris antracita"
+        ],
+        "tamaños_maceta": [
+          "chica",
+          "mediana",
+          "grande"
+        ],
+        "nivel_cuidado": "Alto mantenimiento",
+        "temporada_crecimiento": "Todo el año",
+        "precio_estimado": 41.20,
+        "precio_fuera_temporada": 41.20,
+        "moneda": "euros",
+        "imagen": "/imgs/flores/anturio.webp",
+        "categoría": "Flores",
+        "stock": 5,
+        "descuento": 0,
+        "rating": 4.6
+      }
 ]

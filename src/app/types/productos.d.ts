@@ -3,18 +3,38 @@ export interface Producto {
     tipo: string;
     descripción: string;
     maceta: string;
-    opciones_maceta: string[];
-    nivel_cuidado: string;
-    precio_estimado: number;
+    nivel_cuidado?: string;
+    precio_fuera_temporada?: number;
+    moneda: string;
     imagen: string;
-    moneda: string,
     categoría: string;
+    stock?: number;
+    descuento?: number;
+    rating?: number;
+    precio_estimado: number;
+    precio_promedio?: PrecioPromedio;
+    tamaños_maceta?: string[];
+    nombre?: string;
+    nombre_cientifico?: string;
+    significado?: string;
+    aroma?: string;
     cantidad?: number;
-    stock: number;
-    rating: number;
-    descuento: number;
+    opciones_maceta?: string[];
+    temporada_crecimiento?: string;
 }
 
+export interface ProductoPersonalizado{
+    id: UUID;
+    tipo: string;
+    descripción: string;
+    maceta: string;
+    moneda: string;
+    imagen: string;
+    categoría: string;
+    stock?: number;
+    precio_estimado: number;
+    cantidad?: number;
+}
 
 
 type Productos = {

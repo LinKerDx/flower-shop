@@ -1,4 +1,4 @@
-import { ListOfProductos, Producto } from "../types/productos";
+import { ListOfProductos, Producto, ProductoPersonalizado } from "../types/productos";
 
 export const getInitialCartState = (): ListOfProductos => {
     if (typeof window !== 'undefined') {
@@ -21,7 +21,7 @@ export const updateLocalStorage = (state: ListOfProductos) => {
     }
 };
 
-export const cartReducer = (state: ListOfProductos, action: { type: string, payload?: Producto }) => {
+export const cartReducer = (state: ListOfProductos, action: { type: string, payload?: Producto | ProductoPersonalizado }) => {
     const { type: actionType, payload: actionPayload } = action;
 
     switch (actionType) {
