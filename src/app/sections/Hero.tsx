@@ -33,10 +33,6 @@ export default function Hero({ onScrollToProductos }: { onScrollToProductos: () 
     return (
         <SectionContainer>
             <div className="relative mb-15">
-                {/* Círculo decorativo superior izquierdo */}
-                <div className="absolute -top-4 -left-4 w-16 h-16 rounded-full bg-[#ffc0d0] opacity-60 z-10"></div>
-
-
                 <div className="relative flex flex-col md:grid md:grid-cols-4 lg:grid-cols-5 md:gap-2 overflow-hidden ">
                     {/* Gradiente overlay */}
                     <div className="absolute inset-0 bg-gradient-to-br from-[#f291ab]/20 to-transparent pointer-events-none z-10"></div>
@@ -103,33 +99,7 @@ export default function Hero({ onScrollToProductos }: { onScrollToProductos: () 
                             </button>
                         </p>
                     </div>
-                    {/* <div className=" md:absolute md:left-1/2 md:-bottom-13  lg:-bottom-12 md:-translate-x-1/2 bg-gradient-to-b from-primary to-primary-dark rounded-b-xl  py-4 px-6 md:px-8 shadow-lg w-[90%] md:w-[500px] mx-auto text-center md:mt-0 z-30">
-                        <p className="text-black font-bold text-sm md:text-2xl tracking-wide">
-                            Cada arreglo cuenta una historia
-                        </p>
-
-                    </div>
-                    <div className="max-md:mt-4 md:absolute md:-right-20 md:-bottom-55 lg:-bottom-40  md:-translate-x-1/2 bg-gradient-to-b from-primary to-[#B7BA70] rounded-b-xl  py-4 px-6 md:px-8 shadow-lg w-[90%] md:w-[500px] mx-auto text-center md:mt-0 z-30">
-                        <p className="text-black font-bold text-sm md:text-2xl tracking-wide">
-                            <Link href="/ArregloPersonalizado" className="w-full text-black font-bold text-lg md:text-2xl tracking-wide cursor-pointer hover:scale-105 transition-all"
-                                aria-label="Ver nuestros productos"
-                            >Crea tu propio arreglo 🍀 </Link>
-                        </p>
-                    </div>
-                    <div className="max-md:mt-4 md:absolute md:right-20  md:-bottom-35 lg:-bottom-40 md:-translate-x-1/2 bg-gradient-to-b from-primary to-[#E64C4C] rounded-b-xl  py-4 px-6 md:px-8 shadow-lg w-[90%] md:w-[500px] mx-auto text-center md:mt-0 z-30">
-                        <p className="text-black font-bold text-sm md:text-2xl tracking-wide">
-                            <button
-                                onClick={onScrollToProductos}
-                                className="w-full text-black font-bold text-lg md:text-2xl tracking-wide cursor-pointer hover:scale-105 transition-all"
-                                aria-label="Ver nuestros productos"
-                            >
-                                ⬇ Mira nuestros productos 😳
-                            </button>
-                        </p>
-                    </div>*/}
-
                 </section>
-
             </div>
         </SectionContainer>
     )

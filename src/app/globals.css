@@ -63,6 +63,30 @@ html {
   }
 }
 
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .badges {
   position: relative;
   overflow: hidden;
@@ -265,9 +289,74 @@ html {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --primary-dark: rgb(244, 193, 207);
-    --primary: #f291ab;
+    --background: #1a1a1a;
+    --foreground: #ffffff;
   }
+}
+
+/* Dark mode styles */
+.dark {
+  --background: #1a1a1a;
+  --foreground: #ffffff;
+  /* Usando solo los dos colores especificados */
+}
+
+.dark body {
+  background: var(--primary);
+  color: var(--foreground);
+}
+
+.dark header {
+  border-color: var(--primary-dark);
+}
+
+/* Dark mode specific component styles */
+.dark .bg-white {
+  background-color: var(--primary-dark) !important;
+  color: var(--foreground);
+}
+
+.dark input {
+  background-color: var(--primary);
+  color: var(--foreground);
+  border-color: var(--primary-dark);
+}
+
+.dark input::placeholder {
+  color: var(--foreground);
+  opacity: 0.6;
+}
+
+/* Mejoras adicionales para modo oscuro */
+.dark .text-gray-900 {
+  color: var(--foreground) !important;
+}
+
+.dark .text-gray-500 {
+  color: var(--foreground) !important;
+  opacity: 0.7;
+}
+
+.dark .text-gray-600 {
+  color: var(--foreground) !important;
+  opacity: 0.8;
+}
+
+.dark .hover\:bg-gray-100:hover {
+  background-color: var(--primary-dark) !important;
+}
+
+.dark .hover\:bg-gray-700:hover {
+  background-color: var(--primary-dark) !important;
+}
+
+/* Animation utility classes */
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.4s ease-out;
 }
 
 

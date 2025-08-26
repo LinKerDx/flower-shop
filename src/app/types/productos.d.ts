@@ -1,5 +1,5 @@
 export interface Producto {
-    id: number;
+    id: number | string;
     tipo: string;
     descripción: string;
     maceta: string;
@@ -23,7 +23,7 @@ export interface Producto {
     temporada_crecimiento?: string;
 }
 
-export interface ProductoPersonalizado{
+export interface ProductoPersonalizado {
     id: UUID;
     tipo: string;
     descripción: string;

@@ -21,9 +21,9 @@ export default function Home() {
   return (
     <FiltroProvider>
       <Hero onScrollToProductos={scrollToProductos} />
+      <Productos />
       <Carrucel />
       <ProductosListados ref={productosRef} />
-      <Productos />
       <PreguntasFrecuentes />
     </FiltroProvider>
   );
