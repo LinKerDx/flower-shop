@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 
-import Link from "next/link"
 import SectionContainer from "../components/SectionContainer"
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
@@ -11,7 +10,7 @@ import { SplitText } from "gsap/SplitText";
 gsap.registerPlugin(SplitText);
 
 
-export default function Hero({ onScrollToProductos }: { onScrollToProductos: () => void }) {
+export default function Hero() {
 
 
     const text = useRef<HTMLHeadingElement>(null)
@@ -32,15 +31,15 @@ export default function Hero({ onScrollToProductos }: { onScrollToProductos: () 
 
     return (
         <SectionContainer>
-            <div className="relative mb-15">
+            <div className="relative ">
                 <div className="relative flex flex-col md:grid md:grid-cols-4 lg:grid-cols-5 md:gap-2 overflow-hidden ">
                     {/* Gradiente overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#f291ab]/20 to-transparent pointer-events-none z-10"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-transparent pointer-events-none z-10"></div>
 
                     {/* Máscara ondulada en la parte inferior */}
                     <div className="absolute bottom-0 left-0 w-full overflow-hidden z-20">
                         <svg
-                            className="relative block w-full text-primary"
+                            className="relative block w-full text-secondary"
                             viewBox="0 0 1200 120"
                             preserveAspectRatio="none"
                             style={{ height: '50px' }}
@@ -70,36 +69,6 @@ export default function Hero({ onScrollToProductos }: { onScrollToProductos: () 
                         className="hidden lg:block w-full h-full object-cover col-span-1 aspect-[9/16] transition-all duration-300 hover:brightness-110 hover:scale-[1.02]"
                     />
                 </div>
-                <section className="flex flex-col gap-4 mt-6 md:mt-0 lg:grid lg:grid-cols-2 lg:gap-4">
-
-                    <div className=" bg-gradient-to-b from-primary to-primary-dark lg:col-span-2 rounded-b-xl  py-4 px-6 md:px-8 shadow-lg w-[90%] md:w-[500px] mx-auto text-center md:mt-0 z-30">
-                        <h1 ref={text} className="text-black font-bold text-sm md:text-2xl tracking-wide">
-                            Cada arreglo cuenta una historia
-                        </h1>
-
-                    </div>
-                    <div className="bg-gradient-to-b from-primary to-[#B7BA70]  rounded-b-xl  py-4 px-6 md:px-8 shadow-lg w-[90%] md:w-[500px] mx-auto text-center md:mt-0 z-30">
-                        <p className="text-black font-bold text-sm md:text-2xl tracking-wide">
-                            <button className="w-full text-black font-bold md:text-2xl tracking-wide cursor-pointer hover:scale-105 transition-all">
-                                <Link href="/ArregloPersonalizado"
-                                    aria-label="Ver nuestros productos"
-                                >Crea tu propio arreglo 🍀
-                                </Link>
-                            </button>
-                        </p>
-                    </div>
-                    <div className="bg-gradient-to-b from-primary to-[#E64C4C]  rounded-b-xl  py-4 px-6 md:px-8 shadow-lg w-[90%] md:w-[500px] mx-auto text-center md:mt-0 z-30">
-                        <p className="text-black font-bold text-sm md:text-2xl tracking-wide">
-                            <button
-                                onClick={onScrollToProductos}
-                                className="w-full text-black font-bold md:text-2xl tracking-wide cursor-pointer hover:scale-105 transition-all"
-                                aria-label="Ver nuestros productos"
-                            >
-                                ⬇ Mira nuestros productos 😳
-                            </button>
-                        </p>
-                    </div>
-                </section>
             </div>
         </SectionContainer>
     )

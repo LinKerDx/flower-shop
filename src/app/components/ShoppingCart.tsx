@@ -29,13 +29,13 @@ export default function ShoppingCart() {
             {/* Botón de la bolsa */}
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="badges p-2 text-blue-text hover:text-red-600 focus:outline-none transition-colors bg-primary-dark rounded-lg cursor-pointer "
+                className="badges p-2 text-blue-text hover:text-red-600 focus:outline-none transition-colors bg-secondary rounded-lg cursor-pointer "
                 aria-label="Ver carrito de compras"
             >
                 <AddToCartIcon className={`${animateIcon ? 'animate-bounce' : ''} size-10`}
                 />
                 {cart.length > 0 && (
-                    <span className="fixed animate-bounce top-20 right-1 bg-primary-dark text-red-600 text-md font-bold rounded-full size-7 flex items-center justify-center">
+                    <span className="fixed animate-bounce top-20 right-1 bg-secondary text-red-600 text-md font-bold rounded-full size-7 flex items-center justify-center">
                         {cart.reduce((sum, item) => sum + (item.cantidad || 1), 0)}
                     </span>
                 )}
@@ -92,7 +92,7 @@ export default function ShoppingCart() {
                                                     <div className="flex items-center gap-2">
                                                         <button
                                                             onClick={() => (item.cantidad ?? 1) > 1 ? reduceCantidad(item) : removeFromCart(item)}
-                                                            className=" text-blue-text hover:text-primary-dark p-1 cursor-pointer"
+                                                            className=" text-blue-text hover:text-accent p-1 cursor-pointer"
                                                             aria-label="Reducir cantidad"
                                                         >
                                                             <Minus />
@@ -100,7 +100,7 @@ export default function ShoppingCart() {
                                                         <span className="text-sm w-5 text-center">{item.cantidad || 1}</span>
                                                         <button
                                                             onClick={() => addToCart(item)}
-                                                            className=" text-blue-text hover:text-primary-dark p-1 cursor-pointer"
+                                                            className=" text-blue-text hover:text-accent p-1 cursor-pointer"
                                                             aria-label="Aumentar cantidad"
                                                         >
                                                             <Plus />

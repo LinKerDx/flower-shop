@@ -8,7 +8,7 @@ import Link from "next/link";
 import { Oferta } from "../components/icons/Icons";
 
 interface Props {
-    productoActualId?: number;
+    productoActualId?: number | string;
     categoria: string;
     lista?: ListOfProductos;
     cantidad?: number;
@@ -57,7 +57,7 @@ export default function ProductosRecomendados({ productoActualId, categoria }: P
                         >
                             <Link href={`/producto/${item.id}`} >
                                 {/* Badge de descuento */}
-                                {item.descuento > 0 && (
+                                {item.descuento && item.descuento > 0 && (
                                     <div className="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-md z-10 flex items-center">
                                         <Oferta />
                                         {item.descuento}% OFF
@@ -78,9 +78,9 @@ export default function ProductosRecomendados({ productoActualId, categoria }: P
                                 <div className="p-4 flex flex-col flex-grow">
                                     {/* Información de stock */}
                                     <div className="mb-1">
-                                        {item.stock > 0 ? (
+                                        {(item.stock ?? 0) > 0 ? (
                                             <span className="text-xs text-green-600 font-medium">
-                                                {item.stock > 10 ? "En stock" : `Solo ${item.stock} disponibles`}
+                                                {(item.stock ?? 0) > 10 ? "En stock" : `Solo ${item.stock ?? 0} disponibles`}
                                             </span>
                                         ) : (
                                             <span className="text-xs text-red-500 font-medium">Agotado</span>
@@ -98,7 +98,7 @@ export default function ProductosRecomendados({ productoActualId, categoria }: P
                                             {[...Array(5)].map((_, i) => (
                                                 <svg
                                                     key={i}
-                                                    className={`w-3.5 h-3.5 ${i < Math.floor(item.rating) ? "text-yellow-400" : "text-gray-300"}`}
+                                                    className={`w-3.5 h-3.5 ${i < Math.floor(item.rating ?? 0) ? "text-yellow-400" : "text-gray-300"}`}
                                                     fill="currentColor"
                                                     viewBox="0 0 20 20"
                                                 >
@@ -112,10 +112,10 @@ export default function ProductosRecomendados({ productoActualId, categoria }: P
                                     {/* Precios */}
                                     <div className="mt-auto flex items-center justify-between">
                                         <div className="flex items-center">
-                                            {item.descuento > 0 ? (
+                                            {(item.descuento ?? 0) > 0 ? (
                                                 <>
                                                     <span className="text-lg font-bold text-gray-900">
-                                                        ${(item.precio_estimado * (1 - item.descuento / 100)).toFixed(2)}
+                                                        ${(item.precio_estimado * (1 - (item.descuento ?? 0) / 100)).toFixed(2)}
                                                     </span>
                                                     <span className="ml-2 text-sm text-gray-500 line-through">
                                                         ${item.precio_estimado.toFixed(2)}

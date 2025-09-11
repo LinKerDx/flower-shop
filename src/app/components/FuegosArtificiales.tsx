@@ -125,7 +125,7 @@ const FuegosArtificiales: React.FC<Props> = ({ disparar }) => {
         <>
             <canvas
                 ref={canvasRef}
-                className='bg-primary'
+                className='bg-secondary'
                 style={{ position: 'fixed', top: 0, left: 0, zIndex: -1 }}
             />
             <audio ref={audioRef} src="/explosion.mp3" preload="auto" />

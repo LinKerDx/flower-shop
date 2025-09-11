@@ -10,17 +10,17 @@ import { useRef } from "react";
 export default function Home() {
   const productosRef = useRef<HTMLElement | null>(null);
 
-  const scrollToProductos = () => {
-    if (productosRef.current) {
-      productosRef.current.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      console.warn('productosRef no está disponible');
-    }
-  };
+  // const scrollToProductos = () => {
+  //   if (productosRef.current) {
+  //     productosRef.current.scrollIntoView({ behavior: 'smooth' });
+  //   } else {
+  //     console.warn('productosRef no está disponible');
+  //   }
+  // };
 
   return (
     <FiltroProvider>
-      <Hero onScrollToProductos={scrollToProductos} />
+      <Hero />
       <Productos />
       <Carrucel />
       <ProductosListados ref={productosRef} />

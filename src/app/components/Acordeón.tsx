@@ -3,19 +3,19 @@ import { ChevronDown } from './icons/Icons';
 
 export const AccordionDemo = () => {
     return (
-        <div className="w-full max-w-3xl mx-auto p-6 bg-white rounded-xl shadow-lg">
+        <div className="w-full max-w-3xl mx-auto p-6 bg-secondary dark:bg-gray-900 rounded-xl shadow-lg">
             {/* Elementos decorativos */}
             <div className="relative">
-                <div className="absolute -top-6 -left-6 w-16 h-16 rounded-full bg-[#ffc0d0] opacity-50 z-0"></div>
-                <div className="absolute -bottom-6 -right-6 w-16 h-16 rounded-full bg-[#ffc0d0] opacity-50 z-0"></div>
+                <div className="absolute -top-6 -left-6 w-16 h-16 rounded-full bg-tertiary/50 dark:bg-gray-700/50 opacity-50 z-0"></div>
+                <div className="absolute -bottom-6 -right-6 w-16 h-16 rounded-full bg-tertiary/50 dark:bg-gray-700/50 opacity-50 z-0"></div>
 
                 <div className="relative z-10">
-                    <h2 className="text-2xl font-bold text-[#e0718d] mb-2">Preguntas Frecuentes</h2>
-                    <div className="w-20 h-1 bg-[#f291ab] rounded-full mb-6"></div>
+                    <h2 className="text-2xl font-bold text-accent dark:text-gray-200 mb-2">Preguntas Frecuentes</h2>
+                    <div className="w-20 h-1 bg-accent rounded-full mb-6"></div>
 
                     <Accordion items={accordionData} />
 
-                    <div className="w-full h-1 bg-gradient-to-r from-[#f291ab]/70 to-transparent rounded-full mt-6"></div>
+                    <div className="w-full h-1 bg-gradient-to-r from-accent/70 to-transparent rounded-full mt-6"></div>
                 </div>
             </div>
         </div>
@@ -62,15 +62,15 @@ type AccordionItemProps = {
 
 const AccordionItem = ({ title, content, isOpen, onClick }: AccordionItemProps) => {
     return (
-        <div className="border border-[#f291ab]/20 rounded-lg overflow-hidden shadow-sm transition-all duration-300">
+        <div className="border border-accent/20 rounded-lg overflow-hidden shadow-sm transition-all duration-300">
             <button
-                className={`w-full p-4 text-left flex justify-between items-center transition-colors duration-300 ${isOpen ? 'bg-[#f291ab]/10' : 'bg-white hover:bg-[#f291ab]/5'
+                className={`w-full p-4 text-left flex justify-between items-center transition-colors duration-300 ${isOpen ? 'bg-tertiary/30 dark:bg-gray-800' : 'bg-secondary dark:bg-gray-900 hover:bg-tertiary/20 dark:hover:bg-gray-800/50'
                     }`}
                 onClick={onClick}
             >
-                <span className="font-medium text-lg text-[#e0718d]">{title}</span>
+                <span className="font-medium text-lg text-accent dark:text-gray-200">{title}</span>
                 <ChevronDown
-                    className={`w-5 h-5 text-[#f291ab] transition-transform duration-300 ${isOpen ? 'transform rotate-180' : ''
+                    className={`w-5 h-5 text-accent transition-transform duration-300 ${isOpen ? 'transform rotate-180' : ''
                         }`}
                 />
             </button>
@@ -79,7 +79,7 @@ const AccordionItem = ({ title, content, isOpen, onClick }: AccordionItemProps) 
                 className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-96' : 'max-h-0'
                     }`}
             >
-                <div className="p-4 bg-white border-l-4 border-[#f291ab]/30">
+                <div className="p-4 bg-secondary dark:bg-gray-900 border-l-4 border-accent/30">
                     {content}
                 </div>
             </div>

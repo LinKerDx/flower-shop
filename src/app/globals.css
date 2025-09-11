@@ -4,14 +4,19 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --primary: rgb(244, 193, 207);
-  --primary-dark: #f291ab;
+  --primary: #FCD8CD;
+  --secondary: #FEEBF6;
+  --tertiary: #EBD6FB;
+  --accent: #687FE5;
+  --text: #171717;
 }
 
 @theme inline {
   --color-primary: var(--primary);
-  --color-primary-dark: var(--primary-dark);
-  --color-primary-font: #070605;
+  --color-secondary: var(--secondary);
+  --color-tertiary: var(--tertiary);
+  --color-accent: var(--accent);
+  --color-text: var(--text);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --color-blue-text: #002167;
@@ -289,37 +294,361 @@ html {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #1a1a1a;
-    --foreground: #ffffff;
+    --background: #1E201E;
+    --foreground: #ECDFCC;
   }
 }
 
 /* Dark mode styles */
 .dark {
-  --background: #1a1a1a;
-  --foreground: #ffffff;
-  /* Usando solo los dos colores especificados */
+  --background: #1E201E;
+  --foreground: #ECDFCC;
+  --primary: #1E201E;
+  --secondary: #3C3D37;
+  --tertiary: #697565;
+  --accent: #ECDFCC;
+  --text: #ECDFCC;
+}
+
+/* Utility classes for new color palette */
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.bg-primary\/10 {
+  background-color: rgb(252 216 205 / 0.1);
+}
+
+.bg-primary\/20 {
+  background-color: rgb(252 216 205 / 0.2);
+}
+
+.bg-primary\/30 {
+  background-color: rgb(252 216 205 / 0.3);
+}
+
+.bg-primary\/50 {
+  background-color: rgb(252 216 205 / 0.5);
+}
+
+.bg-primary\/70 {
+  background-color: rgb(252 216 205 / 0.7);
+}
+
+.bg-secondary {
+  background-color: var(--secondary);
+}
+
+.bg-secondary\/10 {
+  background-color: rgb(254 235 246 / 0.1);
+}
+
+.bg-secondary\/20 {
+  background-color: rgb(254 235 246 / 0.2);
+}
+
+.bg-secondary\/30 {
+  background-color: rgb(254 235 246 / 0.3);
+}
+
+.bg-secondary\/50 {
+  background-color: rgb(254 235 246 / 0.5);
+}
+
+.bg-secondary\/70 {
+  background-color: rgb(254 235 246 / 0.7);
+}
+
+.bg-tertiary {
+  background-color: var(--tertiary);
+}
+
+.bg-tertiary\/10 {
+  background-color: rgb(235 214 251 / 0.1);
+}
+
+.bg-tertiary\/20 {
+  background-color: rgb(235 214 251 / 0.2);
+}
+
+.bg-tertiary\/30 {
+  background-color: rgb(235 214 251 / 0.3);
+}
+
+.bg-tertiary\/50 {
+  background-color: rgb(235 214 251 / 0.5);
+}
+
+.bg-tertiary\/70 {
+  background-color: rgb(235 214 251 / 0.7);
+}
+
+.bg-accent {
+  background-color: var(--accent);
+}
+
+.bg-accent\/10 {
+  background-color: rgb(104 127 229 / 0.1);
+}
+
+.bg-accent\/20 {
+  background-color: rgb(104 127 229 / 0.2);
+}
+
+.bg-accent\/30 {
+  background-color: rgb(104 127 229 / 0.3);
+}
+
+.bg-accent\/50 {
+  background-color: rgb(104 127 229 / 0.5);
+}
+
+.bg-accent\/70 {
+  background-color: rgb(104 127 229 / 0.7);
+}
+
+.bg-accent\/90 {
+  background-color: rgb(104 127 229 / 0.9);
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.text-secondary {
+  color: var(--secondary);
+}
+
+.text-tertiary {
+  color: var(--tertiary);
+}
+
+.text-accent {
+  color: var(--accent);
+}
+
+.text-text {
+  color: var(--text);
+}
+
+.border-primary {
+  border-color: var(--primary);
+}
+
+.border-secondary {
+  border-color: var(--secondary);
+}
+
+.border-tertiary {
+  border-color: var(--tertiary);
+}
+
+.border-accent {
+  border-color: var(--accent);
+}
+
+.border-accent\/30 {
+  border-color: rgb(104 127 229 / 0.3);
+}
+
+.hover\:bg-primary:hover {
+  background-color: var(--primary);
+}
+
+.hover\:bg-secondary:hover {
+  background-color: var(--secondary);
+}
+
+.hover\:bg-tertiary:hover {
+  background-color: var(--tertiary);
+}
+
+.hover\:bg-accent:hover {
+  background-color: var(--accent);
+}
+
+.hover\:bg-accent\/90:hover {
+  background-color: rgb(104 127 229 / 0.9);
+}
+
+.hover\:text-accent:hover {
+  color: var(--accent);
 }
 
 .dark body {
-  background: var(--primary);
+  background: var(--background);
   color: var(--foreground);
 }
 
+/* Dark mode utility classes */
+.dark .bg-primary {
+  background-color: var(--primary);
+}
+
+.dark .bg-secondary {
+  background-color: var(--secondary);
+}
+
+.dark .bg-tertiary {
+  background-color: var(--tertiary);
+}
+
+.dark .bg-accent {
+  background-color: var(--accent);
+}
+
+.dark .text-primary {
+  color: var(--primary);
+}
+
+.dark .text-secondary {
+  color: var(--secondary);
+}
+
+.dark .text-tertiary {
+  color: var(--tertiary);
+}
+
+.dark .text-accent {
+  color: var(--accent);
+}
+
+.dark .text-text {
+  color: var(--text);
+}
+
+.dark .border-primary {
+  border-color: var(--primary);
+}
+
+.dark .border-secondary {
+  border-color: var(--secondary);
+}
+
+.dark .border-tertiary {
+  border-color: var(--tertiary);
+}
+
+.dark .border-accent {
+  border-color: var(--accent);
+}
+
+/* Dark mode opacity variants */
+.dark .bg-primary\/10 {
+  background-color: rgb(30 32 30 / 0.1);
+}
+
+.dark .bg-primary\/20 {
+  background-color: rgb(30 32 30 / 0.2);
+}
+
+.dark .bg-primary\/50 {
+  background-color: rgb(30 32 30 / 0.5);
+}
+
+.dark .bg-secondary\/10 {
+  background-color: rgb(60 61 55 / 0.1);
+}
+
+.dark .bg-secondary\/20 {
+  background-color: rgb(60 61 55 / 0.2);
+}
+
+.dark .bg-secondary\/30 {
+  background-color: rgb(60 61 55 / 0.3);
+}
+
+.dark .bg-secondary\/50 {
+  background-color: rgb(60 61 55 / 0.5);
+}
+
+.dark .bg-secondary\/70 {
+  background-color: rgb(60 61 55 / 0.7);
+}
+
+.dark .bg-tertiary\/10 {
+  background-color: rgb(105 117 101 / 0.1);
+}
+
+.dark .bg-tertiary\/20 {
+  background-color: rgb(105 117 101 / 0.2);
+}
+
+.dark .bg-tertiary\/30 {
+  background-color: rgb(105 117 101 / 0.3);
+}
+
+.dark .bg-tertiary\/50 {
+  background-color: rgb(105 117 101 / 0.5);
+}
+
+.dark .bg-tertiary\/70 {
+  background-color: rgb(105 117 101 / 0.7);
+}
+
+.dark .bg-accent\/10 {
+  background-color: rgb(236 223 204 / 0.1);
+}
+
+.dark .bg-accent\/20 {
+  background-color: rgb(236 223 204 / 0.2);
+}
+
+.dark .bg-accent\/30 {
+  background-color: rgb(236 223 204 / 0.3);
+}
+
+.dark .bg-accent\/50 {
+  background-color: rgb(236 223 204 / 0.5);
+}
+
+.dark .bg-accent\/90 {
+  background-color: rgb(236 223 204 / 0.9);
+}
+
+/* Dark mode hover states */
+.dark .hover\:bg-primary:hover {
+  background-color: var(--primary);
+}
+
+.dark .hover\:bg-secondary:hover {
+  background-color: var(--secondary);
+}
+
+.dark .hover\:bg-secondary\/70:hover {
+  background-color: rgb(60 61 55 / 0.7);
+}
+
+.dark .hover\:bg-tertiary:hover {
+  background-color: var(--tertiary);
+}
+
+.dark .hover\:bg-accent:hover {
+  background-color: var(--accent);
+}
+
+.dark .hover\:bg-accent\/90:hover {
+  background-color: rgb(236 223 204 / 0.9);
+}
+
+.dark .hover\:text-accent:hover {
+  color: var(--accent);
+}
+
 .dark header {
-  border-color: var(--primary-dark);
+  border-color: var(--tertiary);
 }
 
 /* Dark mode specific component styles */
 .dark .bg-white {
-  background-color: var(--primary-dark) !important;
+  background-color: var(--secondary) !important;
   color: var(--foreground);
 }
 
 .dark input {
-  background-color: var(--primary);
+  background-color: var(--secondary);
   color: var(--foreground);
-  border-color: var(--primary-dark);
+  border-color: var(--tertiary);
 }
 
 .dark input::placeholder {
@@ -333,21 +662,43 @@ html {
 }
 
 .dark .text-gray-500 {
-  color: var(--foreground) !important;
-  opacity: 0.7;
+  color: var(--tertiary) !important;
 }
 
 .dark .text-gray-600 {
+  color: var(--tertiary) !important;
+}
+
+.dark .text-gray-400 {
+  color: var(--tertiary) !important;
+}
+
+.dark .text-gray-200 {
   color: var(--foreground) !important;
-  opacity: 0.8;
 }
 
 .dark .hover\:bg-gray-100:hover {
-  background-color: var(--primary-dark) !important;
+  background-color: var(--tertiary) !important;
 }
 
 .dark .hover\:bg-gray-700:hover {
-  background-color: var(--primary-dark) !important;
+  background-color: var(--tertiary) !important;
+}
+
+.dark .hover\:bg-gray-800:hover {
+  background-color: var(--secondary) !important;
+}
+
+.dark .bg-gray-900 {
+  background-color: var(--primary) !important;
+}
+
+.dark .bg-gray-800 {
+  background-color: var(--secondary) !important;
+}
+
+.dark .bg-gray-700 {
+  background-color: var(--tertiary) !important;
 }
 
 /* Animation utility classes */
@@ -363,7 +714,7 @@ html {
 body {
   overscroll-behavior: none;
   background: var(--primary);
-  color: var(--primary-font);
+  color: var(--text);
   font-family: Arial, Helvetica, sans-serif;
   height: 100dvh;
 }

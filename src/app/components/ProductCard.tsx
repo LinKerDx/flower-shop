@@ -15,7 +15,7 @@ export default function ProductCard({ item, onClick }: { item: Producto, onClick
         <>
             <div className="flex flex-col items-center justify-center">
 
-                <article className="bg-primary-dark rounded-xl shadow-md overflow-hidden w-72 h-full flex flex-col  transform transition-transform duration-300 hover:scale-105 hover:shadow-xl ">
+                <article className="bg-secondary rounded-xl shadow-md overflow-hidden w-72 h-full flex flex-col  transform transition-transform duration-300 hover:scale-105 hover:shadow-xl ">
                     {/* Imagen con contenedor de proporción fija */}
                     <Link href={`/producto/${item.id}`} >
 
@@ -28,7 +28,7 @@ export default function ProductCard({ item, onClick }: { item: Producto, onClick
                                 loading="lazy"
                             />
                             {/* Badge de categoría */}
-                            <span className="absolute top-3 right-3 bg-primary text-white text-xs px-2 py-1 rounded-full">
+                            <span className="absolute top-3 right-3 bg-accent text-white text-xs px-2 py-1 rounded-full">
                                 {item.categoría}
                             </span>
                         </div>
@@ -40,9 +40,9 @@ export default function ProductCard({ item, onClick }: { item: Producto, onClick
 
                         {/* Nivel de cuidado */}
                         <div className="flex items-center mb-4 mt-auto">
-                            <span className={`inline-block w-3 h-3 rounded-full mr-2 ${item.nivel_cuidado.includes("Muy bajo") ? "bg-green-300" :
-                                item.nivel_cuidado.includes("Bajo") ? "bg-green-500" :
-                                    item.nivel_cuidado.includes("Moderado") ? "bg-yellow-500" :
+                            <span className={`inline-block w-3 h-3 rounded-full mr-2 ${item.nivel_cuidado?.includes("Muy bajo") ? "bg-green-300" :
+                                item.nivel_cuidado?.includes("Bajo") ? "bg-green-500" :
+                                    item.nivel_cuidado?.includes("Moderado") ? "bg-yellow-500" :
                                         "bg-red-500"
                                 }`}></span>
                             <span className="text-xs text-blue-text">{item.nivel_cuidado}</span>
@@ -67,7 +67,7 @@ export default function ProductCard({ item, onClick }: { item: Producto, onClick
                                 {isInCart ? <RemoveFromCart /> : <AddToCartIcon />}
                             </button>
                             <Link href={`/producto/${item.id}`} >
-                                <button className="bg-primary group-hover:bg-red-600 cursor-pointer group-hover:animate-elastic-ultrasoft text-white text-sm py-2 px-4 rounded-lg transition-colors">
+                                <button className="bg-accent group-hover:bg-red-600 cursor-pointer group-hover:animate-elastic-ultrasoft text-white text-sm py-2 px-4 rounded-lg transition-colors">
                                     Ver detalles
                                 </button>
                             </Link >

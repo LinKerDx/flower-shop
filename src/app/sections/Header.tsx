@@ -2,7 +2,7 @@
 'use client'
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { useState, useEffect, useContext } from "react"
+import { useState, useEffect } from "react"
 import {
     SignInButton,
     SignedIn,
@@ -13,7 +13,6 @@ import {
 import PlaceholderChanger from "../components/PlaceholderChanger"
 import SearchModal from "../components/SearchModal"
 import ThemeToggle from "../components/ThemeToggle"
-import { CartContext } from "../context/cart"
 
 const navLinks = [
     { name: 'Inicio', path: '/', icon: '🏠' },
@@ -28,10 +27,7 @@ export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [isScrolled, setIsScrolled] = useState(false)
     const [isSearchOpen, setIsSearchOpen] = useState(false)
-    const { cart } = useContext(CartContext)
 
-    // Calculate total items in cart
-    const cartItemCount = cart.reduce((total, item) => total + (item.cantidad || 0), 0)
 
     // Handle scroll effect
     useEffect(() => {
@@ -51,14 +47,9 @@ export default function Header() {
 
     return (
         <ClerkProvider>
-            <header className={`
-                fixed top-0 left-0 right-0 z-50 transition-all duration-300
-                ${isScrolled
-                    ? 'bg-primary/95 backdrop-blur-md shadow-lg border-b border-primary-dark/20'
-                    : 'bg-primary/90 backdrop-blur-sm'
-                }
-            `}>
-                <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-secondary/95 backdrop-blur-md shadow-lg border-b border-accent/20' : 'bg-secondary/90 backdrop-blur-sm'
+                }`}>
+                <nav className=" mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between items-center h-16 lg:h-20">
                         {/* Logo */}
                         <Link href="/" className="flex-shrink-0 transition-transform hover:scale-105">
@@ -77,11 +68,11 @@ export default function Header() {
                                     href={link.path}
                                     className={`
                                         px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200
-                                        hover:bg-primary-dark/50 hover:scale-105 hover:shadow-sm
+                                        hover:bg-accent/50 hover:scale-105 hover:shadow-sm
                                         flex items-center gap-2
                                         ${pathname === link.path
-                                            ? 'bg-primary-dark text-primary-font shadow-md'
-                                            : 'text-primary-font/80 hover:text-primary-font'
+                                            ? 'bg-accent text-white shadow-md'
+                                            : 'text-accent/80 hover:text-accent'
                                         }
                                     `}
                                 >
@@ -102,7 +93,7 @@ export default function Header() {
                         <div className="flex items-center space-x-2">
                             {/* Search Button - Mobile */}
                             <button
-                                className="md:hidden p-2 rounded-lg hover:bg-primary-dark/50 transition-colors"
+                                className="md:hidden p-2 rounded-lg hover:bg-accent/50 transition-colors"
                                 onClick={() => setIsSearchOpen(true)}
                                 aria-label="Buscar productos"
                             >
@@ -115,8 +106,8 @@ export default function Header() {
                                     <SignInButton mode="modal">
                                         <button className="
                                             px-4 py-2 text-sm font-medium rounded-lg
-                                            bg-primary-dark hover:bg-primary-dark/80
-                                            text-primary-font shadow-sm hover:shadow-md
+                                            bg-accent hover:bg-accent/90
+                                            text-white shadow-sm hover:shadow-md
                                             transition-all duration-200 hover:scale-105
                                         ">
                                             Ingresar
@@ -144,22 +135,22 @@ export default function Header() {
 
                             {/* Mobile Menu Button */}
                             <button
-                                className="lg:hidden p-2 rounded-lg hover:bg-primary-dark/50 transition-colors"
+                                className="lg:hidden p-2 rounded-lg hover:bg-accent/50 transition-colors"
                                 onClick={toggleMenu}
                                 aria-label="Menú de navegación"
                                 aria-expanded={isMenuOpen}
                             >
                                 <div className="w-6 h-6 flex flex-col justify-center items-center">
                                     <span className={`
-                                        block w-5 h-0.5 bg-primary-font transition-all duration-300
+                                        block w-5 h-0.5 bg-accent transition-all duration-300
                                         ${isMenuOpen ? 'rotate-45 translate-y-1' : ''}
                                     `} />
                                     <span className={`
-                                        block w-5 h-0.5 bg-primary-font mt-1 transition-all duration-300
+                                        block w-5 h-0.5 bg-accent mt-1 transition-all duration-300
                                         ${isMenuOpen ? 'opacity-0' : ''}
                                     `} />
                                     <span className={`
-                                        block w-5 h-0.5 bg-primary-font mt-1 transition-all duration-300
+                                        block w-5 h-0.5 bg-accent mt-1 transition-all duration-300
                                         ${isMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}
                                     `} />
                                 </div>
@@ -172,7 +163,7 @@ export default function Header() {
                         lg:hidden transition-all duration-300 ease-in-out overflow-hidden
                         ${isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}
                     `}>
-                        <div className="py-4 space-y-2 border-t border-primary-dark/20">
+                        <div className="py-4 space-y-2 border-t border-accent/20">
                             {/* Mobile Search */}
                             <div className="md:hidden mb-4">
                                 <div className="bg-white/95 backdrop-blur-sm rounded-lg shadow-sm">
@@ -188,10 +179,10 @@ export default function Header() {
                                     className={`
                                         flex items-center gap-3 px-4 py-3 rounded-lg
                                         text-base font-medium transition-all duration-200
-                                        hover:bg-primary-dark/50 hover:translate-x-1
+                                        hover:bg-accent/50 hover:translate-x-1
                                         ${pathname === link.path
-                                            ? 'bg-primary-dark text-primary-font shadow-sm'
-                                            : 'text-primary-font/80'
+                                            ? 'bg-accent text-white shadow-sm'
+                                            : 'text-accent/80'
                                         }
                                     `}
                                 >

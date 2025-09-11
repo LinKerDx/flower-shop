@@ -36,7 +36,7 @@ export default function ProductoIndividual({ item }: { item: Producto }) {
             </header>
 
             {/* Contenido principal */}
-            <main className="flex flex-col md:grid md:grid-cols-3 gap-10 md:px-5 mt-6 bg-primary-dark py-10 xl:rounded-2xl">
+            <main className="flex flex-col md:grid md:grid-cols-3 gap-10 md:px-5 mt-6 bg-secondary py-10 xl:rounded-2xl">
                 {/* Imagen y descripción corta */}
                 <div className="flex flex-col gap-6 items-center">
 
@@ -58,10 +58,10 @@ export default function ProductoIndividual({ item }: { item: Producto }) {
                         <h2>Opciones:</h2>
                         <div className="flex flex-col md:grid md:grid-cols-2 xl:grid-cols-4 gap-2 items-center-safe md:justify-items-center-safe">
 
-                            {item.opciones_maceta.map((option, index) => {
+                            {item.opciones_maceta?.map((option, index) => {
                                 return (
                                     <button key={index} onClick={() => handleOptionSelect(option)}
-                                        className={`flex items-center justify-center cursor-pointer w-1/2  md:w-full px-4 py-3 border rounded-lg text-sm bg-primary font-medium ${isSelected === option ? 'border-black border-4 text-black' : 'border-[#fb2c36] text-black  hover:bg-gray-50'}`} >{option}
+                                        className={`flex items-center justify-center cursor-pointer w-1/2  md:w-full px-4 py-3 border rounded-lg text-sm bg-tertiary font-medium ${isSelected === option ? 'border-black border-4 text-black' : 'border-accent text-black  hover:bg-gray-50'}`} >{option}
                                         <input className="hidden" type="checkbox" value={option} />
                                     </button>
                                 )
