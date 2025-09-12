@@ -108,7 +108,7 @@ export default function Header() {
                                             px-4 py-2 text-sm font-medium rounded-lg
                                             bg-accent hover:bg-accent/90
                                             text-white shadow-sm hover:shadow-md
-                                            transition-all duration-200 hover:scale-105
+                                            transition-all duration-200 hover:scale-105 cursor-pointer
                                         ">
                                             Ingresar
                                         </button>
@@ -128,7 +128,7 @@ export default function Header() {
                             </div>
 
                             {/* Theme Toggle */}
-                            <div className="hidden sm:block">
+                            <div className="hidden sm:block cursor">
                                 <ThemeToggle />
                             </div>
 
@@ -195,8 +195,6 @@ export default function Header() {
                 </nav>
             </header>
 
-
-            {/* Search Modal */}
             <SearchModal
                 isOpen={isSearchOpen}
                 onClose={() => setIsSearchOpen(false)}

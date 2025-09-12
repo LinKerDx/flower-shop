@@ -55,7 +55,7 @@ export default function RootLayout({
         <Header />
         <ViewTransition>
           <CartProvider>
-            <main className="flex flex-col gap-4">
+            <main className="flex flex-col ">
               <ShoppingCart />
               {children}
             </main>
@@ -67,3 +67,4 @@ export default function RootLayout({
     </html>
   );
 }
+

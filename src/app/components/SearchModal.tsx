@@ -41,7 +41,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
             <div className="flex items-start justify-center min-h-screen pt-16 px-4">
                 <div
                     ref={modalRef}
-                    className="w-full max-w-lg bg-white dark:bg-gray-800 rounded-2xl shadow-2xl overflow-hidden transform transition-all animate-slide-up"
+                    className="w-full h-120 max-w-lg bg-white dark:bg-gray-800 rounded-2xl shadow-2xl overflow-hidden transform transition-all animate-slide-up"
                 >
                     <div className="p-6">
                         <div className="flex items-center justify-between mb-4">

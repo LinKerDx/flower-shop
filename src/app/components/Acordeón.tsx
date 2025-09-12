@@ -3,7 +3,7 @@ import { ChevronDown } from './icons/Icons';
 
 export const AccordionDemo = () => {
     return (
-        <div className="w-full max-w-3xl mx-auto p-6 bg-secondary dark:bg-gray-900 rounded-xl shadow-lg">
+        <div className="w-full max-w-3xl my-20 p-6 bg-secondary dark:bg-gray-900 rounded-xl shadow-lg">
             {/* Elementos decorativos */}
             <div className="relative">
                 <div className="absolute -top-6 -left-6 w-16 h-16 rounded-full bg-tertiary/50 dark:bg-gray-700/50 opacity-50 z-0"></div>
@@ -87,12 +87,11 @@ const AccordionItem = ({ title, content, isOpen, onClick }: AccordionItemProps) 
     );
 };
 
-// Datos de ejemplo para el acordeón
 const accordionData = [
     {
         title: "¿Cuánto tiempo duran los arreglos?",
         content: (
-            <p className="text-gray-700">
+            <p className="text-text">
                 Nuestros arreglos florales están diseñados para durar entre 7 y 10 días, dependiendo del tipo de flores
                 y los cuidados que reciban. Para una mayor duración, recomendamos mantenerlos en un lugar fresco,
                 lejos de la luz solar directa y cambiar el agua cada 2 días.
@@ -102,7 +101,7 @@ const accordionData = [
     {
         title: "¿Ofrecen servicio de entrega?",
         content: (
-            <p className="text-gray-700">
+            <p className="text-text">
                 Sí, contamos con servicio de entrega en toda la ciudad. Las entregas se realizan de lunes a sábado
                 en horario de 9:00 a.m. a 7:00 p.m. Para pedidos especiales o entregas urgentes, contáctanos
                 directamente para verificar disponibilidad.
@@ -113,8 +112,8 @@ const accordionData = [
         title: "¿Qué métodos de pago aceptan?",
         content: (
             <div>
-                <p className="text-gray-700">Aceptamos diversas formas de pago para tu comodidad:</p>
-                <ul className="list-disc pl-5 mt-2 text-gray-700">
+                <p className="text-text">Aceptamos diversas formas de pago para tu comodidad:</p>
+                <ul className="list-disc pl-5 mt-2 text-text">
                     <li>Tarjetas de crédito y débito</li>
                     <li>Transferencias bancarias</li>
                     <li>Pago en efectivo (solo en tienda)</li>
@@ -127,12 +126,12 @@ const accordionData = [
         title: "¿Puedo personalizar mi arreglo floral?",
         content: (
             <div>
-                <p className="text-gray-700">
+                <p className="text-text">
                     ¡Por supuesto! Nos encanta crear diseños personalizados que reflejen tus gustos y necesidades.
                     Puedes elegir el tipo de flores, colores, tamaño y estilo. También podemos incluir elementos
                     adicionales como peluches, chocolates o tarjetas personalizadas.
                 </p>
-                <p className="mt-2 text-gray-700">
+                <p className="mt-2 text-text">
                     Para solicitar un arreglo personalizado, contáctanos con al menos 48 horas de anticipación.
                 </p>
             </div>

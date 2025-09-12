@@ -7,7 +7,7 @@ import React, { forwardRef } from 'react';
 export const ProductosListados = forwardRef<HTMLElement>((props, ref) => {
     return (
         <SectionContainer ref={ref} id="Productos">
-            <div className="flex flex-col items-center justify-center mt-20 gap-10 w-full">
+            <div className="flex flex-col items-center justify-center my-20 gap-10 w-full">
                 <h1 className="text-4xl font-bold text-accent dark:text-gray-200">Productos</h1>
                 <Filtro />
                 <div className="responsivo-grid">

@@ -35,7 +35,7 @@ export default function ShoppingCart() {
                 <AddToCartIcon className={`${animateIcon ? 'animate-bounce' : ''} size-10`}
                 />
                 {cart.length > 0 && (
-                    <span className="fixed animate-bounce top-20 right-1 bg-secondary text-red-600 text-md font-bold rounded-full size-7 flex items-center justify-center">
+                    <span className="fixed animate-bounce  top-20 right-1 bg-primary text-red-600 text-md font-bold rounded-full size-7 flex items-center justify-center">
                         {cart.reduce((sum, item) => sum + (item.cantidad || 1), 0)}
                     </span>
                 )}

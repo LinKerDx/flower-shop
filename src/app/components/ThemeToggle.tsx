@@ -58,14 +58,14 @@ export default function ThemeToggle() {
     return (
         <button
             onClick={toggleTheme}
-            className="p-2 rounded-lg hover:bg-secondary/70 dark:hover:bg-secondary/70 transition-all duration-300 hover:scale-110 relative group"
+            className="p-2 rounded-lg hover:bg-secondary/70 dark:hover:bg-secondary/70 transition-all duration-300 hover:scale-110 relative group cursor-pointer"
             aria-label={isDark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'}
             title={isDark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'}
         >
             <div className="relative overflow-hidden">
                 {isDark ? (
                     // Sun icon - usando la nueva paleta
-                    <svg className="w-5 h-5 transition-all duration-500 animate-spin text-accent"
+                    <svg className="w-5 h-5 transition-all duration-500 animate-spin text-yellow-400"
                         style={{ animationDuration: '2s' }}
                         fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}

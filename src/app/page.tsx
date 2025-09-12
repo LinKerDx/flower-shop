@@ -22,8 +22,8 @@ export default function Home() {
     <FiltroProvider>
       <Hero />
       <Productos />
-      <Carrucel />
       <ProductosListados ref={productosRef} />
+      <Carrucel />
       <PreguntasFrecuentes />
     </FiltroProvider>
   );

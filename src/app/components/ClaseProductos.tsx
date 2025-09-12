@@ -1,29 +1,16 @@
 /* eslint-disable @next/next/no-img-element */
 'use client'
 import Link from "next/link";
+import { DatosProducto } from "../services/producto";
+import SectionContainer from "./SectionContainer";
 
 
 export default function ClaseProductos() {
+    const { Productos } = DatosProducto()
 
-    const Productos = [{
-        category: "Cactus",
-        id: "0",
-        img: "/assets/cactus.webp"
-    },
-    {
-        category: "Variedad",
-        id: "1",
-        img: "/assets/variedad.webp"
-    },
-    {
-        category: "Flores",
-        id: "2",
-        img: "/assets/Flor.webp"
-    }
-    ]
     return (
-        <section>
-            <div className="flex flex-col items-center justify-center bg-secondary mask-y-from-90% mask-y-to-110%">
+        <SectionContainer>
+            <div className="flex flex-col items-center justify-center bg-secondary h-full w-full py-10 px-4 md:px-8 lg:px-16">
                 <h1 className="text-4xl font-bold ">Categorías</h1>
                 <p className="mt-4 text-lg ">Aquí puedes ver todos nuestros productos por categorías.</p>
                 <div className="grid grid-cols-1 gap-4 mt-8 md:grid-cols-2 lg:grid-cols-3">
@@ -41,6 +28,6 @@ export default function ClaseProductos() {
 
                 </div>
             </div>
-        </section>
+        </SectionContainer>
     )
 }

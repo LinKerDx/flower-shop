@@ -158,7 +158,7 @@ export default function PlaceholderChanger() {
                   aria-selected={selectedIndex === index}
                   className={`px-4 py-3 cursor-pointer transition-colors duration-150
                              hover:bg-blue-50 border-b border-gray-100 last:border-b-0
-                             ${selectedIndex === index ? 'bg-blue-50 text-blue-700' : 'text-gray-700'}`}
+                             ${selectedIndex === index ? 'bg-blue-50 text-blue-700' : 'text-green-500'}`}
                   onClick={() => handleSelect(item)}
                   onMouseEnter={() => setSelectedIndex(index)}
                 >

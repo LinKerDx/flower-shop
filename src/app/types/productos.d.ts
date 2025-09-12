@@ -1,5 +1,5 @@
 export interface Producto {
-    id: number | string;
+    id: number;
     tipo: string;
     descripción: string;
     maceta: string;
@@ -21,19 +21,8 @@ export interface Producto {
     cantidad?: number;
     opciones_maceta?: string[];
     temporada_crecimiento?: string;
-}
+    createdAt?: string;
 
-export interface ProductoPersonalizado {
-    id: UUID;
-    tipo: string;
-    descripción: string;
-    maceta: string;
-    moneda: string;
-    imagen: string;
-    categoría: string;
-    stock?: number;
-    precio_estimado: number;
-    cantidad?: number;
 }
 
 

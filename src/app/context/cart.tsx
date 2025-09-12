@@ -1,7 +1,7 @@
 'use client'
 
 import { createContext, useReducer } from "react"
-import { CartContextType, Producto, ProductoPersonalizado } from "../types/productos"
+import { CartContextType, Producto } from "../types/productos"
 import { cartReducer, getInitialCartState } from "../reducers/reducers"
 
 
@@ -19,7 +19,7 @@ export const CartContext = createContext<CartContextType>({
 function useCartReducer() {
     const [state, dispatch] = useReducer(cartReducer, getInitialCartState());
 
-    const addToCart = (item: Producto | ProductoPersonalizado) => {
+    const addToCart = (item: Producto) => {
         dispatch({ type: 'ADD_TO_CART', payload: item })
     }
     const removeFromCart = (item: Producto) => {

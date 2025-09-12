@@ -19,8 +19,7 @@
   --color-text: var(--text);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --color-blue-text: #002167;
-
+  --color-blue-text: #88acf8;
 }
 
 html {
@@ -306,9 +305,12 @@ html {
   --primary: #1E201E;
   --secondary: #3C3D37;
   --tertiary: #697565;
-  --accent: #ECDFCC;
-  --text: #ECDFCC;
+  --accent: #b6b5b2;
+  --text: #b6b5b2;
+  --text-secondary: #231e17;
+  --accent-secondary: #1a1917;
 }
+
 
 /* Utility classes for new color palette */
 .bg-primary {
@@ -494,7 +496,7 @@ html {
 }
 
 .dark .bg-accent {
-  background-color: var(--accent);
+  background-color: var(--accent-secondary);
 }
 
 .dark .text-primary {

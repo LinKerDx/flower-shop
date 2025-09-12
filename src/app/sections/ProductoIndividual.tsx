@@ -25,7 +25,7 @@ export default function ProductoIndividual({ item }: { item: Producto }) {
 
 
     return (
-        <div key={item.id} className="flex flex-col justify-around gap-10 ">
+        <div key={item.id} className="flex flex-col justify-around gap-10 mt-10">
             <FuegosArtificiales disparar={disparar} />
 
             {/* Header con navegación y botones */}

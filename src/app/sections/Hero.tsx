@@ -31,7 +31,7 @@ export default function Hero() {
 
     return (
         <SectionContainer>
-            <div className="relative ">
+            <div className="relative mt-20">
                 <div className="relative flex flex-col md:grid md:grid-cols-4 lg:grid-cols-5 md:gap-2 overflow-hidden ">
                     {/* Gradiente overlay */}
                     <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-transparent pointer-events-none z-10"></div>

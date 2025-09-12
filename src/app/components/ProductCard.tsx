@@ -35,8 +35,8 @@ export default function ProductCard({ item, onClick }: { item: Producto, onClick
                     </Link>
                     {/* Contenido del producto */}
                     <div className="p-5 flex flex-col flex-grow">
-                        <h2 className="font-bold text-xl text-blue-text mb-2 line-clamp-2">{item.tipo}</h2>
-                        <p className="text-blue-text text-sm mb-4 line-clamp-3">{item.descripción}</p>
+                        <h2 className="font-bold text-xl text-text mb-2 line-clamp-2">{item.tipo}</h2>
+                        <p className="text-text text-sm mb-4 line-clamp-3">{item.descripción}</p>
 
                         {/* Nivel de cuidado */}
                         <div className="flex items-center mb-4 mt-auto">
@@ -45,14 +45,14 @@ export default function ProductCard({ item, onClick }: { item: Producto, onClick
                                     item.nivel_cuidado?.includes("Moderado") ? "bg-yellow-500" :
                                         "bg-red-500"
                                 }`}></span>
-                            <span className="text-xs text-blue-text">{item.nivel_cuidado}</span>
+                            <span className="text-xs text-text">{item.nivel_cuidado}</span>
                         </div>
 
                         {/* Precio y botón */}
                         <div className="flex justify-between items-center mt-auto pt-3 border-t border-gray-100 group">
                             <div className="flex flex-col">
-                                <span className="text-xs text-blue-text">Precio</span>
-                                <span className="font-semibold text-lg">{item.precio_estimado} <small className="text-blue-text">{item.moneda}</small></span>
+                                <span className="text-text text-xs">Precio</span>
+                                <span className="font-semibold text-lg">{item.precio_estimado} <small className="text-text">{item.moneda}</small></span>
                             </div>
                             <button style={{ backgroundColor: isInCart ? 'black' : '#6de06d' }}
                                 onClick={() => {

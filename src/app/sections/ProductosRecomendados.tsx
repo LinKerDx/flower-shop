@@ -46,7 +46,7 @@ export default function ProductosRecomendados({ productoActualId, categoria }: P
     }, [productoActualId]);
 
     return (
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-5 my-4">
             <h2 className="text-2xl font-bold text-center">También te puede interesar</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:flex lg:flex-row gap-4 rounded-lg justify-items-center-safe md:justify-center">
                 {productosAleatorios.map((item) => {
@@ -57,7 +57,7 @@ export default function ProductosRecomendados({ productoActualId, categoria }: P
                         >
                             <Link href={`/producto/${item.id}`} >
                                 {/* Badge de descuento */}
-                                {item.descuento && item.descuento > 0 && (
+                                {(item.descuento ?? 0) > 0 && (
                                     <div className="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-md z-10 flex items-center">
                                         <Oferta />
                                         {item.descuento}% OFF

@@ -21,7 +21,6 @@ export default function ProductPage() {
                     }
                 )
             }
-
         </SectionContainer>
     )
 }
