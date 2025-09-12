@@ -143,7 +143,7 @@ export default function SistemaDePago() {
                                         Fecha de Expiración
                                     </label>
                                     <input
-                                        type="text"
+                                        type="date"
                                         name="expiryDate"
                                         value={cardInfo.expiryDate}
                                         onChange={handleInputChange}

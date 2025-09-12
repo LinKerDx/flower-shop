@@ -29,7 +29,7 @@ export default function ShoppingCart() {
             {/* Botón de la bolsa */}
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="badges p-2 text-blue-text hover:text-red-600 focus:outline-none transition-colors bg-secondary rounded-lg cursor-pointer "
+                className="badges p-2 text-text hover:text-red-600 focus:outline-none transition-colors bg-secondary rounded-lg cursor-pointer "
                 aria-label="Ver carrito de compras"
             >
                 <AddToCartIcon className={`${animateIcon ? 'animate-bounce' : ''} size-10`}
@@ -52,10 +52,10 @@ export default function ShoppingCart() {
                     <div className="absolute right-0 top-full mt-2 w-80 bg-white rounded-lg shadow-xl max-h-96 flex flex-col">
                         {/* Encabezado */}
                         <div className="flex justify-between items-center p-4 border-b">
-                            <h2 className="font-bold  text-blue-text">Mi bolsa de compras</h2>
+                            <h2 className="font-bold  text-text">Mi bolsa de compras</h2>
                             <button
                                 onClick={() => setIsOpen(false)}
-                                className="text-blue-text hover:text-blue-text cursor-pointer"
+                                className="text-text hover:text-text cursor-pointer"
                                 aria-label="Cerrar"
                             >
                                 X
@@ -65,7 +65,7 @@ export default function ShoppingCart() {
                         {/* Lista de productos */}
                         <div className="overflow-y-auto flex-grow">
                             {cart.length === 0 ? (
-                                <p className="p-4  text-blue-text text-center">Tu bolsa está vacía</p>
+                                <p className="p-4  text-text text-center">Tu bolsa está vacía</p>
                             ) : (
                                 <ul className="divide-y divide-gray-100">
                                     {cart.map(item => (
@@ -81,8 +81,8 @@ export default function ShoppingCart() {
 
                                             {/* Detalles */}
                                             <div className="flex-grow min-w-0">
-                                                <h3 className="font-medium  text-blue-text truncate">{item.tipo}</h3>
-                                                <p className="text-xs  text-blue-text truncate">{item.descripción}</p>
+                                                <h3 className="font-medium  text-text truncate">{item.tipo}</h3>
+                                                <p className="text-xs  text-text truncate">{item.descripción}</p>
                                                 <div className="flex justify-between items-center mt-2">
                                                     <p className="font-semibold text-sm">
                                                         {item.precio_estimado} {item.moneda}
@@ -92,7 +92,7 @@ export default function ShoppingCart() {
                                                     <div className="flex items-center gap-2">
                                                         <button
                                                             onClick={() => (item.cantidad ?? 1) > 1 ? reduceCantidad(item) : removeFromCart(item)}
-                                                            className=" text-blue-text hover:text-accent p-1 cursor-pointer"
+                                                            className=" text-text hover:text-accent p-1 cursor-pointer"
                                                             aria-label="Reducir cantidad"
                                                         >
                                                             <Minus />
@@ -100,7 +100,7 @@ export default function ShoppingCart() {
                                                         <span className="text-sm w-5 text-center">{item.cantidad || 1}</span>
                                                         <button
                                                             onClick={() => addToCart(item)}
-                                                            className=" text-blue-text hover:text-accent p-1 cursor-pointer"
+                                                            className=" text-text hover:text-accent p-1 cursor-pointer"
                                                             aria-label="Aumentar cantidad"
                                                         >
                                                             <Plus />
@@ -120,14 +120,14 @@ export default function ShoppingCart() {
                             <div className="flex justify-between items-center p-4 border-b">
                                 <button
                                     onClick={() => clearCart()}
-                                    className="text-blue-text cursor-pointer"
+                                    className="text-text cursor-pointer"
                                     aria-label="Cerrar"
                                 >
                                     <h2 className="font-bold  hover:text-red-600">Eliminar todo</h2>
                                 </button>
                                 <button
                                     onClick={() => clearCart()}
-                                    className="text-blue-text hover:text-red-600 cursor-pointer"
+                                    className="text-text hover:text-red-600 cursor-pointer"
                                     aria-label="Cerrar"
                                 >
                                     <Trash2 />
@@ -136,7 +136,7 @@ export default function ShoppingCart() {
 
 
                         {/* Pie con total y botón */}
-                        <div className="border-t p-4 bg-gray-50 rounded-b-lg">
+                        <div className="border-t p-4 bg-primary rounded-b-lg">
                             <div className="flex justify-between mb-3">
                                 <span className="font-medium">Total:</span>
                                 <span className="font-bold">{total.toFixed(2)} euros</span>

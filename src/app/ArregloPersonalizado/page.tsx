@@ -8,6 +8,7 @@ import ProductosRecomendados from "../sections/ProductosRecomendados"
 import { useCart } from "../hooks/useCart"
 import { ListOfProductos, Producto } from "../types/productos"
 import { Minus, Plus } from "../components/icons/Icons"
+import { v4 as uuidv4 } from 'uuid';
 
 export default function Personalizado() {
     // Estados para manejar las selecciones y opciones
@@ -97,7 +98,6 @@ export default function Personalizado() {
             console.warn('No hay flores seleccionadas');
             return;
         }
-        console.log('se executó')
         const arregloPersonalizado = {
             id: generateCryptoNumericId(),
             tipo: "Arreglo Personalizado",
@@ -119,7 +119,7 @@ export default function Personalizado() {
     };
 
     const generateCryptoNumericId = (): number => {
-        const uuid = crypto.randomUUID();
+        const uuid = uuidv4();
         // Tomar primeros 12 caracteres hexadecimales (sin guiones)
         const hex = uuid.replace(/-/g, '').slice(0, 12);
         return parseInt(hex, 16);
