@@ -194,27 +194,6 @@ html {
     }
   }
 
-  @keyframes blob {
-    0% {
-      border-radius: 50%;
-      transform: scale(1, 1);
-    }
-
-    30% {
-      border-radius: 50% 50% 25% 25%;
-      transform: scale(1.2, 0.8);
-    }
-
-    60% {
-      border-radius: 25% 25% 50% 50%;
-      transform: scale(0.8, 1.2);
-    }
-
-    100% {
-      border-radius: 50%;
-      transform: scale(1, 1);
-    }
-  }
 
   @keyframes movimiento-cinta-reversa-compu {
     0% {
@@ -255,11 +234,11 @@ html {
 
   @keyframes movimiento-cinta-mobile {
     0% {
-      transform: translateX(-197%);
+      transform: translateX(-120%);
     }
 
     100% {
-      transform: translateX(170%);
+      transform: translateX(118%);
     }
 
   }
@@ -270,10 +249,33 @@ html {
     }
 
     100% {
-      transform: translateX(-240%);
+      transform: translateX(-110%);
     }
 
   }
+
+  @keyframes blob {
+    0% {
+      border-radius: 50%;
+      transform: scale(1, 1);
+    }
+
+    30% {
+      border-radius: 50% 50% 25% 25%;
+      transform: scale(1.2, 0.8);
+    }
+
+    60% {
+      border-radius: 25% 25% 50% 50%;
+      transform: scale(0.8, 1.2);
+    }
+
+    100% {
+      border-radius: 50%;
+      transform: scale(1, 1);
+    }
+  }
+
 
   @keyframes swing {
     0% {

@@ -25,14 +25,19 @@ export default function Carrucel() {
         <div className="relative group">
             <img
                 key={`${direction}-${index}`}
-                className="size-13 md:size-20 lg:size-24 rounded-xl animate-swing border-2 border-accent/30 dark:border-accent/50 shadow-lg hover:shadow-xl hover:shadow-accent/30 dark:hover:shadow-accent/20 transition-all duration-500 hover:scale-110 hover:rotate-3 group-hover:border-accent/60 dark:group-hover:border-accent/70"
+                className="size-12 sm:size-16 md:size-20 lg:size-24 rounded-xl border-2 shadow-lg       
+        border-accent/30 dark:border-accent/50        
+        transition-all duration-500
+        md:hover:scale-110 md:hover:rotate-3
+        group-hover:border-accent/60 dark:group-hover:border-accent/70
+        touch-manipulation
+        will-change-transform content-fit"
                 src={producto.imagen}
                 alt={`imagen de ${producto.tipo}`}
+                width={96}
+                draggable="false"
+                onContextMenu={(e) => e.preventDefault()}
             />
-            {/* Overlay con información del producto */}
-            <div className="absolute inset-0 bg-gradient-to-t from-accent/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl flex items-end justify-center">
-                <span className="text-white text-xs font-semibold p-2 text-center">{producto.tipo}</span>
-            </div>
         </div>
     )
 
@@ -61,7 +66,7 @@ export default function Carrucel() {
                 {/* Primera cinta del carrusel */}
                 <div className="relative overflow-hidden w-[120%] -rotate-1 mask-y-from-90% mask-y-to-110% mb-8">
                     <div className="bg-gradient-to-r from-tertiary/80 via-accent/60 to-tertiary/80 dark:from-tertiary/70 dark:via-accent/50 dark:to-tertiary/70 py-6 backdrop-blur-sm border-y-2 border-accent/20 dark:border-accent/30">
-                        <article className="flex animate-movimientocinta-mobile md:animate-movimientocinta lg:animate-movimientocinta-compu gap-8 lg:gap-12">
+                        <article className="flex animate-movimientocinta-mobile md:animate-movimientocinta lg:animate-movimientocinta-compu gap-1 md:gap-4 lg:gap-12">
                             {firstlineCactus.map((producto, index) => (
                                 <CarouselImage key={`cactus-${index}`} producto={producto} index={index} direction="normal" />
                             ))}
@@ -78,7 +83,7 @@ export default function Carrucel() {
                 {/* Segunda cinta del carrusel */}
                 <div className="relative overflow-hidden w-[120%] rotate-1 mask-y-from-90% mask-y-to-110%">
                     <div className="bg-gradient-to-r from-accent/60 via-tertiary/80 to-accent/60 dark:from-accent/50 dark:via-tertiary/70 dark:to-accent/50 py-6 backdrop-blur-sm border-y-2 border-accent/20 dark:border-accent/30">
-                        <article className="flex animate-movimientocintareversa-mobile md:animate-movimientocintareversa lg:animate-movimientocintareversa-compu gap-8 lg:gap-12">
+                        <article className="flex animate-movimientocintareversa-mobile md:animate-movimientocintareversa lg:animate-movimientocintareversa-compu gap-1 md:gap-4 lg:gap-12">
                             {secondlineCactus.map((producto, index) => (
                                 <CarouselImage key={`cactus-reverse-${index}`} producto={producto} index={index} direction="reverse" />
                             ))}
