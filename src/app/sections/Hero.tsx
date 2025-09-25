@@ -2,36 +2,68 @@
 
 import SectionContainer from "../components/SectionContainer"
 import gsap from 'gsap';
-import { useGSAP } from '@gsap/react';
-import { useRef } from "react";
-
-import { SplitText } from "gsap/SplitText";
-
-gsap.registerPlugin(SplitText);
-
+import { useRef, useState, useEffect } from "react";
+import Link from 'next/link';
 
 export default function Hero() {
 
 
-    const text = useRef<HTMLHeadingElement>(null)
+    const titleRef = useRef<HTMLHeadingElement>(null);
+    const subtitleRef = useRef<HTMLParagraphElement>(null);
+    const ctaRef = useRef<HTMLDivElement>(null);
+    const [currentWord, setCurrentWord] = useState(0);
+    const words = ['Amor', 'Alegría', 'Gratitud', 'Amistad'];
 
-    useGSAP(() => {
-        // gsap code here...
-        const splitText = SplitText.create(text.current!, {
-            type: "chars"
-        });
-        gsap.from(splitText.chars, {
-            y: 10,
-            duration: 1,
-            ease: 'power3.in',
-            stagger: 0.4,
-            autoAlpha: 0,
-        }); // <-- automatically reverted
-    });
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentWord((prev) => (prev + 1) % words.length);
+        }, 3000);
+        return () => clearInterval(interval);
+    }, []);
 
+    useEffect(() => {
+        if (!titleRef.current || !subtitleRef.current || !ctaRef.current) return;
+
+        gsap.fromTo(
+            [titleRef.current, subtitleRef.current, ctaRef.current],
+            { opacity: 0, y: 20 },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                stagger: 0.2,
+                ease: 'power2.out',
+                clearProps: 'all'
+            }
+        );
+    }, []);
     return (
         <SectionContainer>
-            <div className="relative mt-16">
+            <div className="relative mt-16 hero-section flex items-center">
+                {/* Overlay de fondo semitransparente */}
+                <div className="absolute inset-0 bg-black/10 backdrop-blur-[1px] z-20"></div>
+
+
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-30 px-4 lg:px-0">
+                    <h1 ref={titleRef} className="text-4xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-7xl font-bold mb-6 md:mb-0 lg:mb-6 text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)]">
+                        Flores que Expresan
+                        <span className="block mt-2 md:mt-1 lg:mt-2 text-accent/90 drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] rounded-lg py-2 bg-black/20 backdrop-blur-sm">
+                            {words[currentWord]}
+                        </span>
+                    </h1>
+
+                    <p ref={subtitleRef} className="text-sm md:text-sm 2xl:text-2xl max-w-md md:max-w-lg 2xl:max-w-2xl mx-auto mb-8 text-white drop-shadow-[0_1px_1px_rgba(0,0,0,0.5)] bg-black/20 backdrop-blur-sm rounded-lg p-4">
+                        Creamos arreglos únicos que cuentan historias y despiertan emociones.
+                        Cada flor es elegida con amor para crear momentos inolvidables.
+                    </p>
+
+                    <div ref={ctaRef} className="flex flex-col md:flex-row items-center justify-center">
+                        <Link href="/personalizar" className="px-8 py-2 bg-accent hover:bg-accent/90 text-white rounded-full transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-accent/40 lg:text-md xl:text-lg font-semibold">
+                            Personaliza tu Arreglo
+                        </Link>
+                    </div>
+                </div>
+
                 <div className="relative flex flex-col md:grid md:grid-cols-4 lg:grid-cols-5 md:gap-2 overflow-hidden ">
                     {/* Gradiente overlay */}
                     <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-transparent pointer-events-none z-10"></div>
@@ -54,11 +86,13 @@ export default function Hero() {
                     <img
                         src="/Hero1.webp"
                         alt="Eliza-chan acomodando flores"
-                        className="w-full h-full object-cover aspect-[9/16] transition-all duration-300 hover:brightness-110 hover:scale-[1.02]"
+                        className="w-full h-full object-cover aspect-[9/16]  hover:brightness-110 hover:scale-[1.02]"
+                        fetchPriority="high"
+
                     />
                     <video
                         src="/assets/Hero4.webm"
-                        className="hidden md:block w-full h-full object-cover col-span-3 transition-all duration-300 hover:brightness-110 "
+                        className="hidden md:block w-full h-full object-cover col-span-3 hover:brightness-110 "
                         autoPlay
                         loop
                         muted
@@ -66,7 +100,8 @@ export default function Hero() {
                     <img
                         src="/Hero3.webp"
                         alt="imagen de un arbol de cerezo"
-                        className="hidden lg:block w-full h-full object-cover col-span-1 aspect-[9/16] transition-all duration-300 hover:brightness-110 hover:scale-[1.02]"
+                        className="hidden lg:block w-full h-full object-cover col-span-1 aspect-[9/16] "
+                        fetchPriority="high"
                     />
                 </div>
             </div>

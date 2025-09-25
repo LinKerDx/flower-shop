@@ -19,7 +19,7 @@ const navLinks = [
     { name: 'Flores', path: '/categoria/Flores', icon: '🌸' },
     { name: 'Cactáceas', path: '/categoria/Cactus', icon: '🌵' },
     { name: 'Variedad', path: '/categoria/Variedad', icon: '🌿' },
-    { name: 'Personalizado', path: '/ArregloPersonalizado', icon: '✨' },
+    { name: 'Crea tu arreglo', path: '/ArregloPersonalizado', icon: '✨' },
 ]
 
 export default function Header() {
