@@ -26,6 +26,13 @@ export interface Producto {
 }
 
 
+export interface CategoryCardProps {
+    categoria: string;
+    imagen: string;
+}
+
+
+
 type Productos = {
     vid: string;
     title: string;

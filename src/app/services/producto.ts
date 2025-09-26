@@ -7,32 +7,32 @@ import { useCart } from "../hooks/useCart";
 
 export function DatosProducto() {
     const { cart } = useCart()
-    const [producto] = useState<ListOfProductos>(ProductosIniciales)
+    const [productos] = useState<ListOfProductos>(ProductosIniciales)
     const { setFilters, productoFiltrado } = useFilters()
-    const productosFiltrados = productoFiltrado(producto)
-
+    const productosFiltrados = productoFiltrado(productos)
+    interface ProductoCategoria {
+        category: string;
+        img: string;
+        // Agregar otras propiedades según tu tipo de datos
+    }
 
     const checkProducto = (item: Producto) => {
         return cart.some((i) => i.id === item.id)
     }
 
-    const Productos = [{
-        category: "Cactus",
-        id: "0",
-        img: "/assets/cactus.webp"
-    },
-    {
-        category: "Variedad",
-        id: "1",
-        img: "/assets/variedad.webp"
-    },
-    {
-        category: "Flores",
-        id: "2",
-        img: "/assets/Flor.webp"
-    }
-    ]
+    // Obtener categorías únicas para evitar duplicados
+    const categoriasUnicas = productos.reduce<ProductoCategoria[]>((acc, producto) => {
+        console.log(producto.categoría);
+        const existeCategoria = acc.find(item => item.category === producto.categoría);
+        if (!existeCategoria) {
+            acc.push({
+                category: producto.categoría,
+                img: producto.imagen
+            });
+        }
+        return acc;
+    }, []);
 
 
-    return { producto, productosFiltrados, setFilters, checkProducto, Productos }
+    return { productos, productosFiltrados, setFilters, checkProducto, categoriasUnicas }
 }

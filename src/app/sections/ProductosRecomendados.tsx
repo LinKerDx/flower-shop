@@ -17,9 +17,9 @@ interface Props {
 export default function ProductosRecomendados({ productoActualId, categoria }: Props) {
 
     const [productosAleatorios, setProductosAleatorios] = useState<ListOfProductos>([]);
-    const { producto } = DatosProducto()
+    const { productos } = DatosProducto()
 
-    const productosFiltrados = producto.filter(producto => producto.categoría === categoria);
+    const productosFiltrados = productos.filter(producto => producto.categoría === categoria);
 
     function obtenerProductosAleatorios({ lista, cantidad, productoActualId }: Props) {
         const copia = lista ? lista.filter(producto => producto.id !== productoActualId) : []; // excluye el actual

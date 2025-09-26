@@ -6,11 +6,11 @@ import SectionContainer from "./SectionContainer"
 
 export default function Carrucel() {
 
-    const { producto } = DatosProducto()
+    const { productos } = DatosProducto()
 
-    const ProductosCactus = producto.filter(producto => producto.categoría === "Cactus");
-    const ProductosFlores = producto.filter(producto => producto.categoría === "Flores");
-    const ProductosVariedad = producto.filter(producto => producto.categoría === "Variedad");
+    const ProductosCactus = productos.filter(producto => producto.categoría === "Cactus");
+    const ProductosFlores = productos.filter(producto => producto.categoría === "Flores");
+    const ProductosVariedad = productos.filter(producto => producto.categoría === "Variedad");
 
     const firstlineCactus = ProductosCactus.slice(0, 4)
     const firstlineFlowers = ProductosFlores.slice(0, 4)
@@ -31,7 +31,7 @@ export default function Carrucel() {
         md:hover:scale-110 md:hover:rotate-3
         group-hover:border-accent/60 dark:group-hover:border-accent/70
         touch-manipulation
-        will-change-transform content-fit"
+        will-change-transform content-fit animate-swing"
                 src={producto.imagen}
                 alt={`imagen de ${producto.tipo}`}
                 width={96}

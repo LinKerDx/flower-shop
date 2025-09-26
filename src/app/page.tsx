@@ -1,6 +1,6 @@
 'use client'
 import Hero from "@/app/sections/Hero";
-import Productos from "./sections/CategoríaProductos";
+import CategoriaProductos from "./sections/CategoríaProductos";
 import Carrucel from "./components/Carrucel";
 import { FiltroProvider } from "./context/filtro";
 import { ProductosListados } from "@/app/sections/ProductosListados";
@@ -22,7 +22,7 @@ export default function Home() {
     <FiltroProvider>
       <Hero />
       <Carrucel />
-      <Productos />
+      <CategoriaProductos />
       <ProductosListados ref={productosRef} />
       <PreguntasFrecuentes />
     </FiltroProvider>
