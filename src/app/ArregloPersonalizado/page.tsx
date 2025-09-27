@@ -19,21 +19,21 @@ export default function Personalizado() {
     const [tamañosMaceta, setTamañosMaceta] = useState<string[]>([]);
 
     const { addToCart } = useCart()
-    const { producto } = DatosProducto();
+    const { productos } = DatosProducto();
 
     const precioBase = florSeleccionada.map((item) => {
         const precioUnitario = item.cantidad && item.cantidad >= 12 ? item.precio_promedio.docena / 12 : item.precio_promedio.unidad;
         return precioUnitario * (item.cantidad || 1);
     }).reduce((a, b) => a + b, 0);
     // Obtener datos del producto
-    const arregloPersonalizado = producto.filter((i) => i.categoría === "Flores");
+    const arregloPersonalizado = productos.filter((i) => i.categoría === "Flores");
 
 
     // Extraer opciones únicas de macetas
     useEffect(() => {
         // Obtener colores únicos de macetas
         const opcionesSet = new Set();
-        producto.forEach(p => {
+        productos.forEach(p => {
             if (p.opciones_maceta && p.opciones_maceta.length) {
                 p.opciones_maceta.forEach(o => opcionesSet.add(o));
             }
@@ -45,7 +45,7 @@ export default function Personalizado() {
 
         // Obtener tamaños únicos de macetas
         const tamañosSet = new Set();
-        producto.forEach((i) => {
+        productos.forEach((i) => {
             if (i.tamaños_maceta && i.tamaños_maceta.length) {
                 i.tamaños_maceta.forEach(o => tamañosSet.add(o));
             }
@@ -53,7 +53,7 @@ export default function Personalizado() {
         const tamañosUnicos = (Array.from(tamañosSet) as string[]).sort();
         setTamañosMaceta(tamañosUnicos);
         setTamañoMaceta(tamañosUnicos.length > 0 ? tamañosUnicos[0] : "");
-    }, [producto]);
+    }, [productos]);
 
 
     const handleFlorClick = (item: Producto): void => {
