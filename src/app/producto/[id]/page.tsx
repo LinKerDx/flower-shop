@@ -8,14 +8,14 @@ export default function ProductPage() {
     const params = useParams(); // ✅ funciona en cliente
     const productoId = Number(params.id);
 
-    const { producto } = DatosProducto()
-    const productos = producto.filter((i) => i.id === productoId);
+    const { productos } = DatosProducto()
+    const productoFiltrado = productos.filter((i) => i.id === productoId);
 
 
     return (
         <SectionContainer>
             {
-                productos.map(
+                productoFiltrado.map(
                     (item) => {
                         return <ProductoIndividual key={item.id} item={item} />
                     }
