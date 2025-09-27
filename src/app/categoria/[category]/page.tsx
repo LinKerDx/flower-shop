@@ -10,12 +10,12 @@ import { useParams } from "next/navigation";
 
 export default function Page() {
     const { disparar, lanzarFuegos } = useFuegosArtificiales()
-    const { producto } = DatosProducto()
+    const { productos } = DatosProducto()
     const params = useParams();
 
     const categoryParam = params.category;
     const category = Array.isArray(categoryParam) ? categoryParam[0] : categoryParam;
-    const categoría = producto.filter(producto => producto.categoría === category)
+    const categoría = productos.filter(producto => producto.categoría === category)
 
 
     return (

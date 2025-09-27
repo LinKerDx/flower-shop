@@ -12,7 +12,7 @@ export default function PlaceholderChanger() {
   const [selectedIndex, setSelectedIndex] = useState(-1);
   const [filteredResults, setFilteredResults] = useState<Producto[]>([]);
   const [index, setIndex] = useState(0);
-  const { producto } = DatosProducto()
+  const { productos } = DatosProducto()
 
 
 
@@ -39,13 +39,13 @@ export default function PlaceholderChanger() {
   // Filter results based on query
   useEffect(() => {
     if (query.trim()) {
-      const filtered = producto.filter(item =>
+      const filtered = productos.filter(item =>
         item.tipo.toLowerCase().includes(query.toLowerCase()) ||
         item.categoría.toLowerCase().includes(query.toLowerCase())
       );
       setFilteredResults(filtered);
     } else {
-      setFilteredResults(producto);
+      setFilteredResults(productos);
     }
     setSelectedIndex(-1);
   }, [query]);
