@@ -41,7 +41,6 @@ export default function Hero() {
         <SectionContainer>
             <div className="relative mt-16 hero-section flex items-center">
                 {/* Overlay de fondo semitransparente */}
-                <div className="absolute inset-0 bg-black/10 backdrop-blur-[1px] z-20"></div>
 
 
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-30 px-4 lg:px-0">
@@ -58,7 +57,7 @@ export default function Hero() {
                     </p>
 
                     <div ref={ctaRef} className="flex flex-col md:flex-row items-center justify-center">
-                        <Link href="/personalizar" className="px-8 py-2 bg-accent hover:bg-accent/90 text-white rounded-full transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-accent/40 lg:text-md xl:text-lg font-semibold">
+                        <Link href="/personalizar" className="px-8 py-2 bg-accent text-white rounded-full transform hover:scale-105 transition-all duration-300  lg:text-md xl:text-lg font-semibold">
                             Personaliza tu Arreglo
                         </Link>
                     </div>
