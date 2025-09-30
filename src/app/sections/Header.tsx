@@ -16,9 +16,9 @@ import ThemeToggle from "../components/ThemeToggle"
 
 const navLinks = [
     { name: 'Inicio', path: '/', icon: '🏠' },
-    { name: 'Flores', path: '/categoria/Flores', icon: '🌸' },
-    { name: 'Cactáceas', path: '/categoria/Cactus', icon: '🌵' },
-    { name: 'Variedad', path: '/categoria/Variedad', icon: '🌿' },
+    { name: 'Flores', path: '/categoria/flores', icon: '🌸' },
+    { name: 'Cactáceas', path: '/categoria/cactus', icon: '🌵' },
+    { name: 'Variedad', path: '/categoria/variedad', icon: '🌿' },
     { name: 'Crea tu arreglo', path: '/ArregloPersonalizado', icon: '✨' },
 ]
 

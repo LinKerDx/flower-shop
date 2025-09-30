@@ -12,90 +12,139 @@ import { useFuegosArtificiales } from "../hooks/useFuegosArtificiales";
 import { useState } from "react";
 
 export default function ProductoIndividual({ item }: { item: Producto }) {
-    const { checkProducto } = DatosProducto()
-    const { addToCart, removeFromCart } = useCart()
-    const { disparar, lanzarFuegos } = useFuegosArtificiales()
-    const [isSelected, setIsSelected] = useState("");
+  const { checkProducto } = DatosProducto()
+  const { addToCart, removeFromCart } = useCart()
+  const { disparar, lanzarFuegos } = useFuegosArtificiales()
+  const [isSelected, setIsSelected] = useState("");
 
-    const isInCart = checkProducto(item)
+  const isInCart = checkProducto(item)
 
-    const handleOptionSelect = (option: string) => {
-        setIsSelected(option);
-    }
+  const handleOptionSelect = (option: string) => {
+    setIsSelected(option);
+  }
 
 
-    return (
-        <div key={item.id} className="flex flex-col justify-around gap-10 mt-10">
-            <FuegosArtificiales disparar={disparar} />
+  return (
+    <div className="min-h-screen bg-Primary pt-10 ">
+      <FuegosArtificiales disparar={disparar} />
+      <ImprovedBreadcrumb item={item} />
 
-            {/* Header con navegación y botones */}
-            <header className="space-y-4">
-                {/* Breadcrumb */}
-                <ImprovedBreadcrumb item={item} />
 
-            </header>
+      {/* Contenedor principal */}
+      <div className="container mx-auto px-4 py-4 lg:py-12">
+        <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
+          <div className="grid lg:grid-cols-2 gap-0">
 
-            {/* Contenido principal */}
-            <main className="flex flex-col md:grid md:grid-cols-3 gap-10 md:px-5 mt-6 bg-secondary py-10 xl:rounded-2xl">
-                {/* Imagen y descripción corta */}
-                <div className="flex flex-col gap-6 items-center">
+            {/* Sección de imagen */}
+            <div className="relative p-8 lg:p-12 flex flex-col items-center justify-center bg-primary">
+              <div className="relative group">
+                <img
+                  src={item.imagen}
+                  alt={item.tipo}
+                  className="relative w-80 h-80 lg:w-96 lg:h-96 object-cover rounded-2xl shadow-2xl ring-4 ring-white transform group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="mt-6 flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-md text-text">
+                <p className="text-sm font-medium">{item.maceta} y distintos colores</p>
+              </div>
+            </div>
 
-                    <img src={item.imagen} alt={item.tipo} className="w-72 h-72 object-cover border-4 border-primary rounded" />
-                    <p className="text-sm text-center text-gray-700">{item.maceta} y distintos colores</p>
+            {/* Sección de detalles */}
+            <div className="p-8 lg:p-12 flex flex-col bg-secondary">
+
+              {/* Encabezado */}
+              <div className="space-y-4 mb-8">
+                <h1 className="text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight text-text">
+                  {item.tipo}
+                </h1>
+
+                <div className="flex items-baseline gap-2">
+                  <span className="text-3xl lg:text-4xl font-bold text-accent">
+                    {item.precio_estimado}
+                  </span>
+                  <span className="text-lg text-text">{item.moneda}</span>
+                </div>
+              </div>
+
+              {/* Descripción */}
+              <div className="mb-8">
+                <p className="text-text leading-relaxed whitespace-pre-line">
+                  {item.descripción}
+                </p>
+              </div>
+
+              {/* Opciones de maceta */}
+              <div className="mb-8">
+                <h2 className="text-lg font-semibold mb-4 text-text" >Tamaño de maceta:</h2>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                  {item.opciones_maceta?.map((option) => (
+                    <button
+                      key={option}
+                      onClick={() => handleOptionSelect(option)}
+                      className={`relative py-3 px-4 rounded-xl font-medium text-sm cursor-pointer ${isSelected === option
+                        ? 'text-white bg-accent'
+                        : 'text-text bg-primary'
+                        }`}
+
+                    >
+                      {option}
+                      {isSelected === option && (
+                        <div className="absolute -top-1 -right-1 w-3 h-3 rounded-full border-2 border-white" style={{ backgroundColor: '#FCD8CD' }}></div>
+                      )}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Botones de acción */}
+              <div className="mt-auto space-y-4">
+                <div className="flex flex-row gap-20 justify-center">
+
+
+                  <button
+
+                    onClick={() => {
+                      if (isInCart) {
+                        removeFromCart(item);
+                      } else {
+                        addToCart(item);
+                        lanzarFuegos();
+                      }
+                    }}
+                    className={`p-2 rounded-lg font-semibold text-base flex items-center justify-center gap-3  ${isInCart
+                      ? 'text-white hover:opacity-90'
+                      : 'text-white hover:opacity-90'
+                      }`}
+                    style={{
+                      backgroundColor: isInCart ? '#171717' : '#687FE5',
+                      boxShadow: isInCart ? '0 10px 30px rgba(23, 23, 23, 0.3)' : '0 10px 30px rgba(104, 127, 229, 0.4)'
+                    }}
+                  >
+                    {isInCart ? (
+                      <>
+                        <RemoveFromCart />
+                        Quitar del carrito
+                      </>
+                    ) : (
+                      <>
+                        <AddToCartIcon />
+                        Agregar al carrito
+                      </>
+                    )}
+                  </button>
+                  <SistemaDePago />
+
                 </div>
 
-                {/* Detalles del producto */}
-                <aside className="flex flex-col md:col-span-2">
-                    <section className="flex flex-col gap-2 p-4 md:gap-4">
-                        <h1 className="text-2xl md:text-4xl text-center font-bold">{item.tipo}</h1>
-                        <p className="text-xl max-md:text-center text-green-600 ">
-                            {item.precio_estimado} <small className="text-gray-500">{item.moneda}</small>
-                        </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <ProductosRecomendados productoActualId={item.id} categoria={item.categoría} />
 
-                        <p className="text-sm text-blue-text md:max-w-150 lg:max-w-200 whitespace-pre-line">
-                            {item.descripción}
-                        </p>
-                        <h2>Opciones:</h2>
-                        <div className="flex flex-col md:grid md:grid-cols-2 xl:grid-cols-4 gap-2 items-center-safe md:justify-items-center-safe">
+      </div>
+    </div>
 
-                            {item.opciones_maceta?.map((option, index) => {
-                                return (
-                                    <button key={index} onClick={() => handleOptionSelect(option)}
-                                        className={`flex items-center justify-center cursor-pointer w-1/2  md:w-full px-4 py-3 border rounded-lg text-sm bg-tertiary font-medium ${isSelected === option ? 'border-black border-4 text-black' : 'border-accent text-black  hover:bg-gray-50'}`} >{option}
-                                        <input className="hidden" type="checkbox" value={option} />
-                                    </button>
-                                )
-                            })}
-
-                        </div>
-
-                    </section>
-
-                    {/* Botón de carrito */}
-                    <div className=" flex md:flex-rows cursor-pointer items-center justify-center gap-5 py-5 mt-10">
-                        <button
-                            style={{ backgroundColor: isInCart ? 'black' : '#6de06d' }}
-                            onClick={() => {
-                                if (isInCart) {
-                                    removeFromCart(item);
-                                } else {
-                                    addToCart(item);
-                                    lanzarFuegos();
-                                }
-                            }}
-                            className={`inline-flex items-center justify-center cursor-pointer ${isInCart ? "" : "badges"} gap-1 md:gap-2 text-white text-sm rounded-lg transition-colors p-2 hover:opacity-90`}
-                        >
-                            {isInCart ? <RemoveFromCart /> : <AddToCartIcon />}
-                            {isInCart ? 'Quitar del carrito' : 'Agregar al carrito'}
-                        </button>
-                        <SistemaDePago />
-                    </div>
-                </aside>
-            </main>
-            <footer>
-                <ProductosRecomendados productoActualId={item.id} categoria={item.categoría} />
-            </footer>
-        </div >
-
-    )
+  )
 }
+

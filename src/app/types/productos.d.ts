@@ -25,7 +25,11 @@ export interface Producto {
 
 }
 
-
+export interface ProductoCategoria {
+    category: string;
+    img: string;
+    // Agregar otras propiedades según tu tipo de datos
+}
 export interface CategoryCardProps {
     categoria: string;
     imagen: string;

@@ -26,12 +26,12 @@ export default function Carrucel() {
             <img
                 key={`${direction}-${index}`}
                 className="size-12 sm:size-16 md:size-20 lg:size-24 rounded-xl border-2 shadow-lg       
-        border-accent/30 dark:border-accent/50        
-        transition-all duration-500
-        md:hover:scale-110 md:hover:rotate-3
-        group-hover:border-accent/60 dark:group-hover:border-accent/70
-        touch-manipulation
-        will-change-transform content-fit animate-swing"
+                            border-accent/30 dark:border-accent/50        
+                            transition-all duration-500
+                            md:hover:scale-110 md:hover:rotate-3
+                            group-hover:border-accent/60 dark:group-hover:border-accent/70
+                            touch-manipulation
+                            will-change-transform content-fit animate-swing"
                 src={producto.imagen}
                 alt={`imagen de ${producto.tipo}`}
                 width={96}
@@ -44,7 +44,7 @@ export default function Carrucel() {
 
 
     return (
-        <SectionContainer>
+        <section className="flex flex-col items-center justify-center w-full h-full ">
             <div className="relative flex flex-col items-center justify-center bg-gradient-to-br from-secondary via-primary to-tertiary dark:from-primary dark:via-secondary dark:to-tertiary w-full py-16 overflow-hidden">
 
                 {/* Elementos decorativos de fondo */}
@@ -104,6 +104,6 @@ export default function Carrucel() {
                     <div className="w-3 h-3 bg-accent/60 dark:bg-accent/80 rounded-full animate-bounce delay-400"></div>
                 </div>
             </div>
-        </SectionContainer>
+        </section>
     )
 }

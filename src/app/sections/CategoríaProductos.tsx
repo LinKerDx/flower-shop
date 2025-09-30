@@ -23,7 +23,7 @@ export default function CategoriaProductos() {
 
     return (
         <SectionContainer>
-            <div className="flex flex-col items-center justify-center bg-secondary h-full w-full py-10 px-4 md:px-8 lg:px-16">
+            <div className="flex flex-col items-center justify-center h-full w-full py-10 px-4 md:px-8 lg:px-16">
                 {/* Header Section */}
                 <header className="text-center mb-8">
                     <h1 className="text-4xl font-bold mb-4">Categorías</h1>

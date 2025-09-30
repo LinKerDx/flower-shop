@@ -39,7 +39,7 @@ export default function Hero() {
     }, []);
     return (
         <SectionContainer>
-            <div className="relative mt-16 hero-section flex items-center">
+            <div className="relative hero-section flex items-center">
                 {/* Overlay de fondo semitransparente */}
 
 

@@ -12,14 +12,14 @@ interface Props {
     categoria: string;
     lista?: ListOfProductos;
     cantidad?: number;
+    filtradoDiferente?: boolean;
 }
 
-export default function ProductosRecomendados({ productoActualId, categoria }: Props) {
-
+export default function ProductosRecomendados({ productoActualId, categoria, filtradoDiferente }: Props) {
     const [productosAleatorios, setProductosAleatorios] = useState<ListOfProductos>([]);
     const { productos } = DatosProducto()
 
-    const productosFiltrados = productos.filter(producto => producto.categoría === categoria);
+    const productosFiltrados = filtradoDiferente ? productos.filter(producto => producto.categoría !== categoria) : productos.filter(producto => producto.categoría === categoria);
 
     function obtenerProductosAleatorios({ lista, cantidad, productoActualId }: Props) {
         const copia = lista ? lista.filter(producto => producto.id !== productoActualId) : []; // excluye el actual

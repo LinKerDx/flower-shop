@@ -9,7 +9,7 @@ export default function ImprovedBreadcrumb({ item }: { item: Producto }) {
 
     const breadcrumbItems = [
         { label: "Home", icon: ChevronDown, href: "/" },
-        { label: `${item.categoría}`, icon: ChevronDown, href: `/categoria/${item.categoría}` },
+        { label: `${item.categoría}`, icon: ChevronDown, href: `/categoria/${item.categoría.toLocaleLowerCase()}` },
         { label: `${item.tipo}`, icon: ChevronDown, href: "#", current: true }
     ];
 
@@ -50,10 +50,10 @@ export default function ImprovedBreadcrumb({ item }: { item: Producto }) {
                                 <Link
                                     href={item.href}
                                     className={`
-                    inline-flex items-center text-sm font-medium py-1 px-3 
-                    ${isHovered ? "bg-blue-50 text-blue-600" : "text-gray-700 hover:text-blue-600"} 
-                    rounded-md transition-all duration-200
-                `}
+                                        inline-flex items-center text-sm font-medium py-1 px-3 
+                                        ${isHovered ? "bg-blue-50 text-blue-600" : "text-gray-700 hover:text-blue-600"} 
+                                        rounded-md transition-all duration-200
+                                        `}
                                 >
                                     <Icon
                                         size={16}

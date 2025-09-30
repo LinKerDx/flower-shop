@@ -286,7 +286,7 @@ export default function Personalizado() {
                             </div>
 
                             <button
-                                className={`w-full py-3 rounded-lg font-medium text-white transition-all
+                                className={`w-full py-3 rounded-lg font-medium text-white transition-all cursor-pointer
                                 ${florSeleccionada
                                         ? "bg-green-500 hover:bg-green-600"
                                         : "bg-gray-300 cursor-not-allowed"}`}
