@@ -2,7 +2,6 @@
 'use client'
 import { DatosProducto } from "../services/producto"
 import { Producto } from "../types/productos";
-import SectionContainer from "./SectionContainer"
 
 export default function Carrucel() {
 
