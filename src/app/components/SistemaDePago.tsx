@@ -1,8 +1,11 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { toast } from "sonner";
+import { CreditCardIcon, LockIcon } from "./icons/Icons";
+import { useClickOutsideAndEscape } from "../hooks/useModalClose";
 
 
 export default function SistemaDePago() {
+
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [paymentStatus, setPaymentStatus] = useState("");
     const [isProcessing, setIsProcessing] = useState(false);
@@ -13,12 +16,21 @@ export default function SistemaDePago() {
         cvv: ""
     });
 
+    const modalRef = useRef<HTMLDivElement | null>(null);
+
+
+    useClickOutsideAndEscape({
+        enabled: isModalOpen,
+        onClose: () => onClose(),
+        ref: modalRef
+    });
+
     const openModal = () => {
         setIsModalOpen(true);
         setPaymentStatus("");
     };
 
-    const closeModal = () => {
+    const onClose = () => {
         setIsModalOpen(false);
         setPaymentStatus("");
         setIsProcessing(false);
@@ -26,21 +38,29 @@ export default function SistemaDePago() {
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
-
         let formattedValue = value;
-        // Format card number with spaces every 4 digits
+
         if (name === "cardNumber") {
             formattedValue = value.replace(/\s/g, "").replace(/(\d{4})/g, "$1 ").trim().slice(0, 19);
         }
-        // Format expiry date as MM/YY
         if (name === "expiryDate") {
             formattedValue = value.replace(/\D/g, "");
+
+            // Validar que el mes no sea mayor a 12
+            if (formattedValue.length >= 2) {
+                const month = parseInt(formattedValue.slice(0, 2));
+                if (month > 12) {
+                    formattedValue = "12" + formattedValue.slice(2);
+                } else if (month === 0) {
+                    formattedValue = "01" + formattedValue.slice(2);
+                }
+            }
+
             if (formattedValue.length > 2) {
                 formattedValue = formattedValue.slice(0, 2) + "/" + formattedValue.slice(2, 4);
             }
             formattedValue = formattedValue.slice(0, 5);
         }
-        // Limit CVV to 3 or 4 digits
         if (name === "cvv") {
             formattedValue = value.replace(/\D/g, "").slice(0, 3);
         }
@@ -48,21 +68,18 @@ export default function SistemaDePago() {
         setCardInfo({ ...cardInfo, [name]: formattedValue });
     };
 
-    const handlePayment = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
+    const handlePayment = () => {
         setIsProcessing(true);
-        setPaymentStatus("Procesando pago...");
+        setPaymentStatus("processing");
 
-        // Simulate payment processing
         setTimeout(() => {
             setIsProcessing(false);
-            setPaymentStatus("¡Pago completado con éxito!");
+            setPaymentStatus("success");
 
-            // Reset form and close modal after success
             setTimeout(() => {
                 setCardInfo({ cardNumber: "", cardHolder: "", expiryDate: "", cvv: "" });
-                closeModal();
-            }, 1500);
+                onClose();
+            }, 2000);
         }, 2000);
     };
 
@@ -73,58 +90,70 @@ export default function SistemaDePago() {
         cardInfo.cvv.length >= 3;
 
     return (
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center ">
             {/* Payment Button */}
             <button
                 onClick={openModal}
-                className="flex items-center justify-center py-2 px-7  text-sm  text-white bg-blue-600 rounded-md shadow-md transition-all duration-300 hover:bg-blue-700 active:scale-95 hover:shadow-lg"
+                className="flex items-center justify-center bg-accent gap-3 py-2 px-5 md:max-w-44 text-sm font-semibold text-white rounded-xl shadow-lg transition-all duration-300 hover:opacity-90 cursor-pointer w-full"
             >
-                <svg
-                    className="size-7 mr-2"
-                    viewBox="0 0 20 16"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <rect width="20" height="16" rx="2" fill="white" />
-                    <rect y="3" width="20" height="3" fill="#000" />
-                    <rect y="11" width="12" height="2" rx="1" fill="#888" />
-                </svg>
+                <CreditCardIcon />
                 Pagar ahora
             </button>
 
             {/* Payment Modal */}
             {isModalOpen && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-                    <div className="w-full max-w-md p-6 bg-white rounded-lg shadow-xl">
-                        <div className="flex justify-between items-center mb-4">
-                            <h2 className="text-xl font-bold text-gray-800">Información de Pago</h2>
-                            <button
-                                onClick={closeModal}
-                                className="text-gray-500 hover:text-gray-700"
-                            >
-                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                                </svg>
-                            </button>
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60 backdrop-blur-sm p-4">
+                    <div
+                        ref={modalRef}
+                        className="w-full max-w-md bg-white rounded-3xl shadow-2xl overflow-hidden transform transition-all"
+                        style={{ animation: 'slideIn 0.3s ease-out' }}
+                    >
+                        {/* Header */}
+                        <div className="p-6 border-b">
+                            <div className="flex justify-between items-center">
+                                <div className="flex items-center gap-3">
+                                    <div className="w-12 h-12 rounded-full flex items-center justify-center bg-accent" />
+                                    <div>
+                                        <h2 className="text-2xl font-bold text-text">Pago Seguro</h2>
+                                        <p className="text-sm text-gray-600">Información encriptada</p>
+                                    </div>
+                                </div>
+                                <button
+                                    onClick={onClose}
+                                    className="w-10 h-10 rounded-full flex items-center justify-center transition-colors hover:bg-white/50 text-text"
+                                >
+                                    X
+                                </button>
+                            </div>
                         </div>
 
-                        <form onSubmit={handlePayment}>
-                            <div className="mb-4">
-                                <label className="block text-sm font-medium text-gray-700 mb-1">
+                        {/* Form */}
+                        <div className="p-6 space-y-5">
+                            {/* Card Number */}
+                            <div>
+                                <label className="block text-sm font-semibold mb-2 text-text" >
                                     Número de Tarjeta
                                 </label>
-                                <input
-                                    type="text"
-                                    name="cardNumber"
-                                    value={cardInfo.cardNumber}
-                                    onChange={handleInputChange}
-                                    placeholder="1234 5678 9012 3456"
-                                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                />
+                                <div className="relative">
+                                    <input
+                                        type="text"
+                                        name="cardNumber"
+                                        value={cardInfo.cardNumber}
+                                        onChange={handleInputChange}
+                                        placeholder="1234 5678 9012 3456"
+                                        className={`w-full px-4 py-3 border-2 rounded-xl focus:outline-none transition-colors pr-10 ${cardInfo.cardNumber.length > 0 ? 'bg-accent' : '#e5e7eb'}`}
+                                    />
+                                    <div className="absolute right-4 top-1/2 transform -translate-y-1/2 w-5 h-5" >
+                                        <CreditCardIcon
+                                        />
+                                    </div>
+
+                                </div>
                             </div>
 
-                            <div className="mb-4">
-                                <label className="block text-sm font-medium text-gray-700 mb-1">
+                            {/* Card Holder */}
+                            <div>
+                                <label className="block text-sm font-semibold mb-2 text-text">
                                     Nombre del Titular
                                 </label>
                                 <input
@@ -133,62 +162,98 @@ export default function SistemaDePago() {
                                     value={cardInfo.cardHolder}
                                     onChange={handleInputChange}
                                     placeholder="NOMBRE APELLIDO"
-                                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    className={`w-full px-4 py-3 border-2 rounded-xl focus:outline-none transition-colors uppercase ${cardInfo.cardHolder.length > 0 ? 'bg-accent' : '#e5e7eb'}`}
                                 />
                             </div>
 
-                            <div className="flex space-x-4 mb-6">
-                                <div className="w-1/2">
-                                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                            {/* Expiry Date and CVV */}
+                            <div className="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label className="block text-sm font-semibold mb-2 text-text">
                                         Fecha de Expiración
                                     </label>
                                     <input
-                                        type="date"
+                                        type="text"
                                         name="expiryDate"
                                         value={cardInfo.expiryDate}
                                         onChange={handleInputChange}
                                         placeholder="MM/YY"
-                                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                        className={`w-full px-4 py-3 border-2 rounded-xl focus:outline-none transition-colors
+                                            ${cardInfo.expiryDate.length > 0 ? 'bg-accent' : '#e5e7eb'}`}
                                     />
                                 </div>
-                                <div className="w-1/2">
-                                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                                <div>
+                                    <label className="block text-sm font-semibold mb-2 text-text">
                                         CVV
                                     </label>
                                     <input
-                                        type="text"
+                                        type="password"
                                         name="cvv"
                                         value={cardInfo.cvv}
                                         onChange={handleInputChange}
                                         placeholder="123"
-                                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                        maxLength={3}
+                                        className={`w-full px-4 py-3 border-2 rounded-xl focus:outline-none transition-colors 
+                                            ${cardInfo.cvv.length > 0 ? 'bg-accent' : '#e5e7eb'}`}
                                     />
                                 </div>
                             </div>
 
-                            {paymentStatus && (
+                            {/* Status Message */}
+                            {paymentStatus === "success" && (
                                 <span className="hidden">
                                     {paymentStatus && (
                                         toast.success(paymentStatus)
                                     )}
                                 </span>
-
                             )}
 
+                            {/* Submit Button */}
                             <button
-                                type="submit"
+                                onClick={handlePayment}
                                 disabled={isProcessing || !isFormValid}
-                                className={`w-full py-3 font-bold text-white  rounded-md shadow-md transition-all duration-300 ${isProcessing || !isFormValid
-                                    ? "bg-gray-400 cursor-not-allowed"
-                                    : "bg-blue-600 hover:bg-blue-700 active:scale-99"
+                                className={`w-full py-4 font-bold text-white rounded-xl shadow-lg transition-all duration-300 flex  items-center justify-center gap-2  ${isProcessing || !isFormValid
+                                    ? "opacity-50 cursor-not-allowed bg-accent"
+                                    : "hover:opacity-90 hover:shadow-xl active:scale-98 #d1d5db"
                                     }`}
                             >
-                                {isProcessing ? "Procesando..." : "Confirmar Pago"}
+                                {isProcessing ? (
+                                    <>
+                                        <div className="w-5 h-5 border-3 border-white border-t-transparent rounded-full animate-spin"></div>
+                                        Procesando pago...
+                                    </>
+                                ) : (
+                                    <>
+                                        Confirmar Pago
+                                    </>
+                                )}
                             </button>
-                        </form>
+
+                            {/* Security Badge */}
+                            <div className="flex items-center justify-center gap-2 pt-2">
+                                <LockIcon />
+                                <p className="text-xs text-gray-500">Protegido con encriptación SSL de 256 bits</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             )}
+
+            <style>{`
+                @keyframes slideIn {
+                    from {
+                        opacity: 0;
+                        transform: translateY(-20px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+            `}</style>
         </div>
     );
 }
+
+
+

@@ -25,14 +25,14 @@ export default function ShoppingCart() {
     const total = cart.reduce((sum, item) => sum + (item.precio_estimado * (item.cantidad || 1)), 0);
 
     return (
-        <div className="fixed top-25 right-5 z-50  ">
+        <div className="fixed top-18 md:top-25 right-5 z-20  ">
             {/* Botón de la bolsa */}
             <button
                 onClick={() => setIsOpen(!isOpen)}
                 className="badges p-2 text-text hover:text-red-600 focus:outline-none transition-colors bg-secondary rounded-lg cursor-pointer "
                 aria-label="Ver carrito de compras"
             >
-                <AddToCartIcon className={`${animateIcon ? 'animate-bounce' : ''} size-10`}
+                <AddToCartIcon className={`${animateIcon ? 'animate-bounce' : ''} size-8 md:size-10`}
                 />
                 {cart.length > 0 && (
                     <span className="fixed animate-bounce  top-20 right-1 bg-primary text-red-600 text-md font-bold rounded-full size-7 flex items-center justify-center">

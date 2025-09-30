@@ -1,38 +1,22 @@
 'use client'
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
 import PlaceholderChanger from './PlaceholderChanger'
+import { useClickOutsideAndEscape } from '../hooks/useModalClose'
 
 interface SearchModalProps {
     isOpen: boolean
     onClose: () => void
+    
 }
 
 export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
-    const modalRef = useRef<HTMLDivElement>(null)
+    const modalRef = useRef<HTMLDivElement | null>(null);
 
-    useEffect(() => {
-        const handleEscape = (e: KeyboardEvent) => {
-            if (e.key === 'Escape') onClose()
-        }
-
-        const handleClickOutside = (e: MouseEvent) => {
-            if (modalRef.current && !modalRef.current.contains(e.target as Node)) {
-                onClose()
-            }
-        }
-
-        if (isOpen) {
-            document.addEventListener('keydown', handleEscape)
-            document.addEventListener('mousedown', handleClickOutside)
-            document.body.style.overflow = 'hidden'
-        }
-
-        return () => {
-            document.removeEventListener('keydown', handleEscape)
-            document.removeEventListener('mousedown', handleClickOutside)
-            document.body.style.overflow = 'unset'
-        }
-    }, [isOpen, onClose])
+    useClickOutsideAndEscape({
+        enabled: isOpen,
+        onClose,
+        ref: modalRef,
+    });
 
     if (!isOpen) return null
 
@@ -50,6 +34,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                             </h2>
                             <button
                                 onClick={onClose}
+
                                 className="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full transition-colors"
                                 aria-label="Cerrar búsqueda"
                             >

@@ -44,7 +44,7 @@ export default function ProductoIndividual({ item }: { item: Producto }) {
                   className="relative w-80 h-80 lg:w-96 lg:h-96 object-cover rounded-2xl shadow-2xl ring-4 ring-white transform group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
-              <div className="mt-6 flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-md text-text">
+              <div className="mt-6 flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-md text-black">
                 <p className="text-sm font-medium">{item.maceta} y distintos colores</p>
               </div>
             </div>
@@ -59,7 +59,7 @@ export default function ProductoIndividual({ item }: { item: Producto }) {
                 </h1>
 
                 <div className="flex items-baseline gap-2">
-                  <span className="text-3xl lg:text-4xl font-bold text-accent">
+                  <span className="text-3xl lg:text-4xl font-bold text-[#6de06d]">
                     {item.precio_estimado}
                   </span>
                   <span className="text-lg text-text">{item.moneda}</span>
@@ -98,11 +98,10 @@ export default function ProductoIndividual({ item }: { item: Producto }) {
 
               {/* Botones de acción */}
               <div className="mt-auto space-y-4">
-                <div className="flex flex-row gap-20 justify-center">
+                <div className="flex flex-col md:flex-row gap-5  md:gap-20 justify-center">
 
 
                   <button
-
                     onClick={() => {
                       if (isInCart) {
                         removeFromCart(item);
@@ -111,14 +110,10 @@ export default function ProductoIndividual({ item }: { item: Producto }) {
                         lanzarFuegos();
                       }
                     }}
-                    className={`p-2 rounded-lg font-semibold text-base flex items-center justify-center gap-3  ${isInCart
-                      ? 'text-white hover:opacity-90'
-                      : 'text-white hover:opacity-90'
+                    className={`p-2 rounded-xl md:max-w-44 font-semibold text-sm flex items-center justify-center gap-3 cursor-pointer  ${isInCart
+                      ? 'text-white hover:opacity-90 bg-accent'
+                      : 'text-white hover:opacity-90 bg-[#6de06d]'
                       }`}
-                    style={{
-                      backgroundColor: isInCart ? '#171717' : '#687FE5',
-                      boxShadow: isInCart ? '0 10px 30px rgba(23, 23, 23, 0.3)' : '0 10px 30px rgba(104, 127, 229, 0.4)'
-                    }}
                   >
                     {isInCart ? (
                       <>

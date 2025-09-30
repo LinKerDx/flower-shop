@@ -8,16 +8,18 @@ export default function ImprovedBreadcrumb({ item }: { item: Producto }) {
     const [hoveredIndex, setHoveredIndex] = useState(-1);
 
     const breadcrumbItems = [
-        { label: "Home", icon: ChevronDown, href: "/" },
-        { label: `${item.categoría}`, icon: ChevronDown, href: `/categoria/${item.categoría.toLocaleLowerCase()}` },
-        { label: `${item.tipo}`, icon: ChevronDown, href: "#", current: true }
+        { label: "Home", href: "/", isHome: true },
+        { label: item.categoría, href: `/categoria/${item.categoría.toLowerCase()}` },
+        { label: item.tipo, href: "#", current: true }
     ];
 
     return (
-        <nav aria-label="Breadcrumb" className="py-3 md:px-4 bg-secondary xl:rounded-2xl shadow-sm">
-            <ol className="inline-flex items-center md:gap-2">
-                {breadcrumbItems.map((item, index) => {
-                    const Icon = item.icon;
+        <nav
+            aria-label="Breadcrumb"
+            className="py-2 px-3 md:py-4 md:px-5 xl:rounded-2xl shadow-md bg-secondary"
+        >
+            <ol className="flex flex-wrap items-center md:gap-2">
+                {breadcrumbItems.map((breadcrumbItem, index) => {
                     const isLast = index === breadcrumbItems.length - 1;
                     const isHovered = hoveredIndex === index;
 
@@ -25,42 +27,40 @@ export default function ImprovedBreadcrumb({ item }: { item: Producto }) {
                         <li
                             key={index}
                             className="inline-flex items-center"
-                            onMouseEnter={() => setHoveredIndex(index)}
+                            onMouseEnter={() => !isLast && setHoveredIndex(index)}
                             onMouseLeave={() => setHoveredIndex(-1)}
                         >
+                            {/* Separador */}
                             {index > 0 && (
                                 <ChevronDown
-                                    className="mx-1 md:mx-2 text-gray-400"
+                                    className="mx-2 text-gray-400 flex-shrink-0"
                                     size={16}
                                 />
                             )}
 
+                            {/* Elemento actual (último) */}
                             {isLast ? (
                                 <span
-                                    className="inline-flex items-center text-sm font-medium text-gray-600 bg-gray-100 py-1 px-3 rounded-md"
+                                    className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-2 rounded-lg shadow-sm bg-tertiary text-text"
                                     aria-current="page"
                                 >
-                                    <Icon
-                                        size={16}
-                                        className="mr-1.5 text-gray-500"
-                                    />
-                                    <span>{item.label}</span>
+                                    <span className="truncate max-w-[150px] sm:max-w-none">
+                                        {breadcrumbItem.label}
+                                    </span>
                                 </span>
                             ) : (
+                                /* Enlaces navegables */
                                 <Link
-                                    href={item.href}
-                                    className={`
-                                        inline-flex items-center text-sm font-medium py-1 px-3 
-                                        ${isHovered ? "bg-blue-50 text-blue-600" : "text-gray-700 hover:text-blue-600"} 
-                                        rounded-md transition-all duration-200
-                                        `}
+                                    href={breadcrumbItem.href}
+                                    className={`inline-flex items-center gap-2 text-sm font-medium px-2 py-1 md:px-4 md:py-2 rounded-lg ${isHovered ? 'bg-primary text-accent' : 'transparent text-text'}`}
                                 >
-                                    <Icon
-                                        size={16}
-                                        className={`mr-1.5 ${isHovered ? "text-blue-500 transform scale-110" : "text-gray-500"} transition-all duration-200`}
-                                    />
-                                    <span className={`${isHovered ? "translate-x-0.5" : ""} transition-transform duration-200`}>
-                                        {item.label}
+                                    <span
+                                        className="truncate max-w-[150px] sm:max-w-none transition-transform duration-300"
+                                        style={{
+                                            transform: isHovered ? 'translateX(2px)' : 'translateX(0)'
+                                        }}
+                                    >
+                                        {breadcrumbItem.label}
                                     </span>
                                 </Link>
                             )}

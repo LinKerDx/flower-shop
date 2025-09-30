@@ -11,6 +11,76 @@ export function RemoveFromCart() {
     );
 }
 
+export function CreditCardIcon() {
+    return (
+        <svg
+            className="size-7 mr-2"
+            viewBox="0 0 20 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <rect width="20" height="16" rx="2" fill="white" />
+            <rect y="3" width="20" height="3" fill="#000" />
+            <rect y="11" width="12" height="2" rx="1" fill="#888" />
+        </svg>
+    );
+}
+
+export function LockIcon() {
+    return (
+        <div className="size-9">
+
+
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="lockGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" />
+                        <stop offset="100%" />
+                    </linearGradient>
+
+                    <linearGradient id="shackleGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" />
+                        <stop offset="100%" />
+                    </linearGradient>
+
+                    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+                        <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.3" />
+                    </filter>
+                </defs>
+
+                <path d="M 75 70 
+           L 75 50 
+           Q 75 30, 100 30
+           Q 125 30, 125 50
+           L 125 70"
+                    fill="none"
+                    stroke="url(#shackleGradient)"
+                    stroke-width="16"
+                    stroke-linecap="round"
+                    filter="url(#shadow)" />
+
+                <rect x="60" y="70" width="80" height="90" rx="12" ry="12"
+                    fill="url(#lockGradient)"
+                    filter="url(#shadow)" />
+
+                <circle cx="100" cy="105" r="12" fill="#2D3748" />
+
+                <rect x="94" y="105" width="12" height="30" rx="2" ry="2" fill="#2D3748" />
+
+                <ellipse cx="80" cy="85" rx="8" ry="12" fill="rgba(255,255,255,0.3)" />
+                <ellipse cx="70" cy="100" rx="4" ry="6" fill="rgba(255,255,255,0.2)" />
+
+                <path d="M 79 70 
+           L 79 52 
+           Q 79 35, 100 35"
+                    fill="none"
+                    stroke="rgba(255,255,255,0.4)"
+                    stroke-width="3"
+                    stroke-linecap="round" />
+            </svg>
+        </div>)
+}
+
 export function Plus() {
     return (
         <div className="size-7">
@@ -79,41 +149,41 @@ export function arregloPersonalizadoIcon() {
                         <stop offset="100%" stopColor="#6c757d" stopOpacity="1" />
                     </linearGradient>
                 </defs>
-                <circle cx="50" cy="50" r="48" fill="#f8f9fa" stroke="#e9ecef" stroke-width="2"/>
-                <path d="M35 75 L35 70 Q35 65 40 65 L60 65 Q65 65 65 70 L65 75 Q65 80 60 80 L40 80 Q35 80 35 75 Z" fill="url(#vasGradient)"/>
-                <line x1="42" y1="65" x2="38" y2="35" stroke="#51cf66" stroke-width="2"/>
-                <line x1="50" y1="65" x2="50" y2="25" stroke="#51cf66" stroke-width="2"/>
-                <line x1="58" y1="65" x2="62" y2="40" stroke="#51cf66" stroke-width="2"/>
-                <ellipse cx="40" cy="50" rx="6" ry="3" fill="url(#leafGradient)" transform="rotate(-20 40 50)"/>
-                <ellipse cx="55" cy="45" rx="5" ry="2.5" fill="url(#leafGradient)" transform="rotate(15 55 45)"/>
+                <circle cx="50" cy="50" r="48" fill="#f8f9fa" stroke="#e9ecef" stroke-width="2" />
+                <path d="M35 75 L35 70 Q35 65 40 65 L60 65 Q65 65 65 70 L65 75 Q65 80 60 80 L40 80 Q35 80 35 75 Z" fill="url(#vasGradient)" />
+                <line x1="42" y1="65" x2="38" y2="35" stroke="#51cf66" stroke-width="2" />
+                <line x1="50" y1="65" x2="50" y2="25" stroke="#51cf66" stroke-width="2" />
+                <line x1="58" y1="65" x2="62" y2="40" stroke="#51cf66" stroke-width="2" />
+                <ellipse cx="40" cy="50" rx="6" ry="3" fill="url(#leafGradient)" transform="rotate(-20 40 50)" />
+                <ellipse cx="55" cy="45" rx="5" ry="2.5" fill="url(#leafGradient)" transform="rotate(15 55 45)" />
                 <g transform="translate(38,30)">
-                    <circle cx="0" cy="0" r="3" fill="url(#flowerGradient)"/>
-                    <circle cx="-2" cy="-2" r="2.5" fill="url(#flowerGradient)" opacity="0.8"/>
-                    <circle cx="2" cy="-2" r="2.5" fill="url(#flowerGradient)" opacity="0.8"/>
-                    <circle cx="-2" cy="2" r="2.5" fill="url(#flowerGradient)" opacity="0.8"/>
-                    <circle cx="2" cy="2" r="2.5" fill="url(#flowerGradient)" opacity="0.8"/>
-                    <circle cx="0" cy="0" r="1.5" fill="#fff9c4"/>
+                    <circle cx="0" cy="0" r="3" fill="url(#flowerGradient)" />
+                    <circle cx="-2" cy="-2" r="2.5" fill="url(#flowerGradient)" opacity="0.8" />
+                    <circle cx="2" cy="-2" r="2.5" fill="url(#flowerGradient)" opacity="0.8" />
+                    <circle cx="-2" cy="2" r="2.5" fill="url(#flowerGradient)" opacity="0.8" />
+                    <circle cx="2" cy="2" r="2.5" fill="url(#flowerGradient)" opacity="0.8" />
+                    <circle cx="0" cy="0" r="1.5" fill="#fff9c4" />
                 </g>
                 <g transform="translate(50,20)">
-                    <circle cx="0" cy="0" r="4" fill="#ff8787"/>
-                    <circle cx="-3" cy="-2" r="3" fill="#ff8787" opacity="0.9"/>
-                    <circle cx="3" cy="-2" r="3" fill="#ff8787" opacity="0.9"/>
-                    <circle cx="-2" cy="3" r="3" fill="#ff8787" opacity="0.9"/>
-                    <circle cx="2" cy="3" r="3" fill="#ff8787" opacity="0.9"/>
-                    <circle cx="0" cy="0" r="2" fill="#fff3bf"/>
+                    <circle cx="0" cy="0" r="4" fill="#ff8787" />
+                    <circle cx="-3" cy="-2" r="3" fill="#ff8787" opacity="0.9" />
+                    <circle cx="3" cy="-2" r="3" fill="#ff8787" opacity="0.9" />
+                    <circle cx="-2" cy="3" r="3" fill="#ff8787" opacity="0.9" />
+                    <circle cx="2" cy="3" r="3" fill="#ff8787" opacity="0.9" />
+                    <circle cx="0" cy="0" r="2" fill="#fff3bf" />
                 </g>
                 <g transform="translate(62,35)">
-                    <circle cx="0" cy="0" r="2.5" fill="#ffa8a8"/>
-                    <circle cx="-2" cy="-1.5" r="2" fill="#ffa8a8" opacity="0.8"/>
-                    <circle cx="2" cy="-1.5" r="2" fill="#ffa8a8" opacity="0.8"/>
-                    <circle cx="-1.5" cy="2" r="2" fill="#ffa8a8" opacity="0.8"/>
-                    <circle cx="1.5" cy="2" r="2" fill="#ffa8a8" opacity="0.8"/>
-                    <circle cx="0" cy="0" r="1" fill="#fff9c4"/>
+                    <circle cx="0" cy="0" r="2.5" fill="#ffa8a8" />
+                    <circle cx="-2" cy="-1.5" r="2" fill="#ffa8a8" opacity="0.8" />
+                    <circle cx="2" cy="-1.5" r="2" fill="#ffa8a8" opacity="0.8" />
+                    <circle cx="-1.5" cy="2" r="2" fill="#ffa8a8" opacity="0.8" />
+                    <circle cx="1.5" cy="2" r="2" fill="#ffa8a8" opacity="0.8" />
+                    <circle cx="0" cy="0" r="1" fill="#fff9c4" />
                 </g>
-                <circle cx="25" cy="25" r="1.5" fill="#ffd43b" opacity="0.6"/>
-                <circle cx="75" cy="30" r="1" fill="#ffd43b" opacity="0.6"/>
-                <circle cx="70" cy="70" r="1.5" fill="#69db7c" opacity="0.6"/>
-                <rect x="20" y="85" width="60" height="8" rx="4" fill="#495057" opacity="0.1"/>
+                <circle cx="25" cy="25" r="1.5" fill="#ffd43b" opacity="0.6" />
+                <circle cx="75" cy="30" r="1" fill="#ffd43b" opacity="0.6" />
+                <circle cx="70" cy="70" r="1.5" fill="#69db7c" opacity="0.6" />
+                <rect x="20" y="85" width="60" height="8" rx="4" fill="#495057" opacity="0.1" />
                 <text x="50" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="6" fill="#495057" opacity="0.7">PERSONALIZADO</text>
             </svg>
         </div>

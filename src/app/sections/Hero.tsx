@@ -57,7 +57,7 @@ export default function Hero() {
                     </p>
 
                     <div ref={ctaRef} className="flex flex-col md:flex-row items-center justify-center">
-                        <Link href="/personalizar" className="px-8 py-2 bg-accent text-white rounded-full transform hover:scale-105 transition-all duration-300  lg:text-md xl:text-lg font-semibold">
+                        <Link href="/ArregloPersonalizado" className="px-8 py-2 bg-accent text-white rounded-full transform hover:scale-105 transition-all duration-300  lg:text-md xl:text-lg font-semibold">
                             Personaliza tu Arreglo
                         </Link>
                     </div>
