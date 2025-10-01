@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@clerk/nextjs": "6.18.0",
+    "@clerk/nextjs": "^6.18.0",
     "@gsap/react": "2.1.2",
     "@vercel/analytics": "1.5.0",
     "gsap": "3.13.0",
@@ -22,14 +22,14 @@
     "vercel": "41.6.2"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3",
-    "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
+    "@eslint/eslintrc": "3",
+    "@tailwindcss/postcss": "4",
+    "@types/node": "20",
+    "@types/react": "19",
+    "@types/react-dom": "19",
+    "eslint": "9",
     "eslint-config-next": "15.3.1",
-    "tailwindcss": "^4",
-    "typescript": "^5"
+    "tailwindcss": "4",
+    "typescript": "5"
   }
 }
